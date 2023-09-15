@@ -12,7 +12,7 @@ namespace MEMS
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            if (password.Text.Trim().Length == 0 || email.Text.Trim().Length == 0)
+            if (string.IsNullOrWhiteSpace(password.Text.Trim()) || string.IsNullOrWhiteSpace(email.Text))
             {
                 errorLabel.Text = "Your email and password cannot be empty.";
                 return;
