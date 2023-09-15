@@ -16,7 +16,7 @@ namespace MEMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DatabaseConnectionWindow());
+            Application.Run(new AccountCreationWindow());
         }
     }
 }
