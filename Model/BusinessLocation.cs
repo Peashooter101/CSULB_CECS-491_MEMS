@@ -19,7 +19,6 @@ namespace MEMS.Model
 
         public class Building
         {
-            [BsonId]
             public ObjectId Id { get; set; } = ObjectId.Empty;
             public string name { get; set;}
         }

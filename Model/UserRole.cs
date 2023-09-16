@@ -20,7 +20,6 @@ namespace MEMS.Model
 
         public class User
         {
-            [BsonId]
             public ObjectId Id { get; set; } = ObjectId.Empty;
             public List<ObjectId> locationIds { get; set; } = new List<ObjectId>();
             public string name { get; set; }
