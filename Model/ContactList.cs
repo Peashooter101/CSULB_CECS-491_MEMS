@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MEMS.Model
 {
-    public class ContactList
+    public class ContactList : IEntity
     {
         [BsonId]
         public ObjectId Id { get; set; } = ObjectId.Empty;
