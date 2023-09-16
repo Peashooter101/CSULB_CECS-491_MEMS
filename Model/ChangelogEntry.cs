@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MEMS.Model
 {
-    internal class ChangelogEntry
+    public class ChangelogEntry : IEntity
     {
         [BsonId]
         public ObjectId Id { get; set; } = ObjectId.Empty;

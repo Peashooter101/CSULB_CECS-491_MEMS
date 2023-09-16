@@ -9,7 +9,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace MEMS.Model
 {
-    public class UserRole
+    public class UserRole : IEntity
     {
         [BsonId]
         public ObjectId Id { get; set; } = ObjectId.Empty;
