@@ -7,7 +7,7 @@ using System.Web;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace MEMS.Model
+namespace MEMS
 {
     public class BusinessLocation : IEntity
     {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace MEMS.Model
+namespace MEMS
 {
     public class UserRole : IEntity
     {
