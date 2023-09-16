@@ -13,7 +13,8 @@ namespace MEMS.Model
         [BsonId]
         public ObjectId Id { get; set; } = ObjectId.Empty;
         public string type { get; set; }
-        public UserRole.User user { get; set; }
+        [BsonId]
+        public ObjectId userId { get; set; } = ObjectId.Empty;
         public string description { get; set; }
     }
 }
