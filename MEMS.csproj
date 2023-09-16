@@ -154,6 +154,7 @@
   <ItemGroup>
     <Compile Include="Model\BusinessLocation.cs" />
     <Compile Include="Model\ChangelogEntry.cs" />
+    <Compile Include="Model\Client.cs" />
     <Compile Include="Model\ContactList.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\Machine.cs" />
@@ -184,7 +185,6 @@
     <EmbeddedResource Include="Windows\DatabaseConnectionWindow.resx">
       <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="appsettings.json" />
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />
     <None Include="packages.config" />

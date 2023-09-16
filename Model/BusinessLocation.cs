@@ -16,6 +16,7 @@ namespace MEMS.Model
         public string address { get; set; }
         public List<Building> buildings { get; set; } = new List<Building>();
         public string name { get; set; }
+        public ObjectId clientId { get; set; }
 
         public class Building
         {
