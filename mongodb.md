@@ -11,12 +11,15 @@ MongoDB research and implementation notes.
     - `Environment.GetEnvironmentVariable()` can be used to get an environment variable. Will return `null` if the environment variable does not exist.
     - `Environment.SetEnvironmentVariable()` can be used to set an environment variable. This one we can use to store the connection string in the system.
 
-## Creating Databases, Collections, and Documents within the Cluster
-
 ```cs
 string connectionString = Environment.GetEnvironmentVariable("MONGO_DB_URI");
 MongoClient client = new MongoClient(connectionString);
 ```
+
+## Creating Databases, Collections, and Documents within the Cluster
+
+### Accessing a Collection (Existing or Not)
+
 - You can access a collection of objects with the following: `IMongoCollection<ObjectType> collection = client.GetDatabase("database_name").GetCollection<ObjectType>("collection_name");`
     - You "create" these collections and databases by inserting data into it or creating an index off of them.
     - I genuinely do not know how to create collections otherwise.
