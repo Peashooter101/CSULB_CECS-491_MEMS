@@ -23,7 +23,7 @@ namespace MEMS.Model
         moderate,
         minor
     }
-    public class MantenanceEntry : IEntity
+    public class MaintenanceEntry : IEntity
     {
         [BsonId]
         public ObjectId Id { get; set; } = ObjectId.Empty;

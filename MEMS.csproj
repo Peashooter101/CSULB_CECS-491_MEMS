@@ -165,7 +165,7 @@
     <Compile Include="Model\ChangelogEntry.cs" />
     <Compile Include="Model\IEntity.cs" />
     <Compile Include="Model\MaintenanceSchedule.cs" />
-    <Compile Include="Model\MantenanceEntry.cs" />
+    <Compile Include="Model\MaintenanceEntry.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Contact.cs" />

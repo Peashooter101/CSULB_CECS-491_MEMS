@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MEMS.Model;
 using MongoDB.Driver;
 
 namespace MEMS
@@ -14,11 +15,11 @@ namespace MEMS
 
         public DatabaseContext() 
         {
-            //var connectionString = Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING");
-            var connectionString = "mongodb+srv://seancollins362:3RfZG5Fs4qPg863n@cluster0.1j1jtdz.mongodb.net/";
+            var connectionString = Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING");
+            //var connectionString = "mongodb+srv://seancollins362:3RfZG5Fs4qPg863n@cluster0.1j1jtdz.mongodb.net/";
             if (string.IsNullOrEmpty(connectionString) )
             {
-                throw new ArgumentException("Missing database connection string");
+                throw new ArgumentException("Missing database connection string. Did you save the connection string to your environment variable?");
             }
             var client = new MongoClient(connectionString);
             database = client.GetDatabase("MEMSDB1");
@@ -39,6 +40,13 @@ namespace MEMS
         public IMongoCollection<Machine> Machines
             => database.GetCollection<Machine>("Machines");
 
-        public IMongoCollection<>
+        public IMongoCollection<ChangelogEntry> ChangelogEntries
+            => database.GetCollection < ChangelogEntry >( "ChangelogEntries");
+
+        public IMongoCollection<MaintenanceSchedule> MaintenanceSchedules
+            => database.GetCollection<MaintenanceSchedule>("MaintenanceSchedules");
+
+        public IMongoCollection<MaintenanceEntry> MaintenanceEntries
+            => database.GetCollection<MaintenanceEntry>("MaintenanceEntries");
     }
 }
