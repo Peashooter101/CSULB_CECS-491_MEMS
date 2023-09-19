@@ -12,11 +12,20 @@ namespace MEMS
 
         private void NewMaintenanceWindow_Load(object sender, EventArgs e)
         {
-            Load_ListView();
+            LoadListView();
             //throw new System.NotImplementedException();
         }
 
-        private void Load_ListView()
+        private void DataInputFields(object sender, EventArgs eventArgs)
+        {
+            dataGridView1.Rows.Add(companyLabel.Text,
+                phoneLabel.Text,
+                contactLabel.Text,
+                emailLabel.Text,
+                issueDescriptionLabel.Text);
+        }
+
+        private void LoadListView()
         {
             //test objects to display in window 
             //note: MaintenanceRequests will need a Machine reference
@@ -48,7 +57,7 @@ namespace MEMS
             //add the machines to the list view
             string[] machine1Arr =
                 {   machine1.Name, 
-                    machine1.UniqueId,
+                    machine1.UniqueId
                 };
             var listMachine1 = new ListViewItem(machine1Arr);
             //listview is named in in designer and we use it here. . . 
@@ -67,6 +76,26 @@ namespace MEMS
             var listMachine3 = new ListViewItem(machine3Arr);
             listview.Items.Add(listMachine3);
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void companyTextBox_TextChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
