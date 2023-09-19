@@ -30,10 +30,15 @@ namespace MEMS
         public IMongoCollection<UserRole> UserRoles
             => database.GetCollection<UserRole>("UserRoles");
 
-        public IMongoCollection<ContactList> ContactLists
-            => database.GetCollection<ContactList>("ContactLists");
+        public IMongoCollection<Contact> Contacts
+            => database.GetCollection<Contact>("Contacts");
 
         public IMongoCollection<Client> Clients
             => database.GetCollection<Client>("Clients");
+
+        public IMongoCollection<Machine> Machines
+            => database.GetCollection<Machine>("Machines");
+
+        public IMongoCollection<>
     }
 }

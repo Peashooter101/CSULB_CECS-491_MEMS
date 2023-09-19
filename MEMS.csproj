@@ -164,9 +164,11 @@
     <Compile Include="Model\BusinessLocation.cs" />
     <Compile Include="Model\ChangelogEntry.cs" />
     <Compile Include="Model\IEntity.cs" />
+    <Compile Include="Model\MaintenanceSchedule.cs" />
+    <Compile Include="Model\MantenanceEntry.cs" />
     <Compile Include="Model\Repository.cs" />
     <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\ContactList.cs" />
+    <Compile Include="Model\Contact.cs" />
     <Compile Include="Model\DatabaseContext.cs" />
     <Compile Include="Model\Machine.cs" />
     <Compile Include="Model\UserRole.cs" />
