@@ -18,7 +18,7 @@ namespace MEMS
             private static DatabaseContext _dbContext;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DatabaseConnectionWindow());
+            Application.Run(new AccountCreationWindow());
         }
     }
 }
