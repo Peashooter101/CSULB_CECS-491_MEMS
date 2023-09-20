@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace MEMS
 {
-    internal class UserRoleService
+    public class UserRoleService
     {
+        private readonly DatabaseContext _dbContext;
+
+        public UserRoleService(DatabaseContext _dbContext)
+        {
+            this._dbContext = _dbContext;
+        }
+
+        public void CreateUserRole()
+        {
+            
+        }
+
+        public void AddUser()
+        {
+            
+        }
     }
 }
