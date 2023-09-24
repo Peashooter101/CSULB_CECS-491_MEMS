@@ -9,13 +9,13 @@ namespace MEMS
 {
     static class Program
     {
+        private static DatabaseContext _dbContext;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            private static DatabaseContext _dbContext;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AccountCreationWindow());
