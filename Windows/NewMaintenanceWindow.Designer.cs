@@ -281,6 +281,7 @@ namespace MEMS
             this.Controls.Add(this.listview);
             this.Name = "NewMaintenanceWindow";
             this.Text = "NewMaintenanceWindow";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewMaintenanceWindow_FormClosing);
             this.Load += new System.EventHandler(this.NewMaintenanceWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

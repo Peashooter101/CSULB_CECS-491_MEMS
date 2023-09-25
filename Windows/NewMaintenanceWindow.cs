@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace MEMS
 {
@@ -8,14 +9,40 @@ namespace MEMS
         public NewMaintenanceWindow()
         {
             InitializeComponent();
+            //NewMaintenanceWindow_FormClosing();
         }
+
+        private bool IsSessionEnding = true;
 
         private void NewMaintenanceWindow_Load(object sender, EventArgs e)
         {
             LoadListView();
             //throw new System.NotImplementedException();
+            
         }
-
+        private void NewMaintenanceWindow_FormClosing(Object sender, FormClosingEventArgs e) {
+            if (IsSessionEnding)
+            {
+                switch (MessageBox.Show(
+                            "Save any changes?", 
+                            Text,
+                            MessageBoxButtons.YesNoCancel,
+                            MessageBoxIcon.Question))
+                {
+                    case DialogResult.Yes:
+                        //
+                        MessageBox.Show("Saved");
+                        break;
+                    case DialogResult.No:
+                        break;
+                    case DialogResult.Cancel:
+                        IsSessionEnding = false;
+                        e.Cancel = true;
+                        break;
+                }
+            }
+            IsSessionEnding = true;
+        }
         private void DataInputFields(object sender, EventArgs eventArgs)
         {
             dataGridView1.Rows.Add(companyLabel.Text,
