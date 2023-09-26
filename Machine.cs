@@ -10,6 +10,8 @@ namespace MEMS
         public string Manufacturer { get; set; }
         public int Zone { get; set; }
         public string UniqueId { get; set; }
+        
+        public bool IsActive { get; set; }
     }
     
 }

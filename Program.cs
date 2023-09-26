@@ -17,7 +17,8 @@ namespace MEMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new AccountCreationWindow());
-            Application.Run(new NewMaintenanceWindow());
+            //Application.Run(new NewMaintenanceWindow());
+            Application.Run(new ListMachinesWindow());
         }
     }
 }
