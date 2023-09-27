@@ -73,6 +73,12 @@
         <Compile Include="Windows\ListMachinesWindow.Designer.cs">
           <DependentUpon>ListMachinesWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Windows\MaintenanceReminderWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\MaintenanceReminderWindow.Designer.cs">
+          <DependentUpon>MaintenanceReminderWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\NewMaintenanceWindow.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -96,6 +102,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\ListMachinesWindow.resx">
           <DependentUpon>ListMachinesWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Windows\MaintenanceReminderWindow.resx">
+          <DependentUpon>MaintenanceReminderWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\NewMaintenanceWindow.resx">
           <DependentUpon>NewMaintenanceWindow.cs</DependentUpon>

@@ -36,10 +36,10 @@ namespace MEMS
             this.MachineName = new System.Windows.Forms.ColumnHeader();
             this.MachineUid = new System.Windows.Forms.ColumnHeader();
             this.MachineModel = new System.Windows.Forms.ColumnHeader();
+            this.MachineManufacturer = new System.Windows.Forms.ColumnHeader();
             this.MachineZone = new System.Windows.Forms.ColumnHeader();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.printButton = new System.Windows.Forms.Button();
-            this.MachineManufacturer = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // textBox1
@@ -82,6 +82,13 @@ namespace MEMS
             this.MachineModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MachineModel.Width = 141;
             // 
+            // MachineManufacturer
+            // 
+            this.MachineManufacturer.DisplayIndex = 4;
+            this.MachineManufacturer.Text = "Manufacturer";
+            this.MachineManufacturer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MachineManufacturer.Width = 112;
+            // 
             // MachineZone
             // 
             this.MachineZone.DisplayIndex = 3;
@@ -110,13 +117,6 @@ namespace MEMS
             this.printButton.Text = "Print";
             this.printButton.UseVisualStyleBackColor = false;
             // 
-            // MachineManufacturer
-            // 
-            this.MachineManufacturer.DisplayIndex = 4;
-            this.MachineManufacturer.Text = "Manufacturer";
-            this.MachineManufacturer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MachineManufacturer.Width = 112;
-            // 
             // ListMachinesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -129,7 +129,7 @@ namespace MEMS
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ListMachinesWindow";
-            this.Text = "ListMachinesWindow";
+            this.Text = "Active Machines";
             this.Load += new System.EventHandler(this.ListMachinesWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
