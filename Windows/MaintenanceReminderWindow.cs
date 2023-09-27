@@ -26,7 +26,7 @@ namespace MEMS
         }
         private void label1_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         private void LoadListView()
@@ -41,17 +41,17 @@ namespace MEMS
 
         private void label2_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }
