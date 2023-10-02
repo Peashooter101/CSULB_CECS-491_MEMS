@@ -8,12 +8,11 @@ namespace MEMS
     {        
         private Machine machine1 = new Machine()
         {
-            Name = "Machine Test",
-            IsActive = true,
-            Manufacturer = "Machinery",
-            Model = "123A",
-            UniqueId = "19022AFF0",
-            Zone = 2
+            name = "Machine Test",
+            isActive = true,
+            manufacturer = "Machinery",
+            model = "123A",
+            zone = "2"
         };
         public MaintenanceReminderWindow()
         {
@@ -32,7 +31,7 @@ namespace MEMS
         private void LoadListView()
         {
             string[] machine =
-                { machine1.Name, machine1.UniqueId, machine1.Model, machine1.Manufacturer, machine1.Zone.ToString() };
+                { machine1.name, machine1.Id.ToString(), machine1.model, machine1.manufacturer, machine1.zone };
             var listMachine = new ListViewItem(machine);
             machineListView.Items.Add(listMachine);
 

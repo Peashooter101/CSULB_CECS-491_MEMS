@@ -9,30 +9,27 @@ namespace MEMS
         //note: MaintenanceRequests will need a Machine reference
         Machine machine1 = new Machine()
         {
-            Name = "Kintera Two-Section Reach-In Freezer 54\"",
-            Manufacturer = "Kintera",
-            Model = "KBM2F",
-            UniqueId = "1",
-            Zone = 3,
-            IsActive = true
+            name = "Kintera Two-Section Reach-In Freezer 54\"",
+            manufacturer = "Kintera",
+            model = "KBM2F",
+            zone = "3",
+            isActive = true
         };
         Machine machine2 = new Machine()
         {
-            Name = "Traulsen Dealer's Choice Glass Door Reach-In Refrigerator",
-            Manufacturer = "Traulsen",
-            Model = "G11011",
-            UniqueId = "2",
-            Zone = 2,
-            IsActive = true
+            name = "Traulsen Dealer's Choice Glass Door Reach-In Refrigerator",
+            manufacturer = "Traulsen",
+            model = "G11011",
+            zone = "2",
+            isActive = true
         };
         Machine machine3 = new Machine()
         {
-            Name = "Arctic Air Reach-In Refrigerator, Solid Door, 1 Section",
-            Manufacturer = "Arctic",
-            Model = "AR23",
-            UniqueId = "3",
-            Zone = 1,
-            IsActive = false
+            name = "Arctic Air Reach-In Refrigerator, Solid Door, 1 Section",
+            manufacturer = "Arctic",
+            model = "AR23",
+            zone = "1",
+            isActive= false
         };
         public ListMachinesWindow()
         {
@@ -52,8 +49,8 @@ namespace MEMS
             Machine[] Machines = { machine1, machine2, machine3 };
             foreach (var machine in Machines)
             {
-                string[] machineArr = { machine.Name, machine.UniqueId, machine.Model, machine.Manufacturer, machine.Zone.ToString()};
-                if (machine.IsActive)
+                string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
+                if (machine.isActive)
                 {
                     var listMachine = new ListViewItem(machineArr);
                     activeMachines.Items.Add(listMachine);

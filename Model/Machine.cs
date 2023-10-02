@@ -20,7 +20,7 @@ namespace MEMS
         public ObjectId contactid { get; set; } = ObjectId.Empty;
         public ObjectId maintenanceScheduleId { get; set; } = ObjectId.Empty;
         public ObjectId buildingId { get; set; } = ObjectId.Empty;
-
+        public bool isActive { get; set; }
 
 
     }
