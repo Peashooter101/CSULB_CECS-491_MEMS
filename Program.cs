@@ -23,7 +23,12 @@ namespace MEMS
             // DatabaseInitializer.GetInstance().CheckCollection("sample_mems", "blah");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountCreationWindow());
+            //Application.Run(new AccountCreationWindow());
+            //Application.Run(new NewMaintenanceWindow());
+           
+
+           //Application.Run(new ListMachinesWindow());
+           Application.Run(new MaintenanceReminderWindow());
         }
     }
 }
