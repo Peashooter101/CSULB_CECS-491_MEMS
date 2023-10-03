@@ -191,6 +191,12 @@
         </Compile>
         <Compile Include="Windows\ListMachinesWindow.cs" />
         <Compile Include="Windows\ListMachinesWindow.Designer.cs" />
+        <Compile Include="Windows\MaintenanceLogWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\MaintenanceLogWindow.Designer.cs">
+          <DependentUpon>MaintenanceLogWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\MaintenanceReminderWindow.cs" />
         <Compile Include="Windows\MaintenanceReminderWindow.Designer.cs" />
         <Compile Include="Windows\NewMaintenanceWindow.cs" />
@@ -209,6 +215,9 @@
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\ListMachinesWindow.resx" />
+        <EmbeddedResource Include="Windows\MaintenanceLogWindow.resx">
+          <DependentUpon>MaintenanceLogWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Windows\MaintenanceReminderWindow.resx" />
         <EmbeddedResource Include="Windows\NewMaintenanceWindow.resx" />
         <None Include="libmongocrypt.dylib"/>
