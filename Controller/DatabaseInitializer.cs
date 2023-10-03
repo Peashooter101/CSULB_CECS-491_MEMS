@@ -43,17 +43,43 @@ namespace MEMS
         public void GenerateCollections(string databaseName)
         {
             IMongoDatabase database = _client.GetDatabase(databaseName);
-            GenerateMachineCollection(database);
+            GenerateBusinessLocationCollection(database);
+            GenerateChangelogEntryCollection(database);
             GenerateContactCollection(database);
+            GenerateMachineCollection(database);
+            GenerateMaintenanceEntryCollection(database);
         }
 
-        private void GenerateMachineCollection(IMongoDatabase database)
+        private void GenerateBusinessLocationCollection(IMongoDatabase database)
         {
-            database.GetCollection<Machine>("machines").Indexes.CreateMany(new List<CreateIndexModel<Machine>>
+            database.GetCollection<BusinessLocation>("business_locations").Indexes.CreateMany(
+                new List<CreateIndexModel<BusinessLocation>>
+                {
+                    new CreateIndexModel<BusinessLocation>(Builders<BusinessLocation>.IndexKeys
+                            .Ascending(b => b.name)
+                            .Ascending(b => b.address),
+                        _uniqueOptions)
+                });
+        }
+
+        private void GenerateChangelogEntryCollection(IMongoDatabase database)
+        {
+            database.GetCollection<ChangelogEntry>("changelog_entries").Indexes.CreateMany(
+                new List<CreateIndexModel<ChangelogEntry>>
+                {
+                    new CreateIndexModel<ChangelogEntry>(Builders<ChangelogEntry>.IndexKeys
+                            .Ascending(c => c.userId))
+                    // TODO: Create an index for machineId. (Jared)
+                    // TODO: Create an index for author. (Jared)
+                });
+        }
+
+        private void GenerateClientCollection(IMongoDatabase database)
+        {
+            database.GetCollection<Client>("clients").Indexes.CreateMany(new List<CreateIndexModel<Client>>
             {
-                new CreateIndexModel<Machine>(Builders<Machine>.IndexKeys
-                    .Ascending(m => m.serial),
-                    _uniqueOptions)
+                new CreateIndexModel<Client>(Builders<Client>.IndexKeys
+                        .Ascending(c => c.name))
             });
         }
 
@@ -64,6 +90,16 @@ namespace MEMS
                 new CreateIndexModel<Contact>(Builders<Contact>.IndexKeys
                     .Ascending(c => c.name)
                     .Ascending(c => c.email),
+                    _uniqueOptions)
+            });
+        }
+
+        private void GenerateMachineCollection(IMongoDatabase database)
+        {
+            database.GetCollection<Machine>("machines").Indexes.CreateMany(new List<CreateIndexModel<Machine>>
+            {
+                new CreateIndexModel<Machine>(Builders<Machine>.IndexKeys
+                    .Ascending(m => m.serial),
                     _uniqueOptions)
             });
         }
@@ -81,18 +117,6 @@ namespace MEMS
                         .Ascending(e => e.severity),
                         _uniqueOptions
                         )
-                });
-        }
-
-        private void GenerateBusinessLocationCollection(IMongoDatabase database)
-        {
-            database.GetCollection<BusinessLocation>("business_locations").Indexes.CreateMany(
-                new List<CreateIndexModel<BusinessLocation>>
-                {
-                    new CreateIndexModel<BusinessLocation>(Builders<BusinessLocation>.IndexKeys
-                        .Ascending(b => b.name)
-                        .Ascending(b => b.address),
-                        _uniqueOptions)
                 });
         }
     }
