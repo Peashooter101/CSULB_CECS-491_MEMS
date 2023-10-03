@@ -92,7 +92,7 @@ namespace MEMS
                 Directory.CreateDirectory(dir);
             }
 
-            string time = System.DateTime.Now.ToString("yy-MMM-dd ddd") + ".txt";
+            string time = System.DateTime.Now.ToString("yy-MMM-dd ddd");
             TextWriter txt = new StreamWriter(dir + "\\Log " + time + ".txt");
             foreach (var item in MachineDetails.Items) 
             {
