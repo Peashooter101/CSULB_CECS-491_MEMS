@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +44,17 @@ namespace MEMS
         public void Update(T entity)
         {
             _collection.ReplaceOne(e => e.Id == entity.Id, entity);
+        }
+
+        public List<T> Find(Expression<Func<T, bool>> predicate)
+        {
+            return _collection.Find(predicate).ToList();
+        }
+
+        public T FindOne(Expression<Func<T, bool>> predicate)
+        {
+            List<T> list = _collection.Find(predicate).ToList();
+            return list.Count == 0 ? default : list[0];
         }
     }
 }

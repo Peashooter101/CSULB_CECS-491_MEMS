@@ -9,7 +9,6 @@ namespace MEMS
         private static DatabaseInitializer _instance;
         private readonly MongoClient _client = Program.client;
         private readonly CreateIndexOptions _uniqueOptions = new CreateIndexOptions { Unique = true };
-        public static string example = "";
 
         private DatabaseInitializer()
         {
@@ -50,7 +49,7 @@ namespace MEMS
 
         private void GenerateMachineCollection(IMongoDatabase database)
         {
-            database.GetCollection<Machine>("machine").Indexes.CreateMany(new List<CreateIndexModel<Machine>>
+            database.GetCollection<Machine>("machines").Indexes.CreateMany(new List<CreateIndexModel<Machine>>
             {
                 new CreateIndexModel<Machine>(Builders<Machine>.IndexKeys
                     .Ascending(m => m.serial),
@@ -60,7 +59,7 @@ namespace MEMS
 
         private void GenerateContactCollection(IMongoDatabase database)
         {
-            database.GetCollection<Contact>("contact").Indexes.CreateMany(new List<CreateIndexModel<Contact>>
+            database.GetCollection<Contact>("contacts").Indexes.CreateMany(new List<CreateIndexModel<Contact>>
             {
                 new CreateIndexModel<Contact>(Builders<Contact>.IndexKeys
                     .Ascending(c => c.name)
@@ -71,7 +70,7 @@ namespace MEMS
 
         private void GenerateMaintenanceEntryCollection(IMongoDatabase database)
         {
-            database.GetCollection<MaintenanceEntry>("maintenance_entry").Indexes.CreateMany(
+            database.GetCollection<MaintenanceEntry>("maintenance_entries").Indexes.CreateMany(
                 new List<CreateIndexModel<MaintenanceEntry>>
                 {
                     new CreateIndexModel<MaintenanceEntry>(Builders<MaintenanceEntry>.IndexKeys
@@ -87,7 +86,7 @@ namespace MEMS
 
         private void GenerateBusinessLocationCollection(IMongoDatabase database)
         {
-            database.GetCollection<BusinessLocation>("business_location").Indexes.CreateMany(
+            database.GetCollection<BusinessLocation>("business_locations").Indexes.CreateMany(
                 new List<CreateIndexModel<BusinessLocation>>
                 {
                     new CreateIndexModel<BusinessLocation>(Builders<BusinessLocation>.IndexKeys
