@@ -46,7 +46,12 @@ namespace MEMS
         {
             PasswordHasherInstance phi = PasswordHasherInstance.Create(HashAlgorithm.SHA256, user.salt);
             if (!phi.Validate(oldPass, user.password)) return false;
+            
+            int salt = new Random().Next(int.MinValue, int.MaxValue);
+            phi = PasswordHasherInstance.Create(HashAlgorithm.SHA256, salt);
             user.password = phi.Hash(newPass);
+            user.salt = salt;
+            _repository.Update(user);
             return true;
         }
     }
