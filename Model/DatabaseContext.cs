@@ -12,8 +12,9 @@ namespace MEMS
     public class DatabaseContext
     {
         public IMongoDatabase database;
+        private static DatabaseContext instance;
 
-        public DatabaseContext() 
+        private DatabaseContext() 
         {
             //var connectionString = Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING");
             const string connectionString = "mongodb+srv://seancollins362:3RfZG5Fs4qPg863n@cluster0.1j1jtdz.mongodb.net/";
@@ -23,6 +24,16 @@ namespace MEMS
             }
             var client = new MongoClient(connectionString);
             database = client.GetDatabase("MEMSDB1");
+        }
+
+        public static DatabaseContext GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new DatabaseContext();
+            }
+
+            return instance;
         }
 
         public IMongoCollection<BusinessLocation> BusinessLocations 
