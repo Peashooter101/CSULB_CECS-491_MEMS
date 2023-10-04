@@ -10,7 +10,7 @@ namespace MEMS
 {
     public class UserRoleService
     {
-            private readonly DatabaseContext _dbContext;
+            private DatabaseContext _dbContext;
 
             public UserRoleService(DatabaseContext dbContext)
             {
