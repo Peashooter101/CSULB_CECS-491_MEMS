@@ -183,6 +183,12 @@
         <Compile Include="Windows\DatabaseConnectionWindow.Designer.cs">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Windows\DetailedMachineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\DetailedMachineWindow.Designer.cs">
+          <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\Form1.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -213,6 +219,9 @@
         <EmbeddedResource Include="Windows\AccountCreationWindow.resx"/>
         <EmbeddedResource Include="Windows\DatabaseConnectionWindow.resx">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Windows\DetailedMachineWindow.resx">
+          <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\ListMachinesWindow.resx" />
         <EmbeddedResource Include="Windows\MaintenanceLogWindow.resx">
