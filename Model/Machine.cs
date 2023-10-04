@@ -21,6 +21,7 @@ namespace MEMS
         public ObjectId maintenanceScheduleId { get; set; } = ObjectId.Empty;
         public ObjectId buildingId { get; set; } = ObjectId.Empty;
         public bool isActive { get; set; }
+        public DateTime dateCreated { get; set; }
 
 
     }

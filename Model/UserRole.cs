@@ -22,6 +22,7 @@ namespace MEMS
             public ObjectId Id { get; set; } = ObjectId.Empty;
             public List<ObjectId> locationIds { get; set; } = new List<ObjectId>();
             public string username { get; set; }
+            public string email { get; set; }
             public string password { get; set; }
         }
     }
