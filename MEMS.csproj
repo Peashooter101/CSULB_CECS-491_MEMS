@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <Import Project="packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.props" Condition="Exists('packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.props')" />
+    <Import Project="packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.props" Condition="Exists('packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.props')" />
+    <Import Project="packages\xunit.runner.visualstudio.2.5.2-pre.3\build\net462\xunit.runner.visualstudio.props" Condition="Exists('packages\xunit.runner.visualstudio.2.5.2-pre.3\build\net462\xunit.runner.visualstudio.props')" />
+    <Import Project="packages\xunit.core.2.5.2-pre.2\build\xunit.core.props" Condition="Exists('packages\xunit.core.2.5.2-pre.2\build\xunit.core.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -56,6 +60,9 @@
         <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
             <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
         </Reference>
+        <Reference Include="Microsoft.VisualStudio.CodeCoverage.Shim, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\lib\net462\Microsoft.VisualStudio.CodeCoverage.Shim.dll</HintPath>
+        </Reference>
         <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
             <HintPath>packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
         </Reference>
@@ -71,18 +78,19 @@
         <Reference Include="MongoDB.Libmongocrypt, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
             <HintPath>packages\MongoDB.Libmongocrypt.1.8.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
         </Reference>
+        <Reference Include="mscorlib" />
         <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
             <HintPath>packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
         </Reference>
         <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
             <HintPath>packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
         </Reference>
-        <Reference Include="System"/>
+        <Reference Include="System" />
         <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
             <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
         </Reference>
-        <Reference Include="System.ComponentModel.Composition"/>
-        <Reference Include="System.Core"/>
+        <Reference Include="System.ComponentModel.Composition" />
+        <Reference Include="System.Core" />
         <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
             <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
             <Private>True</Private>
@@ -96,7 +104,7 @@
             <Private>True</Private>
             <Private>True</Private>
         </Reference>
-        <Reference Include="System.Numerics"/>
+        <Reference Include="System.Numerics" />
         <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
             <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
         </Reference>
@@ -145,38 +153,51 @@
         <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
             <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
         </Reference>
-        <Reference Include="System.Xml.Linq"/>
-        <Reference Include="System.Data.DataSetExtensions"/>
-        <Reference Include="Microsoft.CSharp"/>
-        <Reference Include="System.Data"/>
-        <Reference Include="System.Deployment"/>
-        <Reference Include="System.Drawing"/>
-        <Reference Include="System.Windows.Forms"/>
-        <Reference Include="System.Xml"/>
+        <Reference Include="System.Xml.Linq" />
+        <Reference Include="System.Data.DataSetExtensions" />
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Deployment" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+        <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+          <HintPath>packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
+        </Reference>
+        <Reference Include="xunit.assert, Version=2.5.2.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+          <HintPath>packages\xunit.assert.2.5.2-pre.2\lib\netstandard1.1\xunit.assert.dll</HintPath>
+        </Reference>
+        <Reference Include="xunit.core, Version=2.5.2.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+          <HintPath>packages\xunit.extensibility.core.2.5.2-pre.2\lib\net452\xunit.core.dll</HintPath>
+        </Reference>
+        <Reference Include="xunit.execution.desktop, Version=2.5.2.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+          <HintPath>packages\xunit.extensibility.execution.2.5.2-pre.2\lib\net452\xunit.execution.desktop.dll</HintPath>
+        </Reference>
         <Reference Include="ZstdSharp, Version=0.6.2.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
             <HintPath>packages\ZstdSharp.Port.0.6.2\lib\net461\ZstdSharp.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Controller\BusinessLocationService.cs"/>
-        <Compile Include="Controller\ClientService.cs"/>
-        <Compile Include="Controller\DatabaseInitializer.cs"/>
-        <Compile Include="Controller\UserRoleService.cs"/>
-        <Compile Include="Model\BusinessLocation.cs"/>
-        <Compile Include="Model\ChangelogEntry.cs"/>
-        <Compile Include="Model\IEntity.cs"/>
-        <Compile Include="Model\MaintenanceSchedule.cs"/>
-        <Compile Include="Model\MaintenanceEntry.cs"/>
-        <Compile Include="Model\Repository.cs"/>
-        <Compile Include="Model\Client.cs"/>
-        <Compile Include="Model\Contact.cs"/>
-        <Compile Include="Model\DatabaseContext.cs"/>
-        <Compile Include="Model\Machine.cs"/>
-        <Compile Include="Model\UserRole.cs"/>
-        <Compile Include="Program.cs"/>
-        <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="Windows\AccountCreationWindow.cs"/>
-        <Compile Include="Windows\AccountCreationWindow.Designer.cs"/>
+        <Compile Include="Controller\BusinessLocationService.cs" />
+        <Compile Include="Controller\ClientService.cs" />
+        <Compile Include="Controller\DatabaseInitializer.cs" />
+        <Compile Include="Controller\MachineService.cs" />
+        <Compile Include="Controller\UserRoleService.cs" />
+        <Compile Include="Model\BusinessLocation.cs" />
+        <Compile Include="Model\ChangelogEntry.cs" />
+        <Compile Include="Model\IEntity.cs" />
+        <Compile Include="Model\MaintenanceSchedule.cs" />
+        <Compile Include="Model\MaintenanceEntry.cs" />
+        <Compile Include="Model\Repository.cs" />
+        <Compile Include="Model\Client.cs" />
+        <Compile Include="Model\Contact.cs" />
+        <Compile Include="Model\DatabaseContext.cs" />
+        <Compile Include="Model\Machine.cs" />
+        <Compile Include="Model\UserRole.cs" />
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Windows\AccountCreationWindow.cs" />
+        <Compile Include="Windows\AccountCreationWindow.Designer.cs" />
         <Compile Include="Windows\DatabaseConnectionWindow.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -204,16 +225,16 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
-        <EmbeddedResource Include="Windows\AccountCreationWindow.resx"/>
+        <EmbeddedResource Include="Windows\AccountCreationWindow.resx" />
         <EmbeddedResource Include="Windows\DatabaseConnectionWindow.resx">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\ListMachinesWindow.resx" />
         <EmbeddedResource Include="Windows\MaintenanceReminderWindow.resx" />
         <EmbeddedResource Include="Windows\NewMaintenanceWindow.resx" />
-        <None Include="libmongocrypt.dylib"/>
-        <None Include="libmongocrypt.so"/>
-        <None Include="packages.config"/>
+        <None Include="libmongocrypt.dylib" />
+        <None Include="libmongocrypt.so" />
+        <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -225,17 +246,19 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <None Include="App.config"/>
+        <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-        <Analyzer Include="packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll"/>
+        <Analyzer Include="packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+        <Analyzer Include="packages\xunit.analyzers.1.3.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
+        <Analyzer Include="packages\xunit.analyzers.1.3.0\analyzers\dotnet\cs\xunit.analyzers.fixes.dll" />
     </ItemGroup>
     <ItemGroup>
-        <Content Include="mongocrypt.dll"/>
+        <Content Include="mongocrypt.dll" />
     </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <Import Project="packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')"/>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Import Project="packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
         <PropertyGroup>
             <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
@@ -260,17 +283,27 @@
             <WarningLevel>4</WarningLevel>
         </PropertyGroup>
         <ItemGroup>
-            <Reference Include="System"/>
-            <Reference Include="System.Core"/>
-            <Reference Include="System.Xml.Linq"/>
-            <Reference Include="System.Data.DataSetExtensions"/>
-            <Reference Include="Microsoft.CSharp"/>
-            <Reference Include="System.Data"/>
-            <Reference Include="System.Deployment"/>
-            <Reference Include="System.Drawing"/>
-            <Reference Include="System.Net.Http"/>
-            <Reference Include="System.Windows.Forms"/>
-            <Reference Include="System.Xml"/>
+            <Reference Include="System" />
+            <Reference Include="System.Core" />
+            <Reference Include="System.Xml.Linq" />
+            <Reference Include="System.Data.DataSetExtensions" />
+            <Reference Include="Microsoft.CSharp" />
+            <Reference Include="System.Data" />
+            <Reference Include="System.Deployment" />
+            <Reference Include="System.Drawing" />
+            <Reference Include="System.Net.Http" />
+            <Reference Include="System.Windows.Forms" />
+            <Reference Include="System.Xml" />
         </ItemGroup>
+        <Error Condition="!Exists('packages\xunit.core.2.5.2-pre.2\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.5.2-pre.2\build\xunit.core.props'))" />
+        <Error Condition="!Exists('packages\xunit.core.2.5.2-pre.2\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.core.2.5.2-pre.2\build\xunit.core.targets'))" />
+        <Error Condition="!Exists('packages\xunit.runner.visualstudio.2.5.2-pre.3\build\net462\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\xunit.runner.visualstudio.2.5.2-pre.3\build\net462\xunit.runner.visualstudio.props'))" />
+        <Error Condition="!Exists('packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.props'))" />
+        <Error Condition="!Exists('packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.targets'))" />
+        <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.props'))" />
+        <Error Condition="!Exists('packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.targets'))" />
     </Target>
+    <Import Project="packages\xunit.core.2.5.2-pre.2\build\xunit.core.targets" Condition="Exists('packages\xunit.core.2.5.2-pre.2\build\xunit.core.targets')" />
+    <Import Project="packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.targets" Condition="Exists('packages\Microsoft.CodeCoverage.17.8.0-preview-23424-02\build\netstandard2.0\Microsoft.CodeCoverage.targets')" />
+    <Import Project="packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.targets" Condition="Exists('packages\Microsoft.NET.Test.Sdk.17.8.0-preview-23424-02\build\net462\Microsoft.NET.Test.Sdk.targets')" />
 </Project>
