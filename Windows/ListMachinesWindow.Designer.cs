@@ -64,6 +64,7 @@ namespace MEMS
             this.activeMachines.TabIndex = 1;
             this.activeMachines.UseCompatibleStateImageBehavior = false;
             this.activeMachines.View = System.Windows.Forms.View.Details;
+            this.activeMachines.SelectedIndexChanged += new System.EventHandler(this.activeMachines_SelectedIndexChanged);
             // 
             // MachineName
             // 

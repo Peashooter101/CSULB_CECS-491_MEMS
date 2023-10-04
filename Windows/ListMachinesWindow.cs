@@ -59,5 +59,9 @@ namespace MEMS
             /*END TEST CODE*/
         }
 
+        private void activeMachines_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
