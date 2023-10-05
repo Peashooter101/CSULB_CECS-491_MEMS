@@ -182,6 +182,7 @@
         <Compile Include="Controller\ClientService.cs" />
         <Compile Include="Controller\DatabaseInitializer.cs" />
         <Compile Include="Controller\MachineService.cs" />
+        <Compile Include="Controller\ServiceUtil.cs" />
         <Compile Include="Controller\UserRoleService.cs" />
         <Compile Include="Model\BusinessLocation.cs" />
         <Compile Include="Model\ChangelogEntry.cs" />

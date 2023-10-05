@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace MEMS
@@ -7,7 +8,7 @@ namespace MEMS
     {
         //test objects to display in window 
         //note: MaintenanceRequests will need a Machine reference
-        Machine machine1 = new Machine()
+        /*Machine machine1 = new Machine()
         {
             name = "Kintera Two-Section Reach-In Freezer 54\"",
             manufacturer = "Kintera",
@@ -30,7 +31,7 @@ namespace MEMS
             model = "AR23",
             zone = "1",
             isActive= false
-        };
+        };*/
         public ListMachinesWindow()
         {
             InitializeComponent();
@@ -46,8 +47,20 @@ namespace MEMS
 
             //we will have to take this data from the db, returning a list of machines to the program 
             //from there we can use this functionality to list the machines 
-            Machine[] Machines = { machine1, machine2, machine3 };
-            foreach (var machine in Machines)
+            //Machine[] Machines = { machine1, machine2, machine3 };
+            List<Machine> MachineList = ServiceUtil.machineService.GetMachinesByPage(1);
+            foreach (var machine in MachineList)
+            {
+                //THIS HAS A BUG, will only get 10 machines minus the inactive machines on the page
+                string[] machineArr =
+                    { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone };
+                if (machine.isActive)
+                {
+                    var listMachine = new ListViewItem(machineArr);
+                    activeMachines.Items.Add(listMachine);
+                }
+            }
+            /*foreach (var machine in Machines)
             {
                 string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
                 if (machine.isActive)
@@ -55,7 +68,7 @@ namespace MEMS
                     var listMachine = new ListViewItem(machineArr);
                     activeMachines.Items.Add(listMachine);
                 }
-            }
+            }*/
             /*END TEST CODE*/
         }
 
