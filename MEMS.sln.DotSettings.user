@@ -11,9 +11,15 @@
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FDatabaseConnectionWindow/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FAccountCreationWindow/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FDatabaseConnectionWindow/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FListMachinesWindow/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FMaintenanceReminderWindow/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FNewMaintenanceWindow/@EntryIndexedValue">True</s:Boolean>
+	
+	
+	
+	
 	
 	
 	
