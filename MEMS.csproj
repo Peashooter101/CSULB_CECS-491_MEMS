@@ -183,11 +183,11 @@
         <Compile Include="Windows\DatabaseConnectionWindow.Designer.cs">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </Compile>
-        <Compile Include="Windows\DetailedMachineWindow.cs">
+        <Compile Include="Windows\AddMachineWindow.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Windows\DetailedMachineWindow.Designer.cs">
-          <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
+        <Compile Include="Windows\AddMachineWindow.Designer.cs">
+          <DependentUpon>AddMachineWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Windows\Form1.cs">
             <SubType>Form</SubType>
@@ -220,8 +220,8 @@
         <EmbeddedResource Include="Windows\DatabaseConnectionWindow.resx">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Windows\DetailedMachineWindow.resx">
-          <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
+        <EmbeddedResource Include="Windows\AddMachineWindow.resx">
+          <DependentUpon>AddMachineWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\ListMachinesWindow.resx" />
         <EmbeddedResource Include="Windows\MaintenanceLogWindow.resx">

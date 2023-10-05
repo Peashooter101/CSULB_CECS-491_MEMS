@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace MEMS
 {
-    partial class DetailedMachineWindow
+    partial class AddMachineWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -185,7 +185,7 @@ namespace MEMS
             this.detailBox.Size = new System.Drawing.Size(287, 148);
             this.detailBox.TabIndex = 15;
             // 
-            // DetailedMachineWindow
+            // AddMachineWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -206,7 +206,7 @@ namespace MEMS
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblName);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "DetailedMachineWindow";
+            this.Name = "AddMachineWindow";
             this.Text = "[MEMS] DetailedMachineWindow";
             this.ResumeLayout(false);
             this.PerformLayout();

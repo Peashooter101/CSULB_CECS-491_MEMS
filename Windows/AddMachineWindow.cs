@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace MEMS
 {
-    public partial class DetailedMachineWindow : Form
+    public partial class AddMachineWindow : Form
     {
-        public DetailedMachineWindow()
+        public AddMachineWindow()
         {
             InitializeComponent();
         }
