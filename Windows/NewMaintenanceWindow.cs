@@ -24,14 +24,14 @@ namespace MEMS
             if (IsSessionEnding)
             {
                 switch (MessageBox.Show(
-                            "Save any changes?", 
+                            @"Save any changes?", 
                             Text,
                             MessageBoxButtons.YesNoCancel,
                             MessageBoxIcon.Question))
                 {
                     case DialogResult.Yes:
                         //
-                        MessageBox.Show("Saved");
+                        MessageBox.Show(@"Saved");
                         break;
                     case DialogResult.No:
                         break;

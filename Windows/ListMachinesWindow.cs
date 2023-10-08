@@ -50,13 +50,18 @@ namespace MEMS
             foreach (var machine in Machines)
             {
                 string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
-                if (machine.isActive)
-                {
-                    var listMachine = new ListViewItem(machineArr);
-                    activeMachines.Items.Add(listMachine);
-                }
+                if (!machine.isActive) continue;
+                var listMachine = new ListViewItem(machineArr);
+                activeMachines.Items.Add(listMachine);
             }
             /*END TEST CODE*/
+        }
+
+        private void NewMachineButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var addMachine = new AddMachineWindow();
+            addMachine.Show();
         }
 
     }
