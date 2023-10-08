@@ -204,6 +204,12 @@
         <Compile Include="Windows\DatabaseConnectionWindow.Designer.cs">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Windows\AddMachineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\AddMachineWindow.Designer.cs">
+          <DependentUpon>AddMachineWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\Form1.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -212,6 +218,12 @@
         </Compile>
         <Compile Include="Windows\ListMachinesWindow.cs" />
         <Compile Include="Windows\ListMachinesWindow.Designer.cs" />
+        <Compile Include="Windows\MaintenanceLogWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\MaintenanceLogWindow.Designer.cs">
+          <DependentUpon>MaintenanceLogWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\MaintenanceReminderWindow.cs" />
         <Compile Include="Windows\MaintenanceReminderWindow.Designer.cs" />
         <Compile Include="Windows\NewMaintenanceWindow.cs" />
@@ -229,7 +241,13 @@
         <EmbeddedResource Include="Windows\DatabaseConnectionWindow.resx">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Windows\AddMachineWindow.resx">
+          <DependentUpon>AddMachineWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Windows\ListMachinesWindow.resx" />
+        <EmbeddedResource Include="Windows\MaintenanceLogWindow.resx">
+          <DependentUpon>MaintenanceLogWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Windows\MaintenanceReminderWindow.resx" />
         <EmbeddedResource Include="Windows\NewMaintenanceWindow.resx" />
         <None Include="libmongocrypt.dylib" />
