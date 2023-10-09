@@ -13,10 +13,7 @@ namespace MEMS
         [BsonId]
         public ObjectId Id { get; set; } = ObjectId.Empty;
         public string type { get; set; }
-        public ObjectId author { get; set; } = ObjectId.Empty;
+        public ObjectId userId { get; set; } = ObjectId.Empty;
         public string description { get; set; }
-        public DateTime timestamp { get; set; } 
-        public ObjectId machine { get; set; } = ObjectId.Empty;
-        public ObjectId user { get; set; } = ObjectId.Empty;
     }
 }

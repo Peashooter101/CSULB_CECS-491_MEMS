@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\databaseConnections",
     "\\Windows"
   ],
-  "SelectedNode": "\\MEMS.sln",
+  "SelectedNode": "\\databaseConnections\\mongoDBConnection.cs",
   "PreviewInSolutionExplorer": false
 }
