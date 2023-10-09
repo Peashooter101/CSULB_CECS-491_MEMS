@@ -65,10 +65,10 @@ namespace MEMS
             var addMachine = new AddMachineWindow();
             addMachine.Show();
         }
-
         private void PrintButton_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
         }
+
     }
 }
