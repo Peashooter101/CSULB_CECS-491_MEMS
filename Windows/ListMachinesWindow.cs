@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -49,13 +50,14 @@ namespace MEMS
 
             //we will have to take this data from the db, returning a list of machines to the program 
             //from there we can use this functionality to list the machines 
-            var dbInstance = DatabaseContext.GetInstance();
-            var databaseMachines = dbInstance.Machines;
-            var filter = Builders<Machine>.Filter.Eq("isActive", "true");
-            var dbMachines = databaseMachines.Find(filter).ToList();
+            //var dbInstance = DatabaseContext.GetInstance();
+            //var databaseMachines = dbInstance.Machines;
+            //var filter = Builders<Machine>.Filter.Eq("isActive", "true");
+            //var dbMachines = databaseMachines.Find(filter).ToList();
+            List<Machine> MachineList = ServiceUtil.machineService.GetMachineByPage(1);
             
             //Machine[] machines = { machine1, machine2, machine3 };
-            foreach (var machine in dbMachines)
+            foreach (var machine in MachineList)
             {
                 string[] machineArr =
                     { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone };
