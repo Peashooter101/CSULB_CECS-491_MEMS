@@ -66,28 +66,29 @@ namespace MEMS
                     activeMachines.Items.Add(listMachine);
                 }
 
-           /* Machine[] machines = { machine1, machine2, machine3 };
-            foreach (var machine in machines)
-            {
-                string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
-                if (!machine.isActive) continue;
-                var listMachine = new ListViewItem(machineArr);
-                activeMachines.Items.Add(listMachine);
-                /*
+                /* Machine[] machines = { machine1, machine2, machine3 };
+                 foreach (var machine in machines)
+                 {
+                     string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
+                     if (!machine.isActive) continue;
+                     var listMachine = new ListViewItem(machineArr);
+                     activeMachines.Items.Add(listMachine);
+                     /*
 
+                 }
+                 /*foreach (var machine in Machines)
+                 {
+                     string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
+                     if (machine.isActive)
+                     {
+                         var listMachine = new ListViewItem(machineArr);
+                         activeMachines.Items.Add(listMachine);
+                     }
+                 }*/
+                /*END TEST CODE*/
             }
-            /*foreach (var machine in Machines)
-            {
-                string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
-                if (machine.isActive)
-                {
-                    var listMachine = new ListViewItem(machineArr);
-                    activeMachines.Items.Add(listMachine);
-                }
-            }*/
-            /*END TEST CODE*/
         }
-        
+
         private void NewMachineButton_Click(object sender, EventArgs e)
         {
             this.Hide();
