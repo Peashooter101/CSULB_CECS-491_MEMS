@@ -10,7 +10,7 @@ namespace MEMS
 {
     public class BusinessLocationService
     {
-        private readonly DatabaseContext _dbContext;
+        private DatabaseContext _dbContext;
 
         public BusinessLocationService(DatabaseContext dbContext)
         {

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
+
 using System.Windows.Forms;
 using MongoDB.Driver;
 
@@ -11,7 +12,7 @@ namespace MEMS
     {
         //test objects to display in window 
         //note: MaintenanceRequests will need a Machine reference
-        Machine machine1 = new Machine()
+        /*Machine machine1 = new Machine()
         {
             name = "Kintera Two-Section Reach-In Freezer 54\"",
             manufacturer = "Kintera",
@@ -34,7 +35,7 @@ namespace MEMS
             model = "AR23",
             zone = "1",
             isActive= false
-        };
+        };*/
         public ListMachinesWindow()
         {
             InitializeComponent();
@@ -66,7 +67,7 @@ namespace MEMS
                 activeMachines.Items.Add(listMachine);
             }
         }
-        
+
         private void NewMachineButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -78,5 +79,9 @@ namespace MEMS
             throw new System.NotImplementedException();
         }
 
+        private void activeMachines_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
