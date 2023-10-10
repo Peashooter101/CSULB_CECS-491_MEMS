@@ -1,5 +1,10 @@
 using System;
+
 using System.Collections.Generic;
+
+using System.Drawing;
+using System.Drawing.Printing;
+
 using System.Windows.Forms;
 
 namespace MEMS
@@ -47,6 +52,7 @@ namespace MEMS
 
             //we will have to take this data from the db, returning a list of machines to the program 
             //from there we can use this functionality to list the machines 
+
             //Machine[] Machines = { machine1, machine2, machine3 };
             List<Machine> MachineList = ServiceUtil.machineService.GetMachinesByPage(1);
             foreach (var machine in MachineList)
@@ -59,6 +65,16 @@ namespace MEMS
                     var listMachine = new ListViewItem(machineArr);
                     activeMachines.Items.Add(listMachine);
                 }
+
+           /* Machine[] machines = { machine1, machine2, machine3 };
+            foreach (var machine in machines)
+            {
+                string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
+                if (!machine.isActive) continue;
+                var listMachine = new ListViewItem(machineArr);
+                activeMachines.Items.Add(listMachine);
+                /*
+
             }
             /*foreach (var machine in Machines)
             {
@@ -70,6 +86,17 @@ namespace MEMS
                 }
             }*/
             /*END TEST CODE*/
+        }
+        
+        private void NewMachineButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var addMachine = new AddMachineWindow();
+            addMachine.Show();
+        }
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         private void activeMachines_SelectedIndexChanged(object sender, EventArgs e)

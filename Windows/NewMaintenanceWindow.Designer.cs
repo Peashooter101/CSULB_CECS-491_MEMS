@@ -59,7 +59,7 @@ namespace MEMS
             // 
             // listview
             // 
-            this.listview.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listview.BackColor = System.Drawing.Color.GhostWhite;
             this.listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.MachineName, this.MachineUID });
             this.listview.GridLines = true;
             this.listview.HideSelection = false;
@@ -234,6 +234,7 @@ namespace MEMS
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(381, 335);
             this.dataGridView1.Name = "dataGridView1";
