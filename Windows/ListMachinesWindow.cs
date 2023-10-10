@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
+using MongoDB.Driver;
 
 namespace MEMS
 {
@@ -48,15 +49,20 @@ namespace MEMS
 
             //we will have to take this data from the db, returning a list of machines to the program 
             //from there we can use this functionality to list the machines 
-            Machine[] machines = { machine1, machine2, machine3 };
-            foreach (var machine in machines)
+            var dbInstance = DatabaseContext.GetInstance();
+            var databaseMachines = dbInstance.Machines;
+            var filter = Builders<Machine>.Filter.Eq("isActive", "true");
+            var dbMachines = databaseMachines.Find(filter).ToList();
+            
+            //Machine[] machines = { machine1, machine2, machine3 };
+            foreach (var machine in dbMachines)
             {
-                string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
+                string[] machineArr =
+                    { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone };
                 if (!machine.isActive) continue;
                 var listMachine = new ListViewItem(machineArr);
                 activeMachines.Items.Add(listMachine);
             }
-            /*END TEST CODE*/
         }
         
         private void NewMachineButton_Click(object sender, EventArgs e)

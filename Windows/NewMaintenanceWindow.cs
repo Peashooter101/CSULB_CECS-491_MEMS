@@ -12,7 +12,7 @@ namespace MEMS
             //NewMaintenanceWindow_FormClosing();
         }
         //this should be in its own class... with NewMaintenanceWindow_FormClosing
-        private bool IsSessionEnding = true;
+        private bool _isSessionEnding = true;
 
         private void NewMaintenanceWindow_Load(object sender, EventArgs e)
         {
@@ -21,7 +21,7 @@ namespace MEMS
             
         }
         private void NewMaintenanceWindow_FormClosing(Object sender, FormClosingEventArgs e) {
-            if (IsSessionEnding)
+            if (_isSessionEnding)
             {
                 switch (MessageBox.Show(
                             @"Save any changes?", 
@@ -36,12 +36,12 @@ namespace MEMS
                     case DialogResult.No:
                         break;
                     case DialogResult.Cancel:
-                        IsSessionEnding = false;
+                        _isSessionEnding = false;
                         e.Cancel = true;
                         break;
                 }
             }
-            IsSessionEnding = true;
+            _isSessionEnding = true;
         }
         private void DataInputFields(object sender, EventArgs eventArgs)
         {
@@ -57,6 +57,9 @@ namespace MEMS
         {
             //test objects to display in window 
             //note: MaintenanceRequests will need a Machine reference
+            
+            
+            
             Machine machine1 = new Machine()
             {
                 name = "Kintera Two-Section Reach-In Freezer 54\"",

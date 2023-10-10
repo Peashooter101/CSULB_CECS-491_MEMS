@@ -260,8 +260,9 @@ namespace MEMS
             this.updateRequestButton.UseVisualStyleBackColor = true;
             this.updateRequestButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // NewMaintenanceWindow
+            // NewMaintenenaceRequeust
             // 
+            this.AccessibleDescription = "New Maintenance Request";
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -286,8 +287,8 @@ namespace MEMS
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.listview);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "NewMaintenanceWindow";
-            this.Text = "NewMaintenanceWindow";
+            this.Name = "NewMaintenenaceRequeust";
+            this.Text = "New Maintenance Request";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewMaintenanceWindow_FormClosing);
             this.Load += new System.EventHandler(this.NewMaintenanceWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
