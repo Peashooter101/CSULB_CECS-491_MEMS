@@ -28,7 +28,8 @@ namespace MEMS
                 model = machineModel,
                 serial = serialNum,
                 zone = zone,
-                dateCreated = DateTime.Now
+                dateCreated = DateTime.Now,
+                isActive = true
             };
             this.machineRepository.Create(newMachine);
         }
