@@ -1,11 +1,10 @@
 using System;
-
 using System.Collections.Generic;
-
 using System.Drawing;
 using System.Drawing.Printing;
 
 using System.Windows.Forms;
+using MongoDB.Driver;
 
 namespace MEMS
 {
@@ -52,40 +51,20 @@ namespace MEMS
 
             //we will have to take this data from the db, returning a list of machines to the program 
             //from there we can use this functionality to list the machines 
-
-            //Machine[] Machines = { machine1, machine2, machine3 };
-            List<Machine> MachineList = ServiceUtil.machineService.GetMachinesByPage(1);
+            //var dbInstance = DatabaseContext.GetInstance();
+            //var databaseMachines = dbInstance.Machines;
+            //var filter = Builders<Machine>.Filter.Eq("isActive", "true");
+            //var dbMachines = databaseMachines.Find(filter).ToList();
+            List<Machine> MachineList = ServiceUtil.machineService.GetMachineByPage(1);
+            
+            //Machine[] machines = { machine1, machine2, machine3 };
             foreach (var machine in MachineList)
             {
-                //THIS HAS A BUG, will only get 10 machines minus the inactive machines on the page
                 string[] machineArr =
                     { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone };
-                if (machine.isActive)
-                {
-                    var listMachine = new ListViewItem(machineArr);
-                    activeMachines.Items.Add(listMachine);
-                }
-
-                /* Machine[] machines = { machine1, machine2, machine3 };
-                 foreach (var machine in machines)
-                 {
-                     string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
-                     if (!machine.isActive) continue;
-                     var listMachine = new ListViewItem(machineArr);
-                     activeMachines.Items.Add(listMachine);
-                     /*
-
-                 }
-                 /*foreach (var machine in Machines)
-                 {
-                     string[] machineArr = { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone};
-                     if (machine.isActive)
-                     {
-                         var listMachine = new ListViewItem(machineArr);
-                         activeMachines.Items.Add(listMachine);
-                     }
-                 }*/
-                /*END TEST CODE*/
+                if (!machine.isActive) continue;
+                var listMachine = new ListViewItem(machineArr);
+                activeMachines.Items.Add(listMachine);
             }
         }
 

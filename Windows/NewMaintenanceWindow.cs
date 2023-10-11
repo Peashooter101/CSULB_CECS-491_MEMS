@@ -1,4 +1,5 @@
 using System;
+using System.Media;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -12,7 +13,7 @@ namespace MEMS
             //NewMaintenanceWindow_FormClosing();
         }
         //this should be in its own class... with NewMaintenanceWindow_FormClosing
-        private bool IsSessionEnding = true;
+        private bool _isSessionEnding = true;
 
         private void NewMaintenanceWindow_Load(object sender, EventArgs e)
         {
@@ -20,9 +21,16 @@ namespace MEMS
             //throw new System.NotImplementedException();
             
         }
+
+        private void PlayPopUpSound()
+        {
+            SoundPlayer popUpSound = new SoundPlayer("C:\\Windows\\Media\\Windows Notify System Generic.wav");
+            popUpSound.Play();
+        }
         private void NewMaintenanceWindow_FormClosing(Object sender, FormClosingEventArgs e) {
-            if (IsSessionEnding)
+            if (_isSessionEnding)
             {
+                PlayPopUpSound();
                 switch (MessageBox.Show(
                             @"Save any changes?", 
                             Text,
@@ -36,12 +44,12 @@ namespace MEMS
                     case DialogResult.No:
                         break;
                     case DialogResult.Cancel:
-                        IsSessionEnding = false;
+                        _isSessionEnding = false;
                         e.Cancel = true;
                         break;
                 }
             }
-            IsSessionEnding = true;
+            _isSessionEnding = true;
         }
         private void DataInputFields(object sender, EventArgs eventArgs)
         {
@@ -57,6 +65,9 @@ namespace MEMS
         {
             //test objects to display in window 
             //note: MaintenanceRequests will need a Machine reference
+            
+            
+            
             Machine machine1 = new Machine()
             {
                 name = "Kintera Two-Section Reach-In Freezer 54\"",
@@ -133,11 +144,6 @@ namespace MEMS
         }
 
         private void companyTextBox_TextChanged(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
         }
