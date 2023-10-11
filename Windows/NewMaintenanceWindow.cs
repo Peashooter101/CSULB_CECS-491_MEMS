@@ -1,4 +1,5 @@
 using System;
+using System.Media;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
@@ -20,9 +21,16 @@ namespace MEMS
             //throw new System.NotImplementedException();
             
         }
+
+        private void PlayPopUpSound()
+        {
+            SoundPlayer popUpSound = new SoundPlayer("C:\\Windows\\Media\\Windows Notify System Generic.wav");
+            popUpSound.Play();
+        }
         private void NewMaintenanceWindow_FormClosing(Object sender, FormClosingEventArgs e) {
             if (_isSessionEnding)
             {
+                PlayPopUpSound();
                 switch (MessageBox.Show(
                             @"Save any changes?", 
                             Text,
@@ -136,11 +144,6 @@ namespace MEMS
         }
 
         private void companyTextBox_TextChanged(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
         }

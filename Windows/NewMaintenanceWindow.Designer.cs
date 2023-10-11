@@ -258,9 +258,8 @@ namespace MEMS
             this.updateRequestButton.TabIndex = 24;
             this.updateRequestButton.Text = "Update Request";
             this.updateRequestButton.UseVisualStyleBackColor = true;
-            this.updateRequestButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // NewMaintenenaceRequeust
+            // NewMaintenanceWindow
             // 
             this.AccessibleDescription = "New Maintenance Request";
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -287,7 +286,7 @@ namespace MEMS
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.listview);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "NewMaintenenaceRequeust";
+            this.Name = "NewMaintenanceWindow";
             this.Text = "New Maintenance Request";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewMaintenanceWindow_FormClosing);
             this.Load += new System.EventHandler(this.NewMaintenanceWindow_Load);
