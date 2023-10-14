@@ -40,6 +40,7 @@ namespace MEMS
             this.MachineZone = new System.Windows.Forms.ColumnHeader();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.printButton = new System.Windows.Forms.Button();
+            this.addNewMachineButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -64,6 +65,7 @@ namespace MEMS
             this.activeMachines.TabIndex = 1;
             this.activeMachines.UseCompatibleStateImageBehavior = false;
             this.activeMachines.View = System.Windows.Forms.View.Details;
+            this.activeMachines.SelectedIndexChanged += new System.EventHandler(this.activeMachines_SelectedIndexChanged);
             // 
             // MachineName
             // 
@@ -117,12 +119,25 @@ namespace MEMS
             this.printButton.Text = "Print";
             this.printButton.UseVisualStyleBackColor = false;
             // 
+            // addNewMachineButton
+            // 
+            this.addNewMachineButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.addNewMachineButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addNewMachineButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.addNewMachineButton.Location = new System.Drawing.Point(657, 16);
+            this.addNewMachineButton.Name = "addNewMachineButton";
+            this.addNewMachineButton.Size = new System.Drawing.Size(136, 32);
+            this.addNewMachineButton.TabIndex = 4;
+            this.addNewMachineButton.Text = "Add New Machine";
+            this.addNewMachineButton.UseVisualStyleBackColor = false;
+            // 
             // ListMachinesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(805, 505);
+            this.Controls.Add(this.addNewMachineButton);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.activeMachines);
@@ -134,6 +149,10 @@ namespace MEMS
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button addNewMachineButton;
+        private System.Windows.Forms.Button addMachineButton;
+
 
         private System.Windows.Forms.ColumnHeader MachineManufacturer;
 

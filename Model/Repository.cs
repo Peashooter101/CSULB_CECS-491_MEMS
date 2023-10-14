@@ -46,7 +46,17 @@ namespace MEMS
             _collection.ReplaceOne(e => e.Id == entity.Id, entity);
         }
 
-        public List<T> Find(Expression<Func<T, bool>> predicate)
+        public IFindFluent<T, T> Find(FilterDefinition<T> filter)
+        {
+            return _collection.Find(filter);
+        }
+
+        public IFindFluent<T, T> FindPage(FilterDefinition<T> filter, int skip, int limit)
+        {
+            return _collection.Find(filter).Skip(skip).Limit(limit);
+        }
+        
+        public List<T> FindList(Expression<Func<T, bool>> predicate)
         {
             return _collection.Find(predicate).ToList();
         }

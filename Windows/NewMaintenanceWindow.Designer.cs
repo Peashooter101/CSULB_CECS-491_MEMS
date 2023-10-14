@@ -59,7 +59,7 @@ namespace MEMS
             // 
             // listview
             // 
-            this.listview.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listview.BackColor = System.Drawing.Color.GhostWhite;
             this.listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.MachineName, this.MachineUID });
             this.listview.GridLines = true;
             this.listview.HideSelection = false;
@@ -234,6 +234,7 @@ namespace MEMS
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(381, 335);
             this.dataGridView1.Name = "dataGridView1";
@@ -257,10 +258,10 @@ namespace MEMS
             this.updateRequestButton.TabIndex = 24;
             this.updateRequestButton.Text = "Update Request";
             this.updateRequestButton.UseVisualStyleBackColor = true;
-            this.updateRequestButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // NewMaintenanceWindow
             // 
+            this.AccessibleDescription = "New Maintenance Request";
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -286,7 +287,7 @@ namespace MEMS
             this.Controls.Add(this.listview);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "NewMaintenanceWindow";
-            this.Text = "NewMaintenanceWindow";
+            this.Text = "New Maintenance Request";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewMaintenanceWindow_FormClosing);
             this.Load += new System.EventHandler(this.NewMaintenanceWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
