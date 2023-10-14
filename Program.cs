@@ -12,6 +12,7 @@ namespace MEMS
     {
         private static DatabaseContext _dbContext;
         public static MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGO_DB_URI"));
+        public static string memsDbName = "mems_test";
         
         /// <summary>
         /// The main entry point for the application.

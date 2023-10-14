@@ -17,13 +17,14 @@ namespace MEMS
         public List<User> users { get; set; }
         public ObjectId clientId { get; set; } 
 
-        public class User
+        public class User : IEntity
         {
             public ObjectId Id { get; set; } = ObjectId.Empty;
             public List<ObjectId> locationIds { get; set; } = new List<ObjectId>();
             public string username { get; set; }
             public string email { get; set; }
             public string password { get; set; }
+            public int salt { get; set; }
         }
     }
 }

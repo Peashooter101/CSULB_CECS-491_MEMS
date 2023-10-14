@@ -9,7 +9,6 @@ namespace MEMS
         private static DatabaseInitializer _instance;
         private readonly MongoClient _client = Program.client;
         private readonly CreateIndexOptions _uniqueOptions = new CreateIndexOptions { Unique = true };
-        public static string example = "";
 
         private DatabaseInitializer()
         {
@@ -44,23 +43,49 @@ namespace MEMS
         public void GenerateCollections(string databaseName)
         {
             IMongoDatabase database = _client.GetDatabase(databaseName);
-            GenerateMachineCollection(database);
+            GenerateBusinessLocationCollection(database);
+            GenerateChangelogEntryCollection(database);
             GenerateContactCollection(database);
+            GenerateMachineCollection(database);
+            GenerateMaintenanceEntryCollection(database);
         }
 
-        private void GenerateMachineCollection(IMongoDatabase database)
+        private void GenerateBusinessLocationCollection(IMongoDatabase database)
         {
-            database.GetCollection<Machine>("machine").Indexes.CreateMany(new List<CreateIndexModel<Machine>>
+            database.GetCollection<BusinessLocation>("business_locations").Indexes.CreateMany(
+                new List<CreateIndexModel<BusinessLocation>>
+                {
+                    new CreateIndexModel<BusinessLocation>(Builders<BusinessLocation>.IndexKeys
+                            .Ascending(b => b.name)
+                            .Ascending(b => b.address),
+                        _uniqueOptions)
+                });
+        }
+
+        private void GenerateChangelogEntryCollection(IMongoDatabase database)
+        {
+            database.GetCollection<ChangelogEntry>("changelog_entries").Indexes.CreateMany(
+                new List<CreateIndexModel<ChangelogEntry>>
+                {
+                    new CreateIndexModel<ChangelogEntry>(Builders<ChangelogEntry>.IndexKeys
+                            .Ascending(c => c.userId))
+                    // TODO: Create an index for machineId. (Jared)
+                    // TODO: Create an index for author. (Jared)
+                });
+        }
+
+        private void GenerateClientCollection(IMongoDatabase database)
+        {
+            database.GetCollection<Client>("clients").Indexes.CreateMany(new List<CreateIndexModel<Client>>
             {
-                new CreateIndexModel<Machine>(Builders<Machine>.IndexKeys
-                    .Ascending(m => m.serial),
-                    _uniqueOptions)
+                new CreateIndexModel<Client>(Builders<Client>.IndexKeys
+                        .Ascending(c => c.name))
             });
         }
 
         private void GenerateContactCollection(IMongoDatabase database)
         {
-            database.GetCollection<Contact>("contact").Indexes.CreateMany(new List<CreateIndexModel<Contact>>
+            database.GetCollection<Contact>("contacts").Indexes.CreateMany(new List<CreateIndexModel<Contact>>
             {
                 new CreateIndexModel<Contact>(Builders<Contact>.IndexKeys
                     .Ascending(c => c.name)
@@ -69,9 +94,19 @@ namespace MEMS
             });
         }
 
+        private void GenerateMachineCollection(IMongoDatabase database)
+        {
+            database.GetCollection<Machine>("machines").Indexes.CreateMany(new List<CreateIndexModel<Machine>>
+            {
+                new CreateIndexModel<Machine>(Builders<Machine>.IndexKeys
+                    .Ascending(m => m.serial),
+                    _uniqueOptions)
+            });
+        }
+
         private void GenerateMaintenanceEntryCollection(IMongoDatabase database)
         {
-            database.GetCollection<MaintenanceEntry>("maintenance_entry").Indexes.CreateMany(
+            database.GetCollection<MaintenanceEntry>("maintenance_entries").Indexes.CreateMany(
                 new List<CreateIndexModel<MaintenanceEntry>>
                 {
                     new CreateIndexModel<MaintenanceEntry>(Builders<MaintenanceEntry>.IndexKeys
@@ -82,18 +117,6 @@ namespace MEMS
                         .Ascending(e => e.severity),
                         _uniqueOptions
                         )
-                });
-        }
-
-        private void GenerateBusinessLocationCollection(IMongoDatabase database)
-        {
-            database.GetCollection<BusinessLocation>("business_location").Indexes.CreateMany(
-                new List<CreateIndexModel<BusinessLocation>>
-                {
-                    new CreateIndexModel<BusinessLocation>(Builders<BusinessLocation>.IndexKeys
-                        .Ascending(b => b.name)
-                        .Ascending(b => b.address),
-                        _uniqueOptions)
                 });
         }
     }

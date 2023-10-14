@@ -79,6 +79,9 @@
             <HintPath>packages\MongoDB.Libmongocrypt.1.8.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
         </Reference>
         <Reference Include="mscorlib" />
+        <Reference Include="PasswordHashing, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>packages\PasswordHashing.2.0.1\lib\netstandard2.0\PasswordHashing.dll</HintPath>
+        </Reference>
         <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
             <HintPath>packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
         </Reference>
@@ -91,6 +94,17 @@
         </Reference>
         <Reference Include="System.ComponentModel.Composition" />
         <Reference Include="System.Core" />
+        <Reference Include="System.ComponentModel.Composition"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data.HashFunction.Blake2, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
+          <HintPath>packages\System.Data.HashFunction.Blake2.2.0.0\lib\net45\System.Data.HashFunction.Blake2.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Data.HashFunction.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
+          <HintPath>packages\System.Data.HashFunction.Core.2.0.0\lib\net45\System.Data.HashFunction.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Data.HashFunction.Interfaces, Version=2.0.0.0, Culture=neutral, PublicKeyToken=80c9288e394c1322, processorArchitecture=MSIL">
+          <HintPath>packages\System.Data.HashFunction.Interfaces.2.0.0\lib\net45\System.Data.HashFunction.Interfaces.dll</HintPath>
+        </Reference>
         <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
             <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
             <Private>True</Private>

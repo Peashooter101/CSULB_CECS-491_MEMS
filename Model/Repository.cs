@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,6 +54,17 @@ namespace MEMS
         public IFindFluent<T, T> FindPage(FilterDefinition<T> filter, int skip, int limit)
         {
             return _collection.Find(filter).Skip(skip).Limit(limit);
+        }
+        
+        public List<T> FindList(Expression<Func<T, bool>> predicate)
+        {
+            return _collection.Find(predicate).ToList();
+        }
+
+        public T FindOne(Expression<Func<T, bool>> predicate)
+        {
+            List<T> list = _collection.Find(predicate).ToList();
+            return list.Count == 0 ? default : list[0];
         }
     }
 }
