@@ -55,7 +55,7 @@ namespace MEMS
             //var databaseMachines = dbInstance.Machines;
             //var filter = Builders<Machine>.Filter.Eq("isActive", "true");
             //var dbMachines = databaseMachines.Find(filter).ToList();
-            List<Machine> MachineList = ServiceUtil.machineService.GetMachineByPage(1);
+            List<Machine> MachineList = ServiceUtil.machineService.GetMachinesByPage(1);
             
             //Machine[] machines = { machine1, machine2, machine3 };
             foreach (var machine in MachineList)
