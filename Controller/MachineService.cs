@@ -37,8 +37,9 @@ namespace MEMS
         public Machine ReadMachine(ObjectId id)
         {
             var filter = Builders<Machine>.Filter.Eq(m => m.Id, id);
-            return machineRepository.Read(id);
+            return machineRepository.Find(filter).FirstOrDefault();
         }
+
         public Machine ReadByName(string name)
         {
             var filter = Builders<Machine>.Filter.Eq(m => m.name, name);
