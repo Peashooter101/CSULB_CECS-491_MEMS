@@ -7,7 +7,7 @@ namespace MEMS
     public class DatabaseInitializer
     {
         private static DatabaseInitializer _instance;
-        private readonly MongoClient _client = Program.client;
+        //private readonly MongoClient _client = Program.client;
         private readonly CreateIndexOptions _uniqueOptions = new CreateIndexOptions { Unique = true };
         public static string example = "";
 

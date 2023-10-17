@@ -10,8 +10,8 @@ namespace MEMS
 {
     static class Program
     {
-        private static DatabaseContext _dbContext;
-        public static MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGO_DB_URI"));
+        //private static DatabaseContext _dbContext;
+        //public static MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGO_DB_URI"));
         
         /// <summary>
         /// The main entry point for the application.
@@ -33,7 +33,8 @@ namespace MEMS
            
            
            // Application.Run(new MaintenanceLogWindow());
-           Application.Run(new AddMachineWindow());
+           //Application.Run(new AddMachineWindow());
+           Application.Run(new ChangeLogWindow());
         }
     }
 }

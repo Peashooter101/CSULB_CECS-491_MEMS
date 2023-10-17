@@ -179,8 +179,8 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Controller\BusinessLocationService.cs" />
+        <Compile Include="Controller\ChangeLogService.cs" />
         <Compile Include="Controller\ClientService.cs" />
-        <Compile Include="Controller\DatabaseInitializer.cs" />
         <Compile Include="Controller\MachineService.cs" />
         <Compile Include="Controller\ServiceUtil.cs" />
         <Compile Include="Controller\UserRoleService.cs" />
@@ -199,6 +199,12 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Windows\AccountCreationWindow.cs" />
         <Compile Include="Windows\AccountCreationWindow.Designer.cs" />
+        <Compile Include="Windows\ChangeLogWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\ChangeLogWindow.Designer.cs">
+          <DependentUpon>ChangeLogWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\DatabaseConnectionWindow.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -239,6 +245,9 @@
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
         <EmbeddedResource Include="Windows\AccountCreationWindow.resx" />
+        <EmbeddedResource Include="Windows\ChangeLogWindow.resx">
+          <DependentUpon>ChangeLogWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Windows\DatabaseConnectionWindow.resx">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </EmbeddedResource>

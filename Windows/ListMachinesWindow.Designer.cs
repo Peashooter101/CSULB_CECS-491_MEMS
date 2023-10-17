@@ -133,18 +133,6 @@ namespace MEMS
             this.addMachineButton.UseVisualStyleBackColor = false;
             this.addMachineButton.Click += new System.EventHandler(this.NewMachineButton_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.GhostWhite;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Location = new System.Drawing.Point(657, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add New Machine";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // ListMachinesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

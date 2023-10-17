@@ -4,5 +4,6 @@ namespace MEMS
     {
         public static readonly DatabaseContext dbContext = DatabaseContext.GetInstance();
         public static MachineService machineService = new MachineService(dbContext);
+        public static ChangeLogService changeLogService = new ChangeLogService((dbContext));
     }
 }
