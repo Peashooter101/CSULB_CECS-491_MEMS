@@ -38,7 +38,7 @@ namespace MEMS
 
 		public List<Contact> GetContactsByMachine (ObjectId id)
 		{
-
+			var
 		}
 
 	}
