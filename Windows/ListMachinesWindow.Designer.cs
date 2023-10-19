@@ -130,6 +130,7 @@ namespace MEMS
             this.addNewMachineButton.TabIndex = 4;
             this.addNewMachineButton.Text = "Add New Machine";
             this.addNewMachineButton.UseVisualStyleBackColor = false;
+            this.addNewMachineButton.Click += new System.EventHandler(this.NewMachineButton_Click);
             // 
             // ListMachinesWindow
             // 
