@@ -46,7 +46,6 @@
             this.ClientSize = new System.Drawing.Size(571, 63);
             this.Controls.Add(this.textBox1);
             this.Name = "TextPopUpWindow";
-            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
