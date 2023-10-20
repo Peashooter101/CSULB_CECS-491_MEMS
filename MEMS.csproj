@@ -225,11 +225,11 @@
         <Compile Include="Windows\AddMachineWindow.Designer.cs">
           <DependentUpon>AddMachineWindow.cs</DependentUpon>
         </Compile>
-        <Compile Include="Windows\Form1.cs">
+        <Compile Include="Windows\TextPopUpWindow.cs">
             <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Windows\Form1.Designer.cs">
-            <DependentUpon>Form1.cs</DependentUpon>
+        <Compile Include="Windows\TextPopUpWindow.Designer.cs">
+            <DependentUpon>TextPopUpWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Windows\ListMachinesWindow.cs" />
         <Compile Include="Windows\ListMachinesWindow.Designer.cs" />
@@ -264,6 +264,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\AddMachineWindow.resx">
           <DependentUpon>AddMachineWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Windows\TextPopUpWindow.resx">
+          <DependentUpon>TextPopUpWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\ListMachinesWindow.resx" />
         <EmbeddedResource Include="Windows\MainMenuWindow.resx">

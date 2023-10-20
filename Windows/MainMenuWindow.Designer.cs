@@ -34,14 +34,14 @@ namespace MEMS.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuWindow));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.memsPictureBox = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.accountInformationButton = new System.Windows.Forms.Button();
+            this.addMachineButton = new System.Windows.Forms.Button();
+            this.dbConnectInfoButton = new System.Windows.Forms.Button();
+            this.changeLogButton = new System.Windows.Forms.Button();
+            this.maintenanceLogButton = new System.Windows.Forms.Button();
+            this.activeMachineButtons = new System.Windows.Forms.Button();
+            this.newMaintenanceRequestButton = new System.Windows.Forms.Button();
+            this.maintenanceReminderButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memsPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -61,88 +61,97 @@ namespace MEMS.Windows
             // 
             // memsPictureBox
             // 
+            this.memsPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.memsPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.memsPictureBox.ErrorImage = global::MEMS.Properties.Resources.MEMS_logos_transparent;
-            this.memsPictureBox.Image = global::MEMS.Properties.Resources.MEMS_logos_black;
+            this.memsPictureBox.Image = global::MEMS.Properties.Resources.MEMS_logos_transparent;
             this.memsPictureBox.InitialImage = global::MEMS.Properties.Resources.MEMS_logos_transparent;
             this.memsPictureBox.Location = new System.Drawing.Point(3, 3);
             this.memsPictureBox.Name = "memsPictureBox";
-            this.memsPictureBox.Size = new System.Drawing.Size(958, 183);
+            this.memsPictureBox.Size = new System.Drawing.Size(958, 182);
             this.memsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.memsPictureBox.TabIndex = 0;
             this.memsPictureBox.TabStop = false;
             // 
-            // button1
+            // accountInformationButton
             // 
-            this.button1.Location = new System.Drawing.Point(56, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 53);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Account Information";
-            this.button1.UseVisualStyleBackColor = true;
+            this.accountInformationButton.Location = new System.Drawing.Point(56, 291);
+            this.accountInformationButton.Name = "accountInformationButton";
+            this.accountInformationButton.Size = new System.Drawing.Size(183, 53);
+            this.accountInformationButton.TabIndex = 1;
+            this.accountInformationButton.Text = "Account Information";
+            this.accountInformationButton.UseVisualStyleBackColor = true;
+            this.accountInformationButton.Click += new System.EventHandler(this.accountInformationButton_Click);
             // 
-            // button2
+            // addMachineButton
             // 
-            this.button2.Location = new System.Drawing.Point(738, 291);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 53);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Add Machine";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addMachineButton.Location = new System.Drawing.Point(738, 291);
+            this.addMachineButton.Name = "addMachineButton";
+            this.addMachineButton.Size = new System.Drawing.Size(183, 53);
+            this.addMachineButton.TabIndex = 2;
+            this.addMachineButton.Text = "Add Machine";
+            this.addMachineButton.UseVisualStyleBackColor = true;
+            this.addMachineButton.Click += new System.EventHandler(this.addMachineButton_Click);
             // 
-            // button3
+            // dbConnectInfoButton
             // 
-            this.button3.Location = new System.Drawing.Point(739, 361);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(183, 53);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Database Connection Info";
-            this.button3.UseVisualStyleBackColor = true;
+            this.dbConnectInfoButton.Location = new System.Drawing.Point(739, 361);
+            this.dbConnectInfoButton.Name = "dbConnectInfoButton";
+            this.dbConnectInfoButton.Size = new System.Drawing.Size(183, 53);
+            this.dbConnectInfoButton.TabIndex = 4;
+            this.dbConnectInfoButton.Text = "Database Connection Info";
+            this.dbConnectInfoButton.UseVisualStyleBackColor = true;
+            this.dbConnectInfoButton.Click += new System.EventHandler(this.dbConnectInfoButton_Click);
             // 
-            // button4
+            // changeLogButton
             // 
-            this.button4.Location = new System.Drawing.Point(57, 361);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(183, 53);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Change Log ";
-            this.button4.UseVisualStyleBackColor = true;
+            this.changeLogButton.Location = new System.Drawing.Point(57, 361);
+            this.changeLogButton.Name = "changeLogButton";
+            this.changeLogButton.Size = new System.Drawing.Size(183, 53);
+            this.changeLogButton.TabIndex = 3;
+            this.changeLogButton.Text = "Change Log ";
+            this.changeLogButton.UseVisualStyleBackColor = true;
+            this.changeLogButton.Click += new System.EventHandler(this.changeLogButton_Click);
             // 
-            // button5
+            // maintenanceLogButton
             // 
-            this.button5.Location = new System.Drawing.Point(739, 433);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(183, 53);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Maintenance Log";
-            this.button5.UseVisualStyleBackColor = true;
+            this.maintenanceLogButton.Location = new System.Drawing.Point(739, 433);
+            this.maintenanceLogButton.Name = "maintenanceLogButton";
+            this.maintenanceLogButton.Size = new System.Drawing.Size(183, 53);
+            this.maintenanceLogButton.TabIndex = 6;
+            this.maintenanceLogButton.Text = "Maintenance Log";
+            this.maintenanceLogButton.UseVisualStyleBackColor = true;
+            this.maintenanceLogButton.Click += new System.EventHandler(this.maintenanceLogButton_Click);
             // 
-            // button6
+            // activeMachineButtons
             // 
-            this.button6.Location = new System.Drawing.Point(57, 433);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(183, 53);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "List of Active Machines";
-            this.button6.UseVisualStyleBackColor = true;
+            this.activeMachineButtons.Location = new System.Drawing.Point(57, 433);
+            this.activeMachineButtons.Name = "activeMachineButtons";
+            this.activeMachineButtons.Size = new System.Drawing.Size(183, 53);
+            this.activeMachineButtons.TabIndex = 5;
+            this.activeMachineButtons.Text = "List of Active Machines";
+            this.activeMachineButtons.UseVisualStyleBackColor = true;
+            this.activeMachineButtons.Click += new System.EventHandler(this.activeMachineButtons_Click);
             // 
-            // button7
+            // newMaintenanceRequestButton
             // 
-            this.button7.Location = new System.Drawing.Point(738, 506);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(183, 53);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "New Maintenance Request";
-            this.button7.UseVisualStyleBackColor = true;
+            this.newMaintenanceRequestButton.Location = new System.Drawing.Point(738, 506);
+            this.newMaintenanceRequestButton.Name = "newMaintenanceRequestButton";
+            this.newMaintenanceRequestButton.Size = new System.Drawing.Size(183, 53);
+            this.newMaintenanceRequestButton.TabIndex = 8;
+            this.newMaintenanceRequestButton.Text = "New Maintenance Request";
+            this.newMaintenanceRequestButton.UseVisualStyleBackColor = true;
+            this.newMaintenanceRequestButton.Click += new System.EventHandler(this.newMaintenanceRequestButton_Click);
             // 
-            // button8
+            // maintenanceReminderButton
             // 
-            this.button8.Location = new System.Drawing.Point(56, 506);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(183, 53);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Maintenance Reminder";
-            this.button8.UseVisualStyleBackColor = true;
+            this.maintenanceReminderButton.Location = new System.Drawing.Point(56, 506);
+            this.maintenanceReminderButton.Name = "maintenanceReminderButton";
+            this.maintenanceReminderButton.Size = new System.Drawing.Size(183, 53);
+            this.maintenanceReminderButton.TabIndex = 7;
+            this.maintenanceReminderButton.Text = "Maintenance Reminder";
+            this.maintenanceReminderButton.UseVisualStyleBackColor = true;
+            this.maintenanceReminderButton.Click += new System.EventHandler(this.maintenanceReminderButton_Click);
             // 
             // MainMenuWindow
             // 
@@ -151,14 +160,14 @@ namespace MEMS.Windows
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(979, 774);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.newMaintenanceRequestButton);
+            this.Controls.Add(this.maintenanceReminderButton);
+            this.Controls.Add(this.maintenanceLogButton);
+            this.Controls.Add(this.activeMachineButtons);
+            this.Controls.Add(this.dbConnectInfoButton);
+            this.Controls.Add(this.changeLogButton);
+            this.Controls.Add(this.addMachineButton);
+            this.Controls.Add(this.accountInformationButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
@@ -169,14 +178,14 @@ namespace MEMS.Windows
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button accountInformationButton;
+        private System.Windows.Forms.Button addMachineButton;
+        private System.Windows.Forms.Button dbConnectInfoButton;
+        private System.Windows.Forms.Button changeLogButton;
+        private System.Windows.Forms.Button maintenanceLogButton;
+        private System.Windows.Forms.Button activeMachineButtons;
+        private System.Windows.Forms.Button newMaintenanceRequestButton;
+        private System.Windows.Forms.Button maintenanceReminderButton;
 
         private System.Windows.Forms.PictureBox memsPictureBox;
 
