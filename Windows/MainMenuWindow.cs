@@ -1,23 +1,36 @@
 using System;
-using System.Drawing;
-using System.Drawing.Printing;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using MongoDB.Bson;
 
 namespace MEMS.Windows
 {
     public partial class MainMenuWindow : Form
     {
+        private bool _activeWin;
+        
         public MainMenuWindow()
         {
             InitializeComponent();
         }
 
+        private void ActiveWindowCheck(Form form)
+        {
+            switch (_activeWin)
+            {
+                case false:
+                    form.Show();
+                    _activeWin = true;
+                    break;
+                case true:
+                    MessageBox.Show("");
+                    break;
+            }
+        }
+        
         private void accountInformationButton_Click(object sender, EventArgs e)
         {
             var accountInfo = new AccountCreationWindow();
             accountInfo.Show();
+            
         }
         
         private void addMachineButton_Click(object sender, EventArgs e)
@@ -35,9 +48,10 @@ namespace MEMS.Windows
         {
             var dbConnection = ServiceUtil.dbContext.database.DatabaseNamespace;
             //need to create a popup window that will display text
-            var displayDb = new TextPopUpWindow();
-            displayDb.TextDisplay(dbConnection.ToString());
-            displayDb.Show();
+            //var displayDb = new TextPopUpWindow();
+            MessageBox.Show(dbConnection.ToString());
+            //displayDb.TextDisplay(dbConnection.ToString());
+            //displayDb.Show();
         }
 
 

@@ -61,6 +61,7 @@ namespace MEMS.Windows
             // 
             // memsPictureBox
             // 
+            this.memsPictureBox.BackColor = System.Drawing.Color.GhostWhite;
             this.memsPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.memsPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.memsPictureBox.ErrorImage = global::MEMS.Properties.Resources.MEMS_logos_transparent;
@@ -75,82 +76,106 @@ namespace MEMS.Windows
             // 
             // accountInformationButton
             // 
+            this.accountInformationButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.accountInformationButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.accountInformationButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountInformationButton.Location = new System.Drawing.Point(56, 291);
             this.accountInformationButton.Name = "accountInformationButton";
             this.accountInformationButton.Size = new System.Drawing.Size(183, 53);
             this.accountInformationButton.TabIndex = 1;
             this.accountInformationButton.Text = "Account Information";
-            this.accountInformationButton.UseVisualStyleBackColor = true;
+            this.accountInformationButton.UseVisualStyleBackColor = false;
             this.accountInformationButton.Click += new System.EventHandler(this.accountInformationButton_Click);
             // 
             // addMachineButton
             // 
+            this.addMachineButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.addMachineButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.addMachineButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addMachineButton.Location = new System.Drawing.Point(738, 291);
             this.addMachineButton.Name = "addMachineButton";
             this.addMachineButton.Size = new System.Drawing.Size(183, 53);
             this.addMachineButton.TabIndex = 2;
             this.addMachineButton.Text = "Add Machine";
-            this.addMachineButton.UseVisualStyleBackColor = true;
+            this.addMachineButton.UseVisualStyleBackColor = false;
             this.addMachineButton.Click += new System.EventHandler(this.addMachineButton_Click);
             // 
             // dbConnectInfoButton
             // 
+            this.dbConnectInfoButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.dbConnectInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.dbConnectInfoButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dbConnectInfoButton.Location = new System.Drawing.Point(739, 361);
             this.dbConnectInfoButton.Name = "dbConnectInfoButton";
             this.dbConnectInfoButton.Size = new System.Drawing.Size(183, 53);
             this.dbConnectInfoButton.TabIndex = 4;
             this.dbConnectInfoButton.Text = "Database Connection Info";
-            this.dbConnectInfoButton.UseVisualStyleBackColor = true;
+            this.dbConnectInfoButton.UseVisualStyleBackColor = false;
             this.dbConnectInfoButton.Click += new System.EventHandler(this.dbConnectInfoButton_Click);
             // 
             // changeLogButton
             // 
+            this.changeLogButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.changeLogButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.changeLogButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeLogButton.Location = new System.Drawing.Point(57, 361);
             this.changeLogButton.Name = "changeLogButton";
             this.changeLogButton.Size = new System.Drawing.Size(183, 53);
             this.changeLogButton.TabIndex = 3;
             this.changeLogButton.Text = "Change Log ";
-            this.changeLogButton.UseVisualStyleBackColor = true;
+            this.changeLogButton.UseVisualStyleBackColor = false;
             this.changeLogButton.Click += new System.EventHandler(this.changeLogButton_Click);
             // 
             // maintenanceLogButton
             // 
+            this.maintenanceLogButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.maintenanceLogButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.maintenanceLogButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maintenanceLogButton.Location = new System.Drawing.Point(739, 433);
             this.maintenanceLogButton.Name = "maintenanceLogButton";
             this.maintenanceLogButton.Size = new System.Drawing.Size(183, 53);
             this.maintenanceLogButton.TabIndex = 6;
             this.maintenanceLogButton.Text = "Maintenance Log";
-            this.maintenanceLogButton.UseVisualStyleBackColor = true;
+            this.maintenanceLogButton.UseVisualStyleBackColor = false;
             this.maintenanceLogButton.Click += new System.EventHandler(this.maintenanceLogButton_Click);
             // 
             // activeMachineButtons
             // 
+            this.activeMachineButtons.BackColor = System.Drawing.Color.GhostWhite;
+            this.activeMachineButtons.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.activeMachineButtons.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.activeMachineButtons.Location = new System.Drawing.Point(57, 433);
             this.activeMachineButtons.Name = "activeMachineButtons";
             this.activeMachineButtons.Size = new System.Drawing.Size(183, 53);
             this.activeMachineButtons.TabIndex = 5;
             this.activeMachineButtons.Text = "List of Active Machines";
-            this.activeMachineButtons.UseVisualStyleBackColor = true;
+            this.activeMachineButtons.UseVisualStyleBackColor = false;
             this.activeMachineButtons.Click += new System.EventHandler(this.activeMachineButtons_Click);
             // 
             // newMaintenanceRequestButton
             // 
+            this.newMaintenanceRequestButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.newMaintenanceRequestButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.newMaintenanceRequestButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newMaintenanceRequestButton.Location = new System.Drawing.Point(738, 506);
             this.newMaintenanceRequestButton.Name = "newMaintenanceRequestButton";
             this.newMaintenanceRequestButton.Size = new System.Drawing.Size(183, 53);
             this.newMaintenanceRequestButton.TabIndex = 8;
             this.newMaintenanceRequestButton.Text = "New Maintenance Request";
-            this.newMaintenanceRequestButton.UseVisualStyleBackColor = true;
+            this.newMaintenanceRequestButton.UseVisualStyleBackColor = false;
             this.newMaintenanceRequestButton.Click += new System.EventHandler(this.newMaintenanceRequestButton_Click);
             // 
             // maintenanceReminderButton
             // 
+            this.maintenanceReminderButton.BackColor = System.Drawing.Color.GhostWhite;
+            this.maintenanceReminderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.maintenanceReminderButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maintenanceReminderButton.Location = new System.Drawing.Point(56, 506);
             this.maintenanceReminderButton.Name = "maintenanceReminderButton";
             this.maintenanceReminderButton.Size = new System.Drawing.Size(183, 53);
             this.maintenanceReminderButton.TabIndex = 7;
             this.maintenanceReminderButton.Text = "Maintenance Reminder";
-            this.maintenanceReminderButton.UseVisualStyleBackColor = true;
+            this.maintenanceReminderButton.UseVisualStyleBackColor = false;
             this.maintenanceReminderButton.Click += new System.EventHandler(this.maintenanceReminderButton_Click);
             // 
             // MainMenuWindow
