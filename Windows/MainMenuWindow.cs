@@ -43,22 +43,26 @@ namespace MEMS.Windows
 
         private void activeMachineButtons_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            var listMachines = new ListMachinesWindow();
+            listMachines.Show();
         }
 
         private void maintenanceLogButton_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            var maintenanceLog = new MaintenanceLogWindow();
+            maintenanceLog.Show();
         }
 
         private void maintenanceReminderButton_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            var maintenanceReminder = new MaintenanceReminderWindow();
+            maintenanceReminder.Show();
         }
 
         private void newMaintenanceRequestButton_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            var newMaintenance = new NewMaintenanceWindow();
+            newMaintenance.Show();
         }
     }
 }
