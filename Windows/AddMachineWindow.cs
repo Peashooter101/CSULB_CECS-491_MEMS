@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace MEMS
+namespace MEMS.Windows
 {
     public partial class AddMachineWindow : Form
     {

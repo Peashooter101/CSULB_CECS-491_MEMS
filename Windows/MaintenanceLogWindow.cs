@@ -1,21 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DnsClient.Protocol;
-using MEMS.Model;
-using MongoDB.Bson;
-using MongoDB.Bson.IO;
-using MongoDB.Driver;
 
-namespace MEMS
+namespace MEMS.Windows
 {
 
     

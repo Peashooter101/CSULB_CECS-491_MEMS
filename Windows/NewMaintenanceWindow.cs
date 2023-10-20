@@ -1,9 +1,8 @@
 using System;
 using System.Media;
 using System.Windows.Forms;
-using Microsoft.Win32;
 
-namespace MEMS
+namespace MEMS.Windows
 {
     public partial class NewMaintenanceWindow : Form
     {
@@ -65,9 +64,7 @@ namespace MEMS
         {
             //test objects to display in window 
             //note: MaintenanceRequests will need a Machine reference
-            
-            
-            
+
             Machine machine1 = new Machine()
             {
                 name = "Kintera Two-Section Reach-In Freezer 54\"",
@@ -94,8 +91,8 @@ namespace MEMS
             };
             //we will have to take this data from the db, returning a list of machines to the program 
             //from there we can use this functionality to list the machines 
-            Machine[] Machines = new[] { machine1, machine2, machine3 };
-            foreach (var machine in Machines)
+            Machine[] machines = new[] { machine1, machine2, machine3 };
+            foreach (var machine in machines)
             {
                 var name = machine.name;
                 var uid = machine.Id;
@@ -107,30 +104,6 @@ namespace MEMS
                     listview.Items.Add(listMachine);
                 }
             }
-            //add the machines to the list view
-            //string[] machine1Arr =
-            //    {   machine1.Name, 
-            //        machine1.UniqueId
-            //    };
-            //var listMachine1 = new ListViewItem(machine1Arr);
-            ////listview is named in in designer and we use it here. . . 
-            //listview.Items.Add(listMachine1);
-            //
-            //string[] machine2Arr =
-            //{   machine2.Name, 
-            //    machine2.UniqueId, 
-            //};
-            //var listMachine2 = new ListViewItem(machine2Arr);
-            //
-            //listview.Items.Add(listMachine2);
-            //string[] machine3Arr =
-            //{   machine3.Name, 
-            //    machine3.UniqueId, 
-            //};
-            //
-            //var listMachine3 = new ListViewItem(machine3Arr);
-            //listview.Items.Add(listMachine3);
-        /*END TEST CODE*/
         }
 
         private void label4_Click(object sender, EventArgs e)

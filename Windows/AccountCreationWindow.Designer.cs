@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace MEMS
+namespace MEMS.Windows
 {
     partial class AccountCreationWindow
     {
