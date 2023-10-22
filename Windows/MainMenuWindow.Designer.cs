@@ -32,8 +32,6 @@ namespace MEMS.Windows
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuWindow));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.memsPictureBox = new System.Windows.Forms.PictureBox();
             this.accountInformationButton = new System.Windows.Forms.Button();
             this.addMachineButton = new System.Windows.Forms.Button();
             this.dbConnectInfoButton = new System.Windows.Forms.Button();
@@ -42,44 +40,16 @@ namespace MEMS.Windows
             this.activeMachineButtons = new System.Windows.Forms.Button();
             this.newMaintenanceRequestButton = new System.Windows.Forms.Button();
             this.maintenanceReminderButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memsPictureBox)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.memsPictureBox, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 5);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(964, 189);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // memsPictureBox
-            // 
-            this.memsPictureBox.BackColor = System.Drawing.Color.GhostWhite;
-            this.memsPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.memsPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.memsPictureBox.ErrorImage = global::MEMS.Properties.Resources.MEMS_logos_transparent;
-            this.memsPictureBox.Image = global::MEMS.Properties.Resources.MEMS_logos_transparent;
-            this.memsPictureBox.InitialImage = global::MEMS.Properties.Resources.MEMS_logos_transparent;
-            this.memsPictureBox.Location = new System.Drawing.Point(3, 3);
-            this.memsPictureBox.Name = "memsPictureBox";
-            this.memsPictureBox.Size = new System.Drawing.Size(958, 182);
-            this.memsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.memsPictureBox.TabIndex = 0;
-            this.memsPictureBox.TabStop = false;
             // 
             // accountInformationButton
             // 
             this.accountInformationButton.BackColor = System.Drawing.Color.GhostWhite;
             this.accountInformationButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.accountInformationButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountInformationButton.Location = new System.Drawing.Point(56, 291);
+            this.accountInformationButton.Location = new System.Drawing.Point(37, 226);
             this.accountInformationButton.Name = "accountInformationButton";
             this.accountInformationButton.Size = new System.Drawing.Size(183, 53);
             this.accountInformationButton.TabIndex = 1;
@@ -92,7 +62,7 @@ namespace MEMS.Windows
             this.addMachineButton.BackColor = System.Drawing.Color.GhostWhite;
             this.addMachineButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addMachineButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMachineButton.Location = new System.Drawing.Point(738, 291);
+            this.addMachineButton.Location = new System.Drawing.Point(343, 226);
             this.addMachineButton.Name = "addMachineButton";
             this.addMachineButton.Size = new System.Drawing.Size(183, 53);
             this.addMachineButton.TabIndex = 2;
@@ -105,7 +75,7 @@ namespace MEMS.Windows
             this.dbConnectInfoButton.BackColor = System.Drawing.Color.GhostWhite;
             this.dbConnectInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.dbConnectInfoButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dbConnectInfoButton.Location = new System.Drawing.Point(739, 361);
+            this.dbConnectInfoButton.Location = new System.Drawing.Point(344, 296);
             this.dbConnectInfoButton.Name = "dbConnectInfoButton";
             this.dbConnectInfoButton.Size = new System.Drawing.Size(183, 53);
             this.dbConnectInfoButton.TabIndex = 4;
@@ -118,7 +88,7 @@ namespace MEMS.Windows
             this.changeLogButton.BackColor = System.Drawing.Color.GhostWhite;
             this.changeLogButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.changeLogButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLogButton.Location = new System.Drawing.Point(57, 361);
+            this.changeLogButton.Location = new System.Drawing.Point(38, 296);
             this.changeLogButton.Name = "changeLogButton";
             this.changeLogButton.Size = new System.Drawing.Size(183, 53);
             this.changeLogButton.TabIndex = 3;
@@ -131,7 +101,7 @@ namespace MEMS.Windows
             this.maintenanceLogButton.BackColor = System.Drawing.Color.GhostWhite;
             this.maintenanceLogButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.maintenanceLogButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maintenanceLogButton.Location = new System.Drawing.Point(739, 433);
+            this.maintenanceLogButton.Location = new System.Drawing.Point(344, 368);
             this.maintenanceLogButton.Name = "maintenanceLogButton";
             this.maintenanceLogButton.Size = new System.Drawing.Size(183, 53);
             this.maintenanceLogButton.TabIndex = 6;
@@ -144,7 +114,7 @@ namespace MEMS.Windows
             this.activeMachineButtons.BackColor = System.Drawing.Color.GhostWhite;
             this.activeMachineButtons.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.activeMachineButtons.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.activeMachineButtons.Location = new System.Drawing.Point(57, 433);
+            this.activeMachineButtons.Location = new System.Drawing.Point(38, 368);
             this.activeMachineButtons.Name = "activeMachineButtons";
             this.activeMachineButtons.Size = new System.Drawing.Size(183, 53);
             this.activeMachineButtons.TabIndex = 5;
@@ -157,7 +127,7 @@ namespace MEMS.Windows
             this.newMaintenanceRequestButton.BackColor = System.Drawing.Color.GhostWhite;
             this.newMaintenanceRequestButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.newMaintenanceRequestButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newMaintenanceRequestButton.Location = new System.Drawing.Point(738, 506);
+            this.newMaintenanceRequestButton.Location = new System.Drawing.Point(343, 441);
             this.newMaintenanceRequestButton.Name = "newMaintenanceRequestButton";
             this.newMaintenanceRequestButton.Size = new System.Drawing.Size(183, 53);
             this.newMaintenanceRequestButton.TabIndex = 8;
@@ -170,7 +140,7 @@ namespace MEMS.Windows
             this.maintenanceReminderButton.BackColor = System.Drawing.Color.GhostWhite;
             this.maintenanceReminderButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.maintenanceReminderButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maintenanceReminderButton.Location = new System.Drawing.Point(56, 506);
+            this.maintenanceReminderButton.Location = new System.Drawing.Point(37, 441);
             this.maintenanceReminderButton.Name = "maintenanceReminderButton";
             this.maintenanceReminderButton.Size = new System.Drawing.Size(183, 53);
             this.maintenanceReminderButton.TabIndex = 7;
@@ -178,13 +148,26 @@ namespace MEMS.Windows
             this.maintenanceReminderButton.UseVisualStyleBackColor = false;
             this.maintenanceReminderButton.Click += new System.EventHandler(this.maintenanceReminderButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.GhostWhite;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(534, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainMenuWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(979, 774);
+            this.ClientSize = new System.Drawing.Size(578, 544);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.newMaintenanceRequestButton);
             this.Controls.Add(this.maintenanceReminderButton);
             this.Controls.Add(this.maintenanceLogButton);
@@ -193,15 +176,15 @@ namespace MEMS.Windows
             this.Controls.Add(this.changeLogButton);
             this.Controls.Add(this.addMachineButton);
             this.Controls.Add(this.accountInformationButton);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MainMenuWindow";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.memsPictureBox)).EndInit();
+            this.Load += new System.EventHandler(this.MainMenuWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox pictureBox1;
 
         private System.Windows.Forms.Button accountInformationButton;
         private System.Windows.Forms.Button addMachineButton;
@@ -211,10 +194,6 @@ namespace MEMS.Windows
         private System.Windows.Forms.Button activeMachineButtons;
         private System.Windows.Forms.Button newMaintenanceRequestButton;
         private System.Windows.Forms.Button maintenanceReminderButton;
-
-        private System.Windows.Forms.PictureBox memsPictureBox;
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 
         #endregion
     }
