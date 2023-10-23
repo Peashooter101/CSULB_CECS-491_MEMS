@@ -22,6 +22,11 @@ namespace MEMS
             return phi.Validate(pass, userObj.password) ? userObj : default;
         }
 
+        public void SetConnectionString(string connectionString)
+        {
+            Environment.SetEnvironmentVariable(connectionString);
+        }
+
         public bool CreateUser(string user, string pass)
         {
             UserRole.User userObj = _repository.FindOne(u => u.username == user);
