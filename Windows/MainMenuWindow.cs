@@ -66,9 +66,6 @@ namespace MEMS.Windows
             newMaintenance.Show();
         }
 
-        private void MainMenuWindow_Load(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }
