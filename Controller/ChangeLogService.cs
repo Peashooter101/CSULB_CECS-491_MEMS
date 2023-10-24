@@ -11,7 +11,7 @@ namespace MEMS
         public ChangeLogService(DatabaseContext dbContext)
         {
             _dbContext = dbContext;
-            changelogRepository = new Repository<ChangelogEntry>(_dbContext.database, "ChangelogEntry");
+            changelogRepository = new Repository<ChangelogEntry>(_dbContext.database, "ChangelogEntries");
         }
 
         public List<ChangelogEntry> GetChangeLogEntries()
