@@ -46,6 +46,11 @@ namespace MEMS
             return machineRepository.Find(filter).FirstOrDefault();
         }
 
+        public List<Machine> ReadAllByName(string name)
+                {
+                    var filter = Builders<Machine>.Filter.Eq(m => m.name, name);
+                    return machineRepository.Find(filter).ToList();
+                }
         public List<Machine> GetMachinesByPage(int pageNumber)
         {
             var skipCount = (pageNumber - 1) * PageSize;
