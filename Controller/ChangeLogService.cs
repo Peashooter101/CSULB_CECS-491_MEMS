@@ -21,9 +21,5 @@ namespace MEMS
                 .SortBy(c => c.timestamp)
                 .ToList();
         }
-        public static void loadChangeEvents()
-        {
-            
-        }
     }
 }
