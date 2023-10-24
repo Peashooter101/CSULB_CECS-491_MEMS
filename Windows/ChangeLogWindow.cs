@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
+using MongoDB.Driver.Linq;
 
 namespace MEMS
 {
@@ -11,21 +13,30 @@ namespace MEMS
             InitializeComponent();
         }
 
-        private void listBoxChangeEvents_SelectedIndexChanged(object sender, EventArgs e)
+        private void ChangelogWindow_Load(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            ChangelogList();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void ChangeLogWindow_Load(object sender, EventArgs e)
+        private void ChangelogList()
         {
             List<ChangelogEntry> changelogList = ServiceUtil.changeLogService.GetChangeLogEntries();
-            lstbxChangeEvents.Items.AddRange(changelogList.ToArray());
-            //lstbxChangeEvents.DataSource = changelogList;
+            foreach (var change in changelogList)
+            {
+                string[] changeArray =
+                {
+                    change.Id.ToString(),
+                    change.machineId.ToString(),
+                    change.userId.ToString(),
+                    change.authorId.ToString(),
+                    change.timestamp.ToString(CultureInfo.CurrentCulture),
+                    change.type,
+                    change.description
+                };
+                var changelogMachine = new ListViewItem(changeArray);
+                listView1.Items.Add(changelogMachine);
+                
+            }
         }
     }
 }
