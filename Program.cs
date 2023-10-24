@@ -4,6 +4,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MEMS.Windows;
 using MongoDB.Driver;
 
 namespace MEMS
@@ -32,8 +33,9 @@ namespace MEMS
            // Application.Run(new ListMachinesWindow());
            //Application.Run(new MaintenanceReminderWindow());
 
-           Application.Run(new MaintenanceLogWindow());
-           Application.Run(new ListMachinesWindow());
+           //Application.Run(new MaintenanceLogWindow());
+           //Application.Run(new ListMachinesWindow());
+           Application.Run(new MainMenuWindow());
         }
     }
 }

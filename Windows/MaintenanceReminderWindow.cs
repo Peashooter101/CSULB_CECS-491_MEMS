@@ -1,8 +1,7 @@
 using System;
-using System.Collections.ObjectModel;
 using System.Windows.Forms;
 
-namespace MEMS
+namespace MEMS.Windows
 {
     public partial class MaintenanceReminderWindow : Form
     {        

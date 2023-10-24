@@ -1,12 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Printing;
-
 using System.Windows.Forms;
-using MongoDB.Driver;
 
-namespace MEMS
+namespace MEMS.Windows
 {
     public partial class ListMachinesWindow : Form
     { 

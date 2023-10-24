@@ -1,4 +1,4 @@
-namespace MEMS
+namespace MEMS.Windows
 {
     partial class MaintenanceLogWindow
     {
