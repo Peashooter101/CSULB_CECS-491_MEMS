@@ -10,6 +10,7 @@ namespace MEMS
 {
     public partial class ListMachinesWindow : Form
     { 
+        private AddMachineWindow addMachineWindow;
         public ListMachinesWindow()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace MEMS
         private void LoadListView()
         {
             List<Machine> machineList = ServiceUtil.machineService.GetMachinesByPage(1);
-            
+            activeMachines.Items.Clear();
             foreach (var machine in machineList)
             {
                 string[] machineArr =
@@ -36,9 +37,10 @@ namespace MEMS
 
         private void NewMachineButton_Click(object sender, EventArgs e)
         {
-            Hide();
-            var addMachine = new AddMachineWindow();
-            addMachine.Show();
+            //Hide();
+            var addMachineWindow = new AddMachineWindow();
+            addMachineWindow.MachineAdded += LoadListView;
+            addMachineWindow.Show();
         }
         private void PrintButton_Click(object sender, EventArgs e)
         {
@@ -48,6 +50,15 @@ namespace MEMS
         private void activeMachines_SelectedIndexChanged(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+        //FormClosing event unsubscribes from the MachineAdded event to prevent memory leak
+        private void ListMachinesWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (addMachineWindow != null)
+            {
+                addMachineWindow.MachineAdded -= LoadListView;
+                addMachineWindow.Close();
+            }
         }
     }
 }

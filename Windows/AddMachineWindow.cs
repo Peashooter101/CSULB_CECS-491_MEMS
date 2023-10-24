@@ -6,6 +6,8 @@ namespace MEMS
 {
     public partial class AddMachineWindow : Form
     {
+        public delegate void MachineAddedHandler();
+        public event MachineAddedHandler MachineAdded;
         public AddMachineWindow()
         {
             InitializeComponent();
@@ -59,6 +61,7 @@ namespace MEMS
                     //Query the DB if no entry -> add else -> create popup that machine already exists. 
                     ServiceUtil.machineService.CreateMachine(nameBox.Text, modelBox.Text, serialNumBox.Text,
                         manuBox.Text, zoneBox.Text);
+                    MachineAdded?.Invoke();
                 }
                 else
                 {
