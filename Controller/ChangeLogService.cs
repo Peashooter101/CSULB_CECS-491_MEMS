@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using MongoDB.Driver;
+using System;
 
 namespace MEMS
 {
@@ -12,6 +13,18 @@ namespace MEMS
         {
             _dbContext = dbContext;
             changelogRepository = new Repository<ChangelogEntry>(_dbContext.database, "ChangelogEntries");
+        }
+        
+        public void CreateChange(DateTime timestamp, string type, string description)
+        {
+            
+            var newChange = new ChangelogEntry()
+            {
+                timestamp = timestamp,
+                type = type,
+                description = description
+            };
+            this.changelogRepository.Create(newChange);
         }
 
         public List<ChangelogEntry> GetChangeLogEntries()
