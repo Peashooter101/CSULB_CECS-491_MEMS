@@ -28,8 +28,8 @@ namespace MEMS.Windows
         
         private void changeLogButton_Click(object sender, EventArgs e)
         {
-            //var changeLog = new ChangelogWindow();
-            //changeLog.Show();
+            var changeLog = new ChangeLogWindow();
+            changeLog.Show();
         }
         private void dbConnectInfoButton_Click(object sender, EventArgs e)
         {
