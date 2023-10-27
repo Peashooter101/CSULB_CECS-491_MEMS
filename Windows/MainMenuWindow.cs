@@ -1,16 +1,19 @@
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using MEMS.Model;
 
 namespace MEMS.Windows
 {
     public partial class MainMenuWindow : Form
     {
-        private bool _activeWin;
         
         public MainMenuWindow()
         {
             InitializeComponent();
             IsMdiContainer = true;
+            
+            
         }
         
         private void accountInformationButton_Click(object sender, EventArgs e)
@@ -19,7 +22,17 @@ namespace MEMS.Windows
             accountInfo.Show();
             
         }
-        
+
+        private void MaintenanceAlert_Load(object sender, EventArgs e)
+        {
+            MaintenanceAlert();
+        }
+
+        private void MaintenanceAlert()
+        {
+            //read from the data base any active machine requests 
+            //List<MaintenanceEntry> maintenanceEntries = ServiceUtil.maintenanceService.
+        }
         private void addMachineButton_Click(object sender, EventArgs e)
         {
             var addMachine = new AddMachineWindow();
