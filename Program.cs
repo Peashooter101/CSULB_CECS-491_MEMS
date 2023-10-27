@@ -19,7 +19,7 @@ namespace MEMS
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             // DatabaseInitializer.GetInstance().CheckDatabase("sample_mems");
             // DatabaseInitializer.GetInstance().CheckCollection("sample_mems", "blah");
