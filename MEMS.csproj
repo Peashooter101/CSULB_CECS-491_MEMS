@@ -232,6 +232,18 @@
         <Compile Include="Windows\AddMachineWindow.Designer.cs">
           <DependentUpon>AddMachineWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Windows\DetailedMachineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\DetailedMachineWindow.Designer.cs">
+          <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\MoveMachineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\MoveMachineWindow.Designer.cs">
+          <DependentUpon>MoveMachineWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\TextPopUpWindow.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -274,6 +286,12 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\AddMachineWindow.resx">
           <DependentUpon>AddMachineWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Windows\DetailedMachineWindow.resx">
+          <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Windows\MoveMachineWindow.resx">
+          <DependentUpon>MoveMachineWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\TextPopUpWindow.resx">
           <DependentUpon>TextPopUpWindow.cs</DependentUpon>

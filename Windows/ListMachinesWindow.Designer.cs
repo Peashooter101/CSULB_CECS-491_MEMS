@@ -41,13 +41,14 @@ namespace MEMS.Windows
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.printButton = new System.Windows.Forms.Button();
             this.addNewMachineButton = new System.Windows.Forms.Button();
+            this.lblDoubleClick = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(26, 16);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 31);
+            this.textBox1.Size = new System.Drawing.Size(284, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Active Machines";
             // 
@@ -66,6 +67,7 @@ namespace MEMS.Windows
             this.activeMachines.UseCompatibleStateImageBehavior = false;
             this.activeMachines.View = System.Windows.Forms.View.Details;
             this.activeMachines.SelectedIndexChanged += new System.EventHandler(this.activeMachines_SelectedIndexChanged);
+            this.activeMachines.DoubleClick += new System.EventHandler(this.activeMachines_DoubleClick);
             // 
             // MachineName
             // 
@@ -124,7 +126,7 @@ namespace MEMS.Windows
             this.addNewMachineButton.BackColor = System.Drawing.Color.GhostWhite;
             this.addNewMachineButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.addNewMachineButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.addNewMachineButton.Location = new System.Drawing.Point(657, 16);
+            this.addNewMachineButton.Location = new System.Drawing.Point(657, 11);
             this.addNewMachineButton.Name = "addNewMachineButton";
             this.addNewMachineButton.Size = new System.Drawing.Size(136, 32);
             this.addNewMachineButton.TabIndex = 4;
@@ -132,12 +134,22 @@ namespace MEMS.Windows
             this.addNewMachineButton.UseVisualStyleBackColor = false;
             this.addNewMachineButton.Click += new System.EventHandler(this.NewMachineButton_Click);
             // 
+            // lblDoubleClick
+            // 
+            this.lblDoubleClick.Location = new System.Drawing.Point(316, 16);
+            this.lblDoubleClick.Name = "lblDoubleClick";
+            this.lblDoubleClick.Size = new System.Drawing.Size(335, 23);
+            this.lblDoubleClick.TabIndex = 6;
+            this.lblDoubleClick.Text = "Double-click machine for details.";
+            this.lblDoubleClick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ListMachinesWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(805, 505);
+            this.Controls.Add(this.lblDoubleClick);
             this.Controls.Add(this.addNewMachineButton);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.mainMenuButton);
@@ -151,6 +163,8 @@ namespace MEMS.Windows
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label lblDoubleClick;
 
         private System.Windows.Forms.Button addNewMachineButton;
         private System.Windows.Forms.Button addMachineButton;

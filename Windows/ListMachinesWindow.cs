@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Windows.Forms;
 
 namespace MEMS.Windows
@@ -45,7 +46,7 @@ namespace MEMS.Windows
 
         private void activeMachines_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
         }
         //FormClosing event unsubscribes from the MachineAdded event to prevent memory leak
         private void ListMachinesWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -55,6 +56,12 @@ namespace MEMS.Windows
                 addMachineWindow.MachineAdded -= LoadListView;
                 addMachineWindow.Close();
             }
+        }
+
+        private void activeMachines_DoubleClick(object sender, EventArgs e)
+        {
+            var detail = new DetailedMachineWindow();
+            detail.ShowDialog();
         }
     }
 }
