@@ -21,5 +21,11 @@ namespace MEMS.Windows
             moveMachineWindow.ShowDialog();
             this.Close();
         }
+
+        private void saveChangesButton_Click(object sender, EventArgs e)
+        {
+            //this function should save the changes to the machine AND populate the change log
+            //throw new System.NotImplementedException();
+        }
     }
 }
