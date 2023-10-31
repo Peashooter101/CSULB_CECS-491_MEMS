@@ -15,6 +15,17 @@ namespace MEMS.Windows
             this.Close();
         }
 
+        public DetailedMachineWindow(string[] d)
+        {
+            InitializeComponent();
+            nameBox.Text = d[0];
+            modelBox.Text = d[2];
+            serialBox.Text = d[5];
+            manuBox.Text = d[3];
+            zoneBox.Text = d[4];
+            nameBox.SelectionStart = 0;
+        }
+
         private void moveButton_Click(object sender, EventArgs e)
         {
             var moveMachineWindow = new MoveMachineWindow();
