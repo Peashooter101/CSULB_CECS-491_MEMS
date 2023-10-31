@@ -42,6 +42,7 @@ namespace MEMS.Windows
             this.printButton = new System.Windows.Forms.Button();
             this.addNewMachineButton = new System.Windows.Forms.Button();
             this.lblDoubleClick = new System.Windows.Forms.Label();
+            this.FlagButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -143,12 +144,22 @@ namespace MEMS.Windows
             this.lblDoubleClick.Text = "Double-click machine for details.";
             this.lblDoubleClick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // FlagButton
+            // 
+            this.FlagButton.Location = new System.Drawing.Point(117, 449);
+            this.FlagButton.Name = "FlagButton";
+            this.FlagButton.Size = new System.Drawing.Size(91, 32);
+            this.FlagButton.TabIndex = 7;
+            this.FlagButton.Text = "Flag Machine";
+            this.FlagButton.UseVisualStyleBackColor = true;
+            // 
             // ListMachinesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(805, 505);
+            this.Controls.Add(this.FlagButton);
             this.Controls.Add(this.lblDoubleClick);
             this.Controls.Add(this.addNewMachineButton);
             this.Controls.Add(this.printButton);
@@ -163,6 +174,8 @@ namespace MEMS.Windows
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button FlagButton;
 
         private System.Windows.Forms.Label lblDoubleClick;
 

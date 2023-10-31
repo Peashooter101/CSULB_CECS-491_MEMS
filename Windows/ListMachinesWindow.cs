@@ -8,6 +8,7 @@ namespace MEMS.Windows
     public partial class ListMachinesWindow : Form
     { 
         private AddMachineWindow addMachineWindow;
+        
         public ListMachinesWindow()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace MEMS.Windows
             foreach (var machine in machineList)
             {
                 string[] machineArr =
-                    { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone };
+                    { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone, machine.serial };
                 if (!machine.isActive) continue;
                 var listMachine = new ListViewItem(machineArr);
                 activeMachines.Items.Add(listMachine);
@@ -60,7 +61,17 @@ namespace MEMS.Windows
 
         private void activeMachines_DoubleClick(object sender, EventArgs e)
         {
-            var detail = new DetailedMachineWindow();
+            string[] details =
+            {
+                activeMachines.FocusedItem.SubItems[0].Text,
+                activeMachines.FocusedItem.SubItems[1].Text,
+                activeMachines.FocusedItem.SubItems[2].Text,
+                activeMachines.FocusedItem.SubItems[3].Text,
+                activeMachines.FocusedItem.SubItems[4].Text,
+                activeMachines.FocusedItem.SubItems[5].Text,
+            };
+
+            var detail = new DetailedMachineWindow(details);
             detail.ShowDialog();
         }
     }

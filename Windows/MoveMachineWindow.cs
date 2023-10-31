@@ -10,6 +10,13 @@ namespace MEMS.Windows
             InitializeComponent();
         }
 
+        public MoveMachineWindow(string zone)
+        {
+            InitializeComponent();
+            newZoneBox.Text = zone;
+            newZoneBox.SelectionStart = 0;
+        }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -17,7 +24,7 @@ namespace MEMS.Windows
 
         private void relocateButton_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
         }
     }
 }
