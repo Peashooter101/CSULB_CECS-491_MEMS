@@ -137,7 +137,7 @@ namespace MEMS.Windows
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(805, 505);
+            this.ClientSize = new System.Drawing.Size(916, 529);
             this.Controls.Add(this.addNewMachineButton);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.mainMenuButton);
@@ -147,7 +147,7 @@ namespace MEMS.Windows
             this.Name = "ListMachinesWindow";
             this.Text = "Active Machines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListMachinesWindow_FormClosing);
-            this.Load += new System.EventHandler(this.ListMachinesWindow_Load);
+            this.Load += new System.EventHandler(this.ListMachinesWindow_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

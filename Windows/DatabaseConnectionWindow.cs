@@ -12,10 +12,17 @@ namespace MEMS.Windows
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            Console.Out.WriteLine(this.dbConnectString.Text);
-            Console.Out.WriteLine(this.dbName.Text);
-            throw new System.NotImplementedException();
+            
         }
-        
+
+        private void dbConnectString_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
