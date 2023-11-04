@@ -1,4 +1,5 @@
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace MEMS.Windows
@@ -12,7 +13,18 @@ namespace MEMS.Windows
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            
+            if (LoginService.TestMongoDBConnection(dbConnectString.Text))
+            {
+                label2.Text = "Connection successfull";
+                LoginService.SetConnectionString(dbConnectString.Text);
+                var MainMenuWindow = new MainMenuWindow();
+                MainMenuWindow.Show();
+
+            }
+            else
+            {
+                label2.Text = "Failed to connect using connection string";
+            }
         }
 
         private void dbConnectString_TextChanged(object sender, EventArgs e)
@@ -24,5 +36,12 @@ namespace MEMS.Windows
         {
             
         }
+
+        private void dbName_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+        
+        
     }
 }

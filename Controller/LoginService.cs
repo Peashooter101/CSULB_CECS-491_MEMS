@@ -10,8 +10,8 @@ namespace MEMS
 
         public LoginService()
         {
-            MongoClient client = Program.client;
-            _repository = new Repository<UserRole.User>(client.GetDatabase(Program.memsDbName), "users");
+            //MongoClient client = Program.client;
+            //_repository = new Repository<UserRole.User>(client.GetDatabase(Program.memsDbName), "users");
         }
 
         public UserRole.User LoginUser(string user, string pass)
@@ -22,9 +22,24 @@ namespace MEMS
             return phi.Validate(pass, userObj.password) ? userObj : default;
         }
 
-        public void SetConnectionString(string connectionString)
+        public static void SetConnectionString(string connectionString)
         {
-            Environment.SetEnvironmentVariable(connectionString);
+            Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", connectionString);
+        }
+
+        public static bool TestMongoDBConnection(string connectionString)
+        {
+            try
+            {
+                var client = new MongoClient(connectionString);
+                // Getting the list of databases will check the connection
+                var databases = client.ListDatabases().ToList();
+                return true; // If this line is reached, the connection is successful
+            }
+            catch (MongoException ex)
+            {
+                return false;
+            }
         }
 
         public bool CreateUser(string user, string pass)

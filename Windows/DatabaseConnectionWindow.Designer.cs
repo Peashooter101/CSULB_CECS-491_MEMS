@@ -83,6 +83,7 @@ namespace MEMS.Windows
             this.dbName.Name = "dbName";
             this.dbName.Size = new System.Drawing.Size(448, 26);
             this.dbName.TabIndex = 3;
+            this.dbName.TextChanged += new System.EventHandler(this.dbName_TextChanged);
             // 
             // submitButton
             // 

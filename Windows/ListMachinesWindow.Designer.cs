@@ -147,7 +147,7 @@ namespace MEMS.Windows
             this.Name = "ListMachinesWindow";
             this.Text = "Active Machines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListMachinesWindow_FormClosing);
-            this.Load += new System.EventHandler(this.ListMachinesWindow_Load_1);
+            //this.Load += new System.EventHandler(this.ListMachinesWindow_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
