@@ -110,6 +110,7 @@ namespace MEMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(602, 461);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.bttnPrint);

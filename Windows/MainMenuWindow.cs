@@ -8,77 +8,101 @@ namespace MEMS.Windows
     public partial class MainMenuWindow : Form
     {
         
+        
         public MainMenuWindow()
         {
             InitializeComponent();
             IsMdiContainer = true;
-            
-            
         }
-        
-        private void accountInformationButton_Click(object sender, EventArgs e)
-        {
-            var accountInfo = new AccountCreationWindow();
-            accountInfo.Show();
-            
-        }
-
         private void MaintenanceAlert_Load(object sender, EventArgs e)
         {
             MaintenanceAlert();
         }
-
+        
         private void MaintenanceAlert()
         {
             //read from the data base any active machine requests 
             //List<MaintenanceEntry> maintenanceEntries = ServiceUtil.maintenanceService.
         }
-        private void addMachineButton_Click(object sender, EventArgs e)
+        private void MDIAccountInformation_Click(object sender, EventArgs e)
         {
-            var addMachine = new AddMachineWindow();
-            addMachine.Show();
+            AccountCreationWindow accountInfo = new AccountCreationWindow();
+            accountInfo.TopLevel = false;
+            containerControl1.Controls.Add(accountInfo);
+            accountInfo.FormBorderStyle = FormBorderStyle.Sizable;
+            accountInfo.Dock = DockStyle.Fill;
+            accountInfo.Show();
+        }
+
+        
+        private void MDIAddMachineButton_Click(object sender, EventArgs e)
+        {
+            AddMachineWindow addMachine = new AddMachineWindow();
+            addMachine.TopLevel = false;
+            containerControl1.Controls.Add(addMachine);
+            addMachine.FormBorderStyle = FormBorderStyle.Sizable;
+            addMachine.Dock = DockStyle.Fill; 
+            addMachine.Show(); 
         }
         
-        private void changeLogButton_Click(object sender, EventArgs e)
+        private void MDIChangeLogButton_Click(object sender, EventArgs e)
         {
             var changeLog = new ChangeLogWindow();
+            changeLog.TopLevel = false;
+            containerControl1.Controls.Add(changeLog);
+            changeLog.FormBorderStyle = FormBorderStyle.Sizable;
+            changeLog.Dock = DockStyle.Fill;
             changeLog.Show();
         }
-        private void dbConnectInfoButton_Click(object sender, EventArgs e)
+        private void MDIDbConnectInfoButton_Click(object sender, EventArgs e)
         {
+            TextPopUpWindow dbPopUp = new TextPopUpWindow();
             var dbConnection = ServiceUtil.dbContext.database.DatabaseNamespace;
-            //need to create a popup window that will display text
-            //var displayDb = new TextPopUpWindow();
-            MessageBox.Show(dbConnection.ToString());
-            //displayDb.TextDisplay(dbConnection.ToString());
-            //displayDb.Show();
+            dbPopUp.TextDisplay(@"Database Connection: " + dbConnection);
+            dbPopUp.TopLevel = false;
+            containerControl1.Controls.Add(dbPopUp);
+            dbPopUp.Show();
         }
 
 
-        private void activeMachineButtons_Click(object sender, EventArgs e)
+        private void MDIActiveMachineButtons_Click(object sender, EventArgs e)
         {
             var listMachines = new ListMachinesWindow();
+            listMachines.TopLevel = false;
+            containerControl1.Controls.Add(listMachines);
+            listMachines.FormBorderStyle = FormBorderStyle.Sizable;
+            listMachines.Dock = DockStyle.Fill;
             listMachines.Show();
         }
 
-        private void maintenanceLogButton_Click(object sender, EventArgs e)
+        private void MDIMaintenanceLogButton_Click(object sender, EventArgs e)
         {
             var maintenanceLog = new MaintenanceLogWindow();
+            maintenanceLog.TopLevel = false;
+            containerControl1.Controls.Add(maintenanceLog);
+            maintenanceLog.FormBorderStyle = FormBorderStyle.Sizable;
+            maintenanceLog.Dock = DockStyle.Fill;
             maintenanceLog.Show();
         }
 
-        private void maintenanceReminderButton_Click(object sender, EventArgs e)
+        private void MDIMaintenanceReminderButton_Click(object sender, EventArgs e)
         {
             var maintenanceReminder = new MaintenanceReminderWindow();
+            maintenanceReminder.TopLevel = false;
+            containerControl1.Controls.Add(maintenanceReminder);
+            maintenanceReminder.FormBorderStyle = FormBorderStyle.Sizable;
+            maintenanceReminder.Dock = DockStyle.Fill;
             maintenanceReminder.Show();
         }
 
-        private void newMaintenanceRequestButton_Click(object sender, EventArgs e)
+        private void MDINewMaintenanceRequestButton_Click(object sender, EventArgs e)
         {
             var newMaintenance = new NewMaintenanceWindow();
+            newMaintenance.TopLevel = false;
+            containerControl1.Controls.Add(newMaintenance);
+            newMaintenance.FormBorderStyle = FormBorderStyle.Sizable;
+            newMaintenance.Dock = DockStyle.Fill;
             newMaintenance.Show();
         }
-
-        
     }
 }
