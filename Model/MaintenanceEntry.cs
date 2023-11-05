@@ -19,9 +19,9 @@ namespace MEMS.Model
     }
     public enum Severity
     {
-        urgent,
-        moderate,
-        minor
+        Urgent,
+        Moderate,
+        Minor
     }
     public class MaintenanceEntry : IEntity
     {

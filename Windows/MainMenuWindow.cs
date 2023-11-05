@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 using MEMS.Model;
 
@@ -22,7 +23,24 @@ namespace MEMS.Windows
         private void MaintenanceAlert()
         {
             //read from the data base any active machine requests 
-            //List<MaintenanceEntry> maintenanceEntries = ServiceUtil.maintenanceService.
+            List<MaintenanceEntry> maintenanceEntries =
+                ServiceUtil.MaintenanceReminderService.ReadAllBySeverity(Severity.Urgent);
+            foreach (var mEntry in maintenanceEntries)
+            {
+                string[] maintenanceEntriesArr =
+                {
+                    mEntry.Id.ToString(),
+                    mEntry.severity.ToString(),
+                    mEntry.type.ToString(),
+                    mEntry.maintenanceTime.ToString(CultureInfo.CurrentCulture),
+                    mEntry.userId.ToString(),
+                    mEntry.machineId.ToString(),
+                    mEntry.description
+                };
+                var maintenanceEntry = new ListViewItem(maintenanceEntriesArr);
+                maintenanceEntriesList.Items.Add(maintenanceEntry);
+            }
+            
         }
         private void MDIAccountInformation_Click(object sender, EventArgs e)
         {

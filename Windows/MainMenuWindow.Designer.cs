@@ -42,6 +42,14 @@ namespace MEMS.Windows
             this.maintenanceReminderButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.containerControl1 = new System.Windows.Forms.ContainerControl();
+            this.maintenanceEntriesList = new System.Windows.Forms.ListView();
+            this.id = new System.Windows.Forms.ColumnHeader();
+            this.severity = new System.Windows.Forms.ColumnHeader();
+            this.maintenanceTime = new System.Windows.Forms.ColumnHeader();
+            this.userId = new System.Windows.Forms.ColumnHeader();
+            this.machineId = new System.Windows.Forms.ColumnHeader();
+            this.type = new System.Windows.Forms.ColumnHeader();
+            this.description = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,6 +179,46 @@ namespace MEMS.Windows
             this.containerControl1.TabIndex = 10;
             this.containerControl1.Text = "containerControl1";
             // 
+            // maintenanceEntriesList
+            // 
+            this.maintenanceEntriesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.id, this.severity, this.maintenanceTime, this.userId, this.machineId, this.type, this.description });
+            this.maintenanceEntriesList.HideSelection = false;
+            this.maintenanceEntriesList.Location = new System.Drawing.Point(12, 516);
+            this.maintenanceEntriesList.Name = "maintenanceEntriesList";
+            this.maintenanceEntriesList.Size = new System.Drawing.Size(549, 221);
+            this.maintenanceEntriesList.TabIndex = 11;
+            this.maintenanceEntriesList.UseCompatibleStateImageBehavior = false;
+            this.maintenanceEntriesList.View = System.Windows.Forms.View.Details;
+            // 
+            // id
+            // 
+            this.id.Text = "ID";
+            // 
+            // severity
+            // 
+            this.severity.Text = "Severity";
+            // 
+            // maintenanceTime
+            // 
+            this.maintenanceTime.Text = "Maintenance Time";
+            // 
+            // userId
+            // 
+            this.userId.Text = "User";
+            // 
+            // machineId
+            // 
+            this.machineId.Text = "Machine ID";
+            // 
+            // type
+            // 
+            this.type.Text = "Type";
+            // 
+            // description
+            // 
+            this.description.Text = "Description";
+            this.description.Width = 186;
+            // 
             // MainMenuWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +226,7 @@ namespace MEMS.Windows
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1424, 761);
+            this.Controls.Add(this.maintenanceEntriesList);
             this.Controls.Add(this.containerControl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.newMaintenanceRequestButton);
@@ -192,9 +241,20 @@ namespace MEMS.Windows
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MainMenuWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MaintenanceAlert_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader severity;
+        private System.Windows.Forms.ColumnHeader maintenanceTime;
+        private System.Windows.Forms.ColumnHeader userId;
+        private System.Windows.Forms.ColumnHeader machineId;
+        private System.Windows.Forms.ColumnHeader type;
+        private System.Windows.Forms.ColumnHeader description;
+
+        private System.Windows.Forms.ListView maintenanceEntriesList;
 
         private System.Windows.Forms.ContainerControl containerControl1;
 
