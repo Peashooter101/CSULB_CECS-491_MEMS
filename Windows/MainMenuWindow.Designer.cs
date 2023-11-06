@@ -182,7 +182,6 @@ namespace MEMS.Windows
             // maintenanceEntriesList
             // 
             this.maintenanceEntriesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.id, this.severity, this.maintenanceTime, this.userId, this.machineId, this.type, this.description });
-            this.maintenanceEntriesList.GridLines = true;
             this.maintenanceEntriesList.HideSelection = false;
             this.maintenanceEntriesList.Location = new System.Drawing.Point(12, 516);
             this.maintenanceEntriesList.Name = "maintenanceEntriesList";

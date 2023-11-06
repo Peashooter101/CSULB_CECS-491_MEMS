@@ -17,6 +17,7 @@ namespace MEMS.Windows
         }
         private void MaintenanceAlert_Load(object sender, EventArgs e)
         {
+            
             MaintenanceAlert();
         }
         
