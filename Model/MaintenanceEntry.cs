@@ -11,11 +11,11 @@ namespace MEMS.Model
 {
     public enum MaintenanceType
     {
-        repair,
-        replace,
-        routineService,
-        lockout,
-        discontinue
+        Repair,
+        Replace,
+        RoutineService,
+        Lockout,
+        Discontinue
     }
     public enum Severity
     {
