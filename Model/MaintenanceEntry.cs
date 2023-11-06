@@ -19,9 +19,12 @@ namespace MEMS.Model
     }
     public enum Severity
     {
+        [BsonRepresentation(BsonType.String)]
         Urgent,
+        [BsonRepresentation(BsonType.String)]
         Moderate,
-        Minor
+        [BsonRepresentation(BsonType.String)]
+        Minor,
     }
     public class MaintenanceEntry : IEntity
     {

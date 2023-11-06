@@ -4,6 +4,10 @@ using System.Security.Cryptography;
 using MEMS.Model;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Linq;
+using System.Runtime.InteropServices;
+using MongoDB.Driver.Core.Misc;
+using SharpCompress.Common;
 
 
 namespace MEMS
@@ -52,7 +56,7 @@ namespace MEMS
 
         public List<MaintenanceEntry> ReadAllBySeverity(Severity severity)
         {
-            var severityType = Builders<MaintenanceEntry>.Filter.Eq(entry => entry.severity, severity);
+            var severityType = Builders<MaintenanceEntry>.Filter.Exists(e => e.severity);
             return _maintenanceRepository.Find(severityType).ToList();
         }
     }
