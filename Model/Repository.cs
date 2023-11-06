@@ -7,6 +7,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using MEMS.Model;
+using MongoDB.Driver.Search;
 
 namespace MEMS
 {
@@ -50,7 +52,7 @@ namespace MEMS
         {
             return _collection.Find(filter);
         }
-
+        
         public IFindFluent<T, T> FindPage(FilterDefinition<T> filter, int skip, int limit)
         {
             return _collection.Find(filter).Skip(skip).Limit(limit);
