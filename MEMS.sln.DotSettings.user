@@ -20,6 +20,7 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FDetailedMachineWindow/@EntryIndexedValue">True</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FListMachinesWindow/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FMainMenuMaintenanceReminderWindow/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FMaintenanceLogWindow/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FMaintenanceReminderWindow/@EntryIndexedValue">False</s:Boolean>
 	

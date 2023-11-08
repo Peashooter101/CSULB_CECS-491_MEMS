@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Windows.Forms;
 
 namespace MEMS.Windows
@@ -68,10 +67,17 @@ namespace MEMS.Windows
                 activeMachines.FocusedItem.SubItems[2].Text,
                 activeMachines.FocusedItem.SubItems[3].Text,
                 activeMachines.FocusedItem.SubItems[4].Text,
-                activeMachines.FocusedItem.SubItems[5].Text,
+                activeMachines.FocusedItem.SubItems[5].Text
             };
-
-            var detail = new DetailedMachineWindow(details);
+            
+            List<string> zones = new List<string>();
+            
+            for (int i = 0; i < activeMachines.Items.Count; i++)
+            {
+                zones.Add(activeMachines.Items[i].SubItems[4].Text);
+            }
+            
+            var detail = new DetailedMachineWindow(details, zones);
             detail.ShowDialog();
         }
     }

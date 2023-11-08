@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace MEMS.Windows
@@ -10,21 +11,24 @@ namespace MEMS.Windows
             InitializeComponent();
         }
 
-        public MoveMachineWindow(string zone)
+        public MoveMachineWindow(string z, List<String> zs)
         {
             InitializeComponent();
-            newZoneBox.Text = zone;
-            newZoneBox.SelectionStart = 0;
+            zoneChoice.Text = z;
+            foreach (var x in zs)
+            {
+                zoneChoice.Items.Add(x);
+            }
         }
-
-        private void closeButton_Click(object sender, EventArgs e)
+        
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void relocateButton_Click(object sender, EventArgs e)
         {
-            // throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

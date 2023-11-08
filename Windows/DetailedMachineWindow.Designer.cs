@@ -49,16 +49,16 @@ namespace MEMS.Windows
             // 
             // lblTop
             // 
-            this.lblTop.Location = new System.Drawing.Point(33, 9);
+            this.lblTop.Location = new System.Drawing.Point(8, 9);
             this.lblTop.Name = "lblTop";
-            this.lblTop.Size = new System.Drawing.Size(225, 23);
+            this.lblTop.Size = new System.Drawing.Size(306, 23);
             this.lblTop.TabIndex = 0;
             this.lblTop.Text = "Machine Information";
             this.lblTop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblName
             // 
-            this.lblName.Location = new System.Drawing.Point(33, 47);
+            this.lblName.Location = new System.Drawing.Point(8, 47);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(71, 23);
             this.lblName.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace MEMS.Windows
             // 
             // lblModel
             // 
-            this.lblModel.Location = new System.Drawing.Point(33, 75);
+            this.lblModel.Location = new System.Drawing.Point(8, 75);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(71, 23);
             this.lblModel.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace MEMS.Windows
             // 
             // lblSerial
             // 
-            this.lblSerial.Location = new System.Drawing.Point(33, 101);
+            this.lblSerial.Location = new System.Drawing.Point(8, 101);
             this.lblSerial.Name = "lblSerial";
             this.lblSerial.Size = new System.Drawing.Size(71, 23);
             this.lblSerial.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace MEMS.Windows
             // 
             // lblManu
             // 
-            this.lblManu.Location = new System.Drawing.Point(33, 125);
+            this.lblManu.Location = new System.Drawing.Point(8, 125);
             this.lblManu.Name = "lblManu";
             this.lblManu.Size = new System.Drawing.Size(71, 23);
             this.lblManu.TabIndex = 4;
@@ -94,7 +94,7 @@ namespace MEMS.Windows
             // 
             // lblZone
             // 
-            this.lblZone.Location = new System.Drawing.Point(33, 153);
+            this.lblZone.Location = new System.Drawing.Point(8, 153);
             this.lblZone.Name = "lblZone";
             this.lblZone.Size = new System.Drawing.Size(71, 23);
             this.lblZone.TabIndex = 5;
@@ -103,37 +103,42 @@ namespace MEMS.Windows
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(110, 49);
+            this.nameBox.Enabled = false;
+            this.nameBox.Location = new System.Drawing.Point(85, 49);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(204, 20);
+            this.nameBox.Size = new System.Drawing.Size(229, 20);
             this.nameBox.TabIndex = 6;
             // 
             // modelBox
             // 
-            this.modelBox.Location = new System.Drawing.Point(110, 75);
+            this.modelBox.Enabled = false;
+            this.modelBox.Location = new System.Drawing.Point(85, 75);
             this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(204, 20);
+            this.modelBox.Size = new System.Drawing.Size(229, 20);
             this.modelBox.TabIndex = 7;
             // 
             // serialBox
             // 
-            this.serialBox.Location = new System.Drawing.Point(110, 101);
+            this.serialBox.Enabled = false;
+            this.serialBox.Location = new System.Drawing.Point(85, 101);
             this.serialBox.Name = "serialBox";
-            this.serialBox.Size = new System.Drawing.Size(204, 20);
+            this.serialBox.Size = new System.Drawing.Size(229, 20);
             this.serialBox.TabIndex = 8;
             // 
             // manuBox
             // 
-            this.manuBox.Location = new System.Drawing.Point(110, 128);
+            this.manuBox.Enabled = false;
+            this.manuBox.Location = new System.Drawing.Point(85, 128);
             this.manuBox.Name = "manuBox";
-            this.manuBox.Size = new System.Drawing.Size(204, 20);
+            this.manuBox.Size = new System.Drawing.Size(229, 20);
             this.manuBox.TabIndex = 9;
             // 
             // zoneBox
             // 
-            this.zoneBox.Location = new System.Drawing.Point(110, 153);
+            this.zoneBox.Enabled = false;
+            this.zoneBox.Location = new System.Drawing.Point(85, 153);
             this.zoneBox.Name = "zoneBox";
-            this.zoneBox.Size = new System.Drawing.Size(204, 20);
+            this.zoneBox.Size = new System.Drawing.Size(229, 20);
             this.zoneBox.TabIndex = 10;
             // 
             // moveButton

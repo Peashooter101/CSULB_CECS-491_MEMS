@@ -32,30 +32,23 @@ namespace MEMS.Windows
         private void InitializeComponent()
         {
             this.lblMove = new System.Windows.Forms.Label();
-            this.newZoneBox = new System.Windows.Forms.TextBox();
             this.relocateButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.zoneChoice = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblMove
             // 
             this.lblMove.Location = new System.Drawing.Point(12, 9);
             this.lblMove.Name = "lblMove";
-            this.lblMove.Size = new System.Drawing.Size(236, 23);
+            this.lblMove.Size = new System.Drawing.Size(236, 27);
             this.lblMove.TabIndex = 0;
-            this.lblMove.Text = "Please enter the zone the Machine will move to:";
-            // 
-            // newZoneBox
-            // 
-            this.newZoneBox.Location = new System.Drawing.Point(81, 35);
-            this.newZoneBox.Name = "newZoneBox";
-            this.newZoneBox.Size = new System.Drawing.Size(100, 20);
-            this.newZoneBox.TabIndex = 1;
-            this.newZoneBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblMove.Text = "Please enter/choose the zone the Machine will move to:";
+            this.lblMove.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // relocateButton
             // 
-            this.relocateButton.Location = new System.Drawing.Point(12, 72);
+            this.relocateButton.Location = new System.Drawing.Point(12, 75);
             this.relocateButton.Name = "relocateButton";
             this.relocateButton.Size = new System.Drawing.Size(75, 23);
             this.relocateButton.TabIndex = 2;
@@ -63,36 +56,43 @@ namespace MEMS.Windows
             this.relocateButton.UseVisualStyleBackColor = true;
             this.relocateButton.Click += new System.EventHandler(this.relocateButton_Click);
             // 
-            // closeButton
+            // cancelButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(173, 72);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
-            this.closeButton.TabIndex = 3;
-            this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.cancelButton.Location = new System.Drawing.Point(172, 75);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 3;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // zoneChoice
+            // 
+            this.zoneChoice.FormattingEnabled = true;
+            this.zoneChoice.Location = new System.Drawing.Point(67, 39);
+            this.zoneChoice.Name = "zoneChoice";
+            this.zoneChoice.Size = new System.Drawing.Size(121, 21);
+            this.zoneChoice.TabIndex = 4;
             // 
             // MoveMachineWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(260, 107);
-            this.Controls.Add(this.closeButton);
+            this.ClientSize = new System.Drawing.Size(259, 110);
+            this.Controls.Add(this.zoneChoice);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.relocateButton);
-            this.Controls.Add(this.newZoneBox);
             this.Controls.Add(this.lblMove);
             this.Name = "MoveMachineWindow";
             this.Text = "[MEMS] MoveWindow";
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
+        private System.Windows.Forms.ComboBox zoneChoice;
+
         private System.Windows.Forms.Label lblMove;
-        private System.Windows.Forms.TextBox newZoneBox;
         private System.Windows.Forms.Button relocateButton;
-        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button cancelButton;
 
         #endregion
     }
