@@ -17,13 +17,7 @@ namespace MEMS.Windows
 
         private void MainMenuMaintenanceReminder_Load(object sender, EventArgs e)
         {
-            
             MaintenanceAlert();
-        }
-        private static void PlayPopUpSound()
-        {
-            SoundPlayer popUpSound = new SoundPlayer("C:\\Windows\\Media\\Windows Notify System Generic.wav");
-            popUpSound.Play();
         }
         private void MaintenanceAlert()
         {
