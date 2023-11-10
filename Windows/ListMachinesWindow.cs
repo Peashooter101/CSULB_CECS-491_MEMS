@@ -7,7 +7,7 @@ namespace MEMS.Windows
     public partial class ListMachinesWindow : Form
     { 
         private AddMachineWindow addMachineWindow;
-        
+        private ListMachinesWindow listMachinesWindow;
         public ListMachinesWindow()
         {
             InitializeComponent();
@@ -77,8 +77,9 @@ namespace MEMS.Windows
                 zones.Add(activeMachines.Items[i].SubItems[4].Text);
             }
             
-            var detail = new DetailedMachineWindow(details, zones);
+            var detail = new DetailedMachineWindow(listMachinesWindow, details, zones);
             detail.ShowDialog();
+            LoadListView();
         }
     }
 }

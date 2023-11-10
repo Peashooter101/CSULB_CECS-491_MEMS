@@ -6,15 +6,17 @@ namespace MEMS.Windows
 {
     public partial class MoveMachineWindow : Form
     {
+        private Machine m;
         public MoveMachineWindow()
         {
             InitializeComponent();
         }
 
-        public MoveMachineWindow(string z, List<String> zs)
+        public MoveMachineWindow(Machine m, string z, List<String> zs)
         {
             InitializeComponent();
             zoneChoice.Text = z;
+            this.m = m;
             foreach (var x in zs)
             {
                 zoneChoice.Items.Add(x);
@@ -28,7 +30,11 @@ namespace MEMS.Windows
 
         private void relocateButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            m.zone = zoneChoice.Text;
+            ServiceUtil.machineService.UpdateMachine(m);
+            this.Close();
+            // MessageBox.Show()
+            // throw new NotImplementedException();
         }
     }
 }
