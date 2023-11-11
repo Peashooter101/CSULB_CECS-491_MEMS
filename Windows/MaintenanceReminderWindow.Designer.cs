@@ -102,7 +102,7 @@ namespace MEMS.Windows
             this.machineListView.HideSelection = false;
             this.machineListView.Location = new System.Drawing.Point(13, 37);
             this.machineListView.Name = "machineListView";
-            this.machineListView.Size = new System.Drawing.Size(598, 63);
+            this.machineListView.Size = new System.Drawing.Size(598, 193);
             this.machineListView.TabIndex = 1;
             this.machineListView.UseCompatibleStateImageBehavior = false;
             this.machineListView.View = System.Windows.Forms.View.Details;
@@ -112,7 +112,7 @@ namespace MEMS.Windows
             this.vendorLabel.BackColor = System.Drawing.Color.GhostWhite;
             this.vendorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.vendorLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendorLabel.Location = new System.Drawing.Point(13, 117);
+            this.vendorLabel.Location = new System.Drawing.Point(13, 233);
             this.vendorLabel.Name = "vendorLabel";
             this.vendorLabel.Size = new System.Drawing.Size(138, 22);
             this.vendorLabel.TabIndex = 2;
@@ -125,9 +125,9 @@ namespace MEMS.Windows
             this.vendorListView.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vendorListView.GridLines = true;
             this.vendorListView.HideSelection = false;
-            this.vendorListView.Location = new System.Drawing.Point(12, 142);
+            this.vendorListView.Location = new System.Drawing.Point(12, 258);
             this.vendorListView.Name = "vendorListView";
-            this.vendorListView.Size = new System.Drawing.Size(599, 63);
+            this.vendorListView.Size = new System.Drawing.Size(599, 103);
             this.vendorListView.TabIndex = 3;
             this.vendorListView.UseCompatibleStateImageBehavior = false;
             this.vendorListView.View = System.Windows.Forms.View.Details;
@@ -152,7 +152,7 @@ namespace MEMS.Windows
             this.label1.BackColor = System.Drawing.Color.GhostWhite;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 223);
+            this.label1.Location = new System.Drawing.Point(13, 384);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 22);
             this.label1.TabIndex = 4;
@@ -161,7 +161,7 @@ namespace MEMS.Windows
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 248);
+            this.dateTimePicker1.Location = new System.Drawing.Point(13, 409);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(228, 20);
             this.dateTimePicker1.TabIndex = 5;
@@ -179,6 +179,7 @@ namespace MEMS.Windows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mainMenuButton);

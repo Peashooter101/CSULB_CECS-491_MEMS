@@ -30,7 +30,13 @@ namespace MEMS.Windows
         private void LoadListView()
         {
             string[] machine =
-                { machine1.name, machine1.Id.ToString(), machine1.model, machine1.manufacturer, machine1.zone };
+            {
+                machine1.name,
+                machine1.Id.ToString(), 
+                machine1.model, 
+                machine1.manufacturer, 
+                machine1.zone
+            };
             var listMachine = new ListViewItem(machine);
             machineListView.Items.Add(listMachine);
 

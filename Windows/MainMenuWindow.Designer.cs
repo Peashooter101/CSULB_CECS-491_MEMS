@@ -41,6 +41,7 @@ namespace MEMS.Windows
             this.newMaintenanceRequestButton = new System.Windows.Forms.Button();
             this.maintenanceReminderButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.containerControl1 = new System.Windows.Forms.ContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace MEMS.Windows
             this.accountInformationButton.TabIndex = 1;
             this.accountInformationButton.Text = "Account Information";
             this.accountInformationButton.UseVisualStyleBackColor = false;
-            this.accountInformationButton.Click += new System.EventHandler(this.accountInformationButton_Click);
+            this.accountInformationButton.Click += new System.EventHandler(this.MDIAccountInformation_Click);
             // 
             // addMachineButton
             // 
@@ -68,7 +69,7 @@ namespace MEMS.Windows
             this.addMachineButton.TabIndex = 2;
             this.addMachineButton.Text = "Add Machine";
             this.addMachineButton.UseVisualStyleBackColor = false;
-            this.addMachineButton.Click += new System.EventHandler(this.addMachineButton_Click);
+            this.addMachineButton.Click += new System.EventHandler(this.MDIAddMachineButton_Click);
             // 
             // dbConnectInfoButton
             // 
@@ -81,7 +82,7 @@ namespace MEMS.Windows
             this.dbConnectInfoButton.TabIndex = 4;
             this.dbConnectInfoButton.Text = "Database Connection Info";
             this.dbConnectInfoButton.UseVisualStyleBackColor = false;
-            this.dbConnectInfoButton.Click += new System.EventHandler(this.dbConnectInfoButton_Click);
+            this.dbConnectInfoButton.Click += new System.EventHandler(this.MDIDbConnectInfoButton_Click);
             // 
             // changeLogButton
             // 
@@ -94,7 +95,7 @@ namespace MEMS.Windows
             this.changeLogButton.TabIndex = 3;
             this.changeLogButton.Text = "Change Log ";
             this.changeLogButton.UseVisualStyleBackColor = false;
-            this.changeLogButton.Click += new System.EventHandler(this.changeLogButton_Click);
+            this.changeLogButton.Click += new System.EventHandler(this.MDIChangeLogButton_Click);
             // 
             // maintenanceLogButton
             // 
@@ -107,7 +108,7 @@ namespace MEMS.Windows
             this.maintenanceLogButton.TabIndex = 6;
             this.maintenanceLogButton.Text = "Maintenance Log";
             this.maintenanceLogButton.UseVisualStyleBackColor = false;
-            this.maintenanceLogButton.Click += new System.EventHandler(this.maintenanceLogButton_Click);
+            this.maintenanceLogButton.Click += new System.EventHandler(this.MDIMaintenanceLogButton_Click);
             // 
             // activeMachineButtons
             // 
@@ -120,7 +121,7 @@ namespace MEMS.Windows
             this.activeMachineButtons.TabIndex = 5;
             this.activeMachineButtons.Text = "List of Active Machines";
             this.activeMachineButtons.UseVisualStyleBackColor = false;
-            this.activeMachineButtons.Click += new System.EventHandler(this.activeMachineButtons_Click);
+            this.activeMachineButtons.Click += new System.EventHandler(this.MDIActiveMachineButtons_Click);
             // 
             // newMaintenanceRequestButton
             // 
@@ -133,7 +134,7 @@ namespace MEMS.Windows
             this.newMaintenanceRequestButton.TabIndex = 8;
             this.newMaintenanceRequestButton.Text = "New Maintenance Request";
             this.newMaintenanceRequestButton.UseVisualStyleBackColor = false;
-            this.newMaintenanceRequestButton.Click += new System.EventHandler(this.newMaintenanceRequestButton_Click);
+            this.newMaintenanceRequestButton.Click += new System.EventHandler(this.MDINewMaintenanceRequestButton_Click);
             // 
             // maintenanceReminderButton
             // 
@@ -146,7 +147,7 @@ namespace MEMS.Windows
             this.maintenanceReminderButton.TabIndex = 7;
             this.maintenanceReminderButton.Text = "Maintenance Reminder";
             this.maintenanceReminderButton.UseVisualStyleBackColor = false;
-            this.maintenanceReminderButton.Click += new System.EventHandler(this.maintenanceReminderButton_Click);
+            this.maintenanceReminderButton.Click += new System.EventHandler(this.MDIMaintenanceReminderButton_Click);
             // 
             // pictureBox1
             // 
@@ -160,13 +161,24 @@ namespace MEMS.Windows
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // containerControl1
+            // 
+            this.containerControl1.BackColor = System.Drawing.Color.GhostWhite;
+            this.containerControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.containerControl1.Location = new System.Drawing.Point(567, 12);
+            this.containerControl1.Name = "containerControl1";
+            this.containerControl1.Size = new System.Drawing.Size(845, 737);
+            this.containerControl1.TabIndex = 10;
+            this.containerControl1.Text = "containerControl1";
+            // 
             // MainMenuWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(578, 544);
+            this.ClientSize = new System.Drawing.Size(1424, 761);
+            this.Controls.Add(this.containerControl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.newMaintenanceRequestButton);
             this.Controls.Add(this.maintenanceReminderButton);
@@ -179,9 +191,13 @@ namespace MEMS.Windows
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MainMenuWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.ContainerControl containerControl1;
 
         private System.Windows.Forms.PictureBox pictureBox1;
 

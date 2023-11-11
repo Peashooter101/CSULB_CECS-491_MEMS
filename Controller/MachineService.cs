@@ -61,6 +61,11 @@ namespace MEMS
                 .ToList();
 
         }
-        
+
+        public void UpdateMachine(Machine m)
+        {
+            this.machineRepository.Update(m);
+            ServiceUtil.changeLogService.CreateChange(DateTime.Now, "zone", "machine moved");
+        }
     }
 }

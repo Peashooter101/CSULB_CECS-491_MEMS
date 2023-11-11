@@ -47,7 +47,7 @@ namespace MEMS.Windows
             this.lblConfirm = new System.Windows.Forms.Label();
             this.detailBox = new System.Windows.Forms.ListBox();
             this.serialNumBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSerial = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblName
@@ -178,21 +178,21 @@ namespace MEMS.Windows
             this.serialNumBox.Size = new System.Drawing.Size(222, 20);
             this.serialNumBox.TabIndex = 16;
             // 
-            // label2
+            // lblSerial
             // 
-            this.label2.Location = new System.Drawing.Point(12, 98);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 12);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Serial Number";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblSerial.Location = new System.Drawing.Point(12, 98);
+            this.lblSerial.Name = "lblSerial";
+            this.lblSerial.Size = new System.Drawing.Size(75, 12);
+            this.lblSerial.TabIndex = 17;
+            this.lblSerial.Text = "Serial Number";
             // 
             // AddMachineWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(590, 285);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSerial);
             this.Controls.Add(this.serialNumBox);
             this.Controls.Add(this.detailBox);
             this.Controls.Add(this.lblConfirm);
@@ -215,7 +215,7 @@ namespace MEMS.Windows
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSerial;
 
         private System.Windows.Forms.TextBox serialNumBox;
 

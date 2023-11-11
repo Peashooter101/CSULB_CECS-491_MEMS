@@ -4,6 +4,7 @@ using MongoDB.Driver;
 
 namespace MEMS
 {
+    /*
     public class DatabaseInitializer
     {
         private static DatabaseInitializer _instance;

@@ -35,8 +35,7 @@ namespace MEMS
 
            //Application.Run(new MaintenanceLogWindow());
            //Application.Run(new ListMachinesWindow());
-           //Application.Run(new MainMenuWindow());
-           Application.Run(new DatabaseConnectionWindow());
+           Application.Run(new MainMenuWindow());
         }
     }
 }

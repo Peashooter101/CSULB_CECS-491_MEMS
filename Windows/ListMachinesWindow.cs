@@ -7,6 +7,7 @@ namespace MEMS.Windows
     public partial class ListMachinesWindow : Form
     { 
         private AddMachineWindow addMachineWindow;
+        private ListMachinesWindow listMachinesWindow;
         public ListMachinesWindow()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace MEMS.Windows
             foreach (var machine in machineList)
             {
                 string[] machineArr =
-                    { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone };
+                    { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone, machine.serial };
                 if (!machine.isActive) continue;
                 var listMachine = new ListViewItem(machineArr);
                 activeMachines.Items.Add(listMachine);
@@ -45,7 +46,7 @@ namespace MEMS.Windows
 
         private void activeMachines_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
         }
         //FormClosing event unsubscribes from the MachineAdded event to prevent memory leak
         private void ListMachinesWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -55,6 +56,30 @@ namespace MEMS.Windows
                 addMachineWindow.MachineAdded -= LoadListView;
                 addMachineWindow.Close();
             }
+        }
+
+        private void activeMachines_DoubleClick(object sender, EventArgs e)
+        {
+            string[] details =
+            {
+                activeMachines.FocusedItem.SubItems[0].Text,
+                activeMachines.FocusedItem.SubItems[1].Text,
+                activeMachines.FocusedItem.SubItems[2].Text,
+                activeMachines.FocusedItem.SubItems[3].Text,
+                activeMachines.FocusedItem.SubItems[4].Text,
+                activeMachines.FocusedItem.SubItems[5].Text
+            };
+            
+            List<string> zones = new List<string>();
+            
+            for (int i = 0; i < activeMachines.Items.Count; i++)
+            {
+                zones.Add(activeMachines.Items[i].SubItems[4].Text);
+            }
+            
+            var detail = new DetailedMachineWindow(listMachinesWindow, details, zones);
+            detail.ShowDialog();
+            LoadListView();
         }
     }
 }

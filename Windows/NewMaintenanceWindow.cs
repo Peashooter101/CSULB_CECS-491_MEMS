@@ -21,7 +21,7 @@ namespace MEMS.Windows
             
         }
 
-        private void PlayPopUpSound()
+        private static void PlayPopUpSound()
         {
             SoundPlayer popUpSound = new SoundPlayer("C:\\Windows\\Media\\Windows Notify System Generic.wav");
             popUpSound.Play();
@@ -120,5 +120,6 @@ namespace MEMS.Windows
         {
             throw new System.NotImplementedException();
         }
+        
     }
 }
