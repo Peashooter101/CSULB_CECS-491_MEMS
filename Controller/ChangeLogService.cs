@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using MongoDB.Driver;
 using System;
+using MongoDB.Bson;
 
 namespace MEMS
 {
@@ -15,7 +16,7 @@ namespace MEMS
             changelogRepository = new Repository<ChangelogEntry>(_dbContext.database, "ChangelogEntries");
         }
         
-        public void CreateChange(DateTime timestamp, string type, string description)
+        public void CreateChange(DateTime timestamp, Type type, string description)
         {
             
             var newChange = new ChangelogEntry()
@@ -34,5 +35,13 @@ namespace MEMS
                 .SortBy(c => c.timestamp)
                 .ToList();
         }
+
+        //public static void businessLocationChange(Type type, string description)
+        //{
+        //    CreateChange(DateTime.Now, type);
+            
+        //}
+        
+        
     }
 }

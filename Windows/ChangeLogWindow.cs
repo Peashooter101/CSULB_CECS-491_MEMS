@@ -30,7 +30,7 @@ namespace MEMS
                     change.userId.ToString(),
                     change.authorId.ToString(),
                     change.timestamp.ToString(CultureInfo.CurrentCulture),
-                    change.type,
+                    change.type.ToString(),
                     change.description
                 };
                 var changelogMachine = new ListViewItem(changeArray);

@@ -29,7 +29,7 @@ namespace MEMS
                 maintenanceTime = DateTime.Today,
             };
             _maintenanceRepository.Create(newMaintenanceReminder);
-            ServiceUtil.changeLogService.CreateChange(DateTime.Now, "Maintenance Add", "maintenance request added");
+            ServiceUtil.changeLogService.CreateChange(DateTime.Now, Type.CreateMaintenanceSchedule, "maintenance request added");
         }
 
         public MaintenanceEntry ReadByType(MaintenanceType type)

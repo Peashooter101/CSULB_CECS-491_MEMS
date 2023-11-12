@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MEMS
 {
+    // TODO: create type enumeration
     public class ChangelogEntry : IEntity
     {
         [BsonId]
@@ -16,7 +17,7 @@ namespace MEMS
         public ObjectId userId { get; set; } = ObjectId.Empty;
         public ObjectId authorId { get; set; } = ObjectId.Empty;
         public DateTime timestamp { get; set; } 
-        public string type { get; set; }
+        public Type type { get; set; }
         public string description { get; set; }
     }
 }

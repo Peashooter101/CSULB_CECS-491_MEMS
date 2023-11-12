@@ -27,6 +27,8 @@ namespace MEMS
                     clientId = client
                 };
                 userRoleRepository.Create(newUserRole);
+                ServiceUtil.changeLogService.CreateChange(DateTime.Now, Type.CreateUserRole,
+                    "added " + roleTitle + "to UserRoles");
             }
 
             public void AddUser(UserRole role, List<ObjectId> locationIds, string username, string email, string password)
@@ -43,6 +45,7 @@ namespace MEMS
             
                 role.users.Add(newUser);
                 userRoleRepository.Update(role);
+                ServiceUtil.changeLogService.CreateChange(DateTime.Now, Type.CreateUser, "created user: " + username);
             }
     }
 }

@@ -28,6 +28,7 @@ namespace MEMS
                 clientId = client
             };
             businessRepository.Create(newBusiness);
+            ServiceUtil.changeLogService.CreateChange(DateTime.Now, Type.CreateBusinessLocation, businessAddress + " created");
         }
 
         public void AddBuilding(string buildingName, BusinessLocation location)
@@ -41,6 +42,7 @@ namespace MEMS
             
             location.buildings.Add(newBuilding);
             businessRepository.Update(location);
+            ServiceUtil.changeLogService.CreateChange(DateTime.Now, Type.AddBuilding, "added " + buildingName + " to " + location);
         }
     }
 }
