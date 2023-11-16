@@ -6,6 +6,7 @@ namespace MEMS
         DeleteBusinessLocation = 1,
         AddBuilding = 2,
         RemoveBuilding = 3,
+        ModifyBusinessLocationName = 4,
         
         CreateBuilding = 10,
         DeleteBuilding = 11,
