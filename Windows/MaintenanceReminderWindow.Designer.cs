@@ -31,6 +31,7 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceReminderWindow));
             this.machineOverviewLabel = new System.Windows.Forms.Label();
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.MachineNamee = new System.Windows.Forms.ColumnHeader();
@@ -46,7 +47,6 @@ namespace MEMS.Windows
             this.vendorEmail = new System.Windows.Forms.ColumnHeader();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.mainMenuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // machineOverviewLabel
@@ -166,15 +166,6 @@ namespace MEMS.Windows
             this.dateTimePicker1.Size = new System.Drawing.Size(228, 20);
             this.dateTimePicker1.TabIndex = 5;
             // 
-            // mainMenuButton
-            // 
-            this.mainMenuButton.Location = new System.Drawing.Point(687, 402);
-            this.mainMenuButton.Name = "mainMenuButton";
-            this.mainMenuButton.Size = new System.Drawing.Size(99, 39);
-            this.mainMenuButton.TabIndex = 6;
-            this.mainMenuButton.Text = "Main Menu";
-            this.mainMenuButton.UseVisualStyleBackColor = true;
-            // 
             // MaintenanceReminderWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,21 +173,21 @@ namespace MEMS.Windows
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.vendorListView);
             this.Controls.Add(this.vendorLabel);
             this.Controls.Add(this.machineListView);
             this.Controls.Add(this.machineOverviewLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MaintenanceReminderWindow";
+            this.Text = "[MEMS] Maintenance Reminder Window";
             this.Load += new System.EventHandler(this.MachineReminder_Load);
             this.ResumeLayout(false);
         }
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button mainMenuButton;
 
         private System.Windows.Forms.Label label1;
 

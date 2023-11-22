@@ -31,6 +31,7 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMaintenanceWindow));
             this.listview = new System.Windows.Forms.ListView();
             this.MachineName = new System.Windows.Forms.ColumnHeader();
             this.MachineUID = new System.Windows.Forms.ColumnHeader();
@@ -38,7 +39,6 @@ namespace MEMS.Windows
             this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.printButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.mainMenuButton = new System.Windows.Forms.Button();
             this.companyTextBox = new System.Windows.Forms.TextBox();
             this.phoneBoxText = new System.Windows.Forms.TextBox();
             this.contactTextBox = new System.Windows.Forms.TextBox();
@@ -110,21 +110,12 @@ namespace MEMS.Windows
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             // 
-            // mainMenuButton
-            // 
-            this.mainMenuButton.Location = new System.Drawing.Point(582, 598);
-            this.mainMenuButton.Name = "mainMenuButton";
-            this.mainMenuButton.Size = new System.Drawing.Size(85, 40);
-            this.mainMenuButton.TabIndex = 8;
-            this.mainMenuButton.Text = "Main Menu";
-            this.mainMenuButton.UseVisualStyleBackColor = true;
-            // 
             // companyTextBox
             // 
             this.companyTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.companyTextBox.Location = new System.Drawing.Point(468, 68);
+            this.companyTextBox.Location = new System.Drawing.Point(408, 68);
             this.companyTextBox.Name = "companyTextBox";
-            this.companyTextBox.Size = new System.Drawing.Size(290, 23);
+            this.companyTextBox.Size = new System.Drawing.Size(350, 23);
             this.companyTextBox.TabIndex = 10;
             this.companyTextBox.Text = "Enter Company Name";
             this.companyTextBox.TextChanged += new System.EventHandler(this.companyTextBox_TextChanged);
@@ -132,9 +123,9 @@ namespace MEMS.Windows
             // phoneBoxText
             // 
             this.phoneBoxText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.phoneBoxText.Location = new System.Drawing.Point(468, 101);
+            this.phoneBoxText.Location = new System.Drawing.Point(408, 101);
             this.phoneBoxText.Name = "phoneBoxText";
-            this.phoneBoxText.Size = new System.Drawing.Size(290, 23);
+            this.phoneBoxText.Size = new System.Drawing.Size(350, 23);
             this.phoneBoxText.TabIndex = 11;
             this.phoneBoxText.Text = "Enter Phone Number";
             this.phoneBoxText.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -142,72 +133,67 @@ namespace MEMS.Windows
             // contactTextBox
             // 
             this.contactTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.contactTextBox.Location = new System.Drawing.Point(468, 132);
+            this.contactTextBox.Location = new System.Drawing.Point(408, 132);
             this.contactTextBox.Name = "contactTextBox";
-            this.contactTextBox.Size = new System.Drawing.Size(290, 23);
+            this.contactTextBox.Size = new System.Drawing.Size(350, 23);
             this.contactTextBox.TabIndex = 12;
             this.contactTextBox.Text = "Enter Contact Name";
             // 
             // emailTextBox
             // 
             this.emailTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.emailTextBox.Location = new System.Drawing.Point(468, 166);
+            this.emailTextBox.Location = new System.Drawing.Point(408, 166);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(290, 23);
+            this.emailTextBox.Size = new System.Drawing.Size(350, 23);
             this.emailTextBox.TabIndex = 13;
             this.emailTextBox.Text = "Enter Contact Email";
             // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.descriptionTextBox.Location = new System.Drawing.Point(468, 199);
+            this.descriptionTextBox.Location = new System.Drawing.Point(408, 199);
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(290, 23);
+            this.descriptionTextBox.Size = new System.Drawing.Size(350, 23);
             this.descriptionTextBox.TabIndex = 14;
             this.descriptionTextBox.Text = "Enter Issue Description";
             // 
             // companyLabel
             // 
-            this.companyLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.companyLabel.Location = new System.Drawing.Point(293, 68);
             this.companyLabel.Name = "companyLabel";
-            this.companyLabel.Size = new System.Drawing.Size(169, 23);
+            this.companyLabel.Size = new System.Drawing.Size(109, 23);
             this.companyLabel.TabIndex = 15;
             this.companyLabel.Text = "Company:";
             // 
             // phoneLabel
             // 
-            this.phoneLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.phoneLabel.Location = new System.Drawing.Point(293, 101);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(169, 23);
+            this.phoneLabel.Size = new System.Drawing.Size(109, 23);
             this.phoneLabel.TabIndex = 16;
             this.phoneLabel.Text = "Phone:";
             // 
             // contactLabel
             // 
-            this.contactLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.contactLabel.Location = new System.Drawing.Point(293, 134);
             this.contactLabel.Name = "contactLabel";
-            this.contactLabel.Size = new System.Drawing.Size(169, 23);
+            this.contactLabel.Size = new System.Drawing.Size(109, 23);
             this.contactLabel.TabIndex = 17;
             this.contactLabel.Text = "Contact:";
             // 
             // emailLabel
             // 
-            this.emailLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.emailLabel.Location = new System.Drawing.Point(293, 168);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(169, 23);
+            this.emailLabel.Size = new System.Drawing.Size(109, 23);
             this.emailLabel.TabIndex = 18;
             this.emailLabel.Text = "Email:";
             // 
             // issueDescriptionLabel
             // 
-            this.issueDescriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.issueDescriptionLabel.Location = new System.Drawing.Point(293, 201);
             this.issueDescriptionLabel.Name = "issueDescriptionLabel";
-            this.issueDescriptionLabel.Size = new System.Drawing.Size(169, 23);
+            this.issueDescriptionLabel.Size = new System.Drawing.Size(109, 23);
             this.issueDescriptionLabel.TabIndex = 19;
             this.issueDescriptionLabel.Text = "Issue Description:";
             this.issueDescriptionLabel.Click += new System.EventHandler(this.label4_Click);
@@ -225,7 +211,6 @@ namespace MEMS.Windows
             // 
             // newMaintenanceRequestLabel
             // 
-            this.newMaintenanceRequestLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.newMaintenanceRequestLabel.Location = new System.Drawing.Point(293, 36);
             this.newMaintenanceRequestLabel.Name = "newMaintenanceRequestLabel";
             this.newMaintenanceRequestLabel.Size = new System.Drawing.Size(170, 24);
@@ -243,7 +228,7 @@ namespace MEMS.Windows
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(103, 598);
+            this.addButton.Location = new System.Drawing.Point(202, 598);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(85, 40);
             this.addButton.TabIndex = 23;
@@ -252,7 +237,7 @@ namespace MEMS.Windows
             // 
             // updateRequestButton
             // 
-            this.updateRequestButton.Location = new System.Drawing.Point(202, 598);
+            this.updateRequestButton.Location = new System.Drawing.Point(299, 598);
             this.updateRequestButton.Name = "updateRequestButton";
             this.updateRequestButton.Size = new System.Drawing.Size(85, 40);
             this.updateRequestButton.TabIndex = 24;
@@ -282,13 +267,13 @@ namespace MEMS.Windows
             this.Controls.Add(this.contactTextBox);
             this.Controls.Add(this.phoneBoxText);
             this.Controls.Add(this.companyTextBox);
-            this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.listview);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMaintenanceWindow";
-            this.Text = "New Maintenance Request";
+            this.Text = "[MEMS] New Maintenance Request";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewMaintenanceWindow_FormClosing);
             this.Load += new System.EventHandler(this.NewMaintenanceWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -318,8 +303,6 @@ namespace MEMS.Windows
         private System.Windows.Forms.TextBox contactTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
-
-        private System.Windows.Forms.Button mainMenuButton;
 
         private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button saveButton;

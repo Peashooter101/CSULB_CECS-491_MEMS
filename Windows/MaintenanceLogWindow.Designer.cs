@@ -29,14 +29,15 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceLogWindow));
             this.MachineList = new System.Windows.Forms.ListBox();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
-            this.BackBtn = new System.Windows.Forms.Button();
             this.AddMaintenanceBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.MachineDetails = new System.Windows.Forms.ListBox();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MachineList
@@ -70,16 +71,6 @@ namespace MEMS.Windows
             this.UpdateBtn.Text = "Update Maintenance Entry";
             this.UpdateBtn.UseVisualStyleBackColor = true;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
-            // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(486, 293);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(68, 27);
-            this.BackBtn.TabIndex = 7;
-            this.BackBtn.Text = "Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // AddMaintenanceBtn
             // 
@@ -121,6 +112,16 @@ namespace MEMS.Windows
             this.MachineDetails.Size = new System.Drawing.Size(331, 124);
             this.MachineDetails.TabIndex = 19;
             // 
+            // BackBtn
+            // 
+            this.BackBtn.Location = new System.Drawing.Point(486, 293);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(68, 27);
+            this.BackBtn.TabIndex = 7;
+            this.BackBtn.Text = "Back";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
             // MaintenanceLogWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -136,6 +137,7 @@ namespace MEMS.Windows
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.MachineList);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaintenanceLogWindow";
             this.Text = "[MEMS] Maintenance Log";
             this.ResumeLayout(false);
