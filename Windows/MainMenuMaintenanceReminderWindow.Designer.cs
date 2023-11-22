@@ -31,6 +31,7 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuMaintenanceReminderWindow));
             this.maintenanceEntriesList = new System.Windows.Forms.ListView();
             this.id = new System.Windows.Forms.ColumnHeader();
             this.severity = new System.Windows.Forms.ColumnHeader();
@@ -51,9 +52,9 @@ namespace MEMS.Windows
             this.maintenanceEntriesList.FullRowSelect = true;
             this.maintenanceEntriesList.GridLines = true;
             this.maintenanceEntriesList.HideSelection = false;
-            this.maintenanceEntriesList.Location = new System.Drawing.Point(12, 12);
+            this.maintenanceEntriesList.Location = new System.Drawing.Point(14, 14);
             this.maintenanceEntriesList.Name = "maintenanceEntriesList";
-            this.maintenanceEntriesList.Size = new System.Drawing.Size(776, 426);
+            this.maintenanceEntriesList.Size = new System.Drawing.Size(905, 491);
             this.maintenanceEntriesList.TabIndex = 12;
             this.maintenanceEntriesList.UseCompatibleStateImageBehavior = false;
             this.maintenanceEntriesList.View = System.Windows.Forms.View.Details;
@@ -88,16 +89,22 @@ namespace MEMS.Windows
             // description
             // 
             this.description.Text = "Description";
-            this.description.Width = 350;
+            this.description.Width = 477;
+            // 
+            // flashTimer
+            // 
+            this.flashTimer.SynchronizingObject = this;
             // 
             // MainMenuMaintenanceReminderWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 476);
+            this.ClientSize = new System.Drawing.Size(938, 549);
             this.Controls.Add(this.maintenanceEntriesList);
+            this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuMaintenanceReminderWindow";
-            this.Text = "Maintenance Reminder";
+            this.Text = "[MEMS] Maintenance Reminder";
             this.Load += new System.EventHandler(this.MainMenuMaintenanceReminder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flashTimer)).EndInit();
             this.ResumeLayout(false);

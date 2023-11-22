@@ -31,6 +31,7 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListMachinesWindow));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.activeMachines = new System.Windows.Forms.ListView();
             this.MachineName = new System.Windows.Forms.ColumnHeader();
@@ -159,6 +160,7 @@ namespace MEMS.Windows
             this.Controls.Add(this.activeMachines);
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListMachinesWindow";
             this.Text = "Active Machines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListMachinesWindow_FormClosing);
