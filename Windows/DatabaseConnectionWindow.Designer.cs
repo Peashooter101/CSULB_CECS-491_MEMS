@@ -31,6 +31,7 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatabaseConnectionWindow));
             this.dbConnectString = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.connectStringLabel = new System.Windows.Forms.Label();
@@ -41,48 +42,51 @@ namespace MEMS.Windows
             // 
             // dbConnectString
             // 
-            this.dbConnectString.Location = new System.Drawing.Point(172, 51);
+            this.dbConnectString.BackColor = System.Drawing.Color.GhostWhite;
+            this.dbConnectString.Location = new System.Drawing.Point(201, 59);
             this.dbConnectString.Name = "dbConnectString";
-            this.dbConnectString.Size = new System.Drawing.Size(300, 20);
+            this.dbConnectString.Size = new System.Drawing.Size(349, 23);
             this.dbConnectString.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 23);
+            this.label1.Size = new System.Drawing.Size(349, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Please provide the following MongoDB Database Information";
             // 
             // connectStringLabel
             // 
-            this.connectStringLabel.Location = new System.Drawing.Point(10, 51);
+            this.connectStringLabel.Location = new System.Drawing.Point(12, 59);
             this.connectStringLabel.Name = "connectStringLabel";
-            this.connectStringLabel.Size = new System.Drawing.Size(156, 20);
+            this.connectStringLabel.Size = new System.Drawing.Size(182, 23);
             this.connectStringLabel.TabIndex = 2;
             this.connectStringLabel.Text = "Database Connection String";
             // 
             // dbNameLabel
             // 
-            this.dbNameLabel.Location = new System.Drawing.Point(10, 90);
+            this.dbNameLabel.Location = new System.Drawing.Point(12, 104);
             this.dbNameLabel.Name = "dbNameLabel";
-            this.dbNameLabel.Size = new System.Drawing.Size(156, 20);
+            this.dbNameLabel.Size = new System.Drawing.Size(182, 23);
             this.dbNameLabel.TabIndex = 4;
             this.dbNameLabel.Text = "Database Name";
             // 
             // dbName
             // 
-            this.dbName.Location = new System.Drawing.Point(172, 90);
+            this.dbName.BackColor = System.Drawing.Color.GhostWhite;
+            this.dbName.Location = new System.Drawing.Point(201, 104);
             this.dbName.Name = "dbName";
-            this.dbName.Size = new System.Drawing.Size(300, 20);
+            this.dbName.Size = new System.Drawing.Size(349, 23);
             this.dbName.TabIndex = 3;
             // 
             // submitButton
             // 
             this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.submitButton.Location = new System.Drawing.Point(205, 139);
+            this.submitButton.Location = new System.Drawing.Point(239, 160);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.Size = new System.Drawing.Size(87, 27);
             this.submitButton.TabIndex = 5;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -90,17 +94,19 @@ namespace MEMS.Windows
             // 
             // DatabaseConnectionWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(484, 186);
+            this.ClientSize = new System.Drawing.Size(565, 215);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.dbNameLabel);
             this.Controls.Add(this.dbName);
             this.Controls.Add(this.connectStringLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dbConnectString);
+            this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DatabaseConnectionWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
