@@ -128,6 +128,7 @@ namespace MEMS.Windows
             // 
             // lblDoubleClick
             // 
+            this.lblDoubleClick.BackColor = System.Drawing.SystemColors.Control;
             this.lblDoubleClick.Location = new System.Drawing.Point(316, 16);
             this.lblDoubleClick.Name = "lblDoubleClick";
             this.lblDoubleClick.Size = new System.Drawing.Size(335, 23);
@@ -149,7 +150,7 @@ namespace MEMS.Windows
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(805, 505);
             this.Controls.Add(this.FlagButton);
             this.Controls.Add(this.lblDoubleClick);
