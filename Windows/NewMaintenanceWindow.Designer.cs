@@ -32,7 +32,7 @@ namespace MEMS.Windows
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMaintenanceWindow));
-            this.listview = new System.Windows.Forms.ListView();
+            this.activeMachines = new System.Windows.Forms.ListView();
             this.MachineName = new System.Windows.Forms.ColumnHeader();
             this.MachineUID = new System.Windows.Forms.ColumnHeader();
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
@@ -43,7 +43,7 @@ namespace MEMS.Windows
             this.phoneBoxText = new System.Windows.Forms.TextBox();
             this.contactTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.issueDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.companyLabel = new System.Windows.Forms.Label();
             this.phoneLabel = new System.Windows.Forms.Label();
             this.contactLabel = new System.Windows.Forms.Label();
@@ -52,23 +52,28 @@ namespace MEMS.Windows
             this.machineSelectionLabel = new System.Windows.Forms.Label();
             this.newMaintenanceRequestLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.addButton = new System.Windows.Forms.Button();
+            this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addRequestButton = new System.Windows.Forms.Button();
             this.updateRequestButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listview
+            // activeMachines
             // 
-            this.listview.BackColor = System.Drawing.Color.GhostWhite;
-            this.listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.MachineName, this.MachineUID });
-            this.listview.GridLines = true;
-            this.listview.HideSelection = false;
-            this.listview.Location = new System.Drawing.Point(12, 36);
-            this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(275, 556);
-            this.listview.TabIndex = 1;
-            this.listview.UseCompatibleStateImageBehavior = false;
-            this.listview.View = System.Windows.Forms.View.Details;
+            this.activeMachines.BackColor = System.Drawing.Color.GhostWhite;
+            this.activeMachines.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.MachineName, this.MachineUID });
+            this.activeMachines.GridLines = true;
+            this.activeMachines.HideSelection = false;
+            this.activeMachines.Location = new System.Drawing.Point(12, 36);
+            this.activeMachines.Name = "activeMachines";
+            this.activeMachines.Size = new System.Drawing.Size(275, 556);
+            this.activeMachines.TabIndex = 1;
+            this.activeMachines.UseCompatibleStateImageBehavior = false;
+            this.activeMachines.View = System.Windows.Forms.View.Details;
             // 
             // MachineName
             // 
@@ -118,7 +123,6 @@ namespace MEMS.Windows
             this.companyTextBox.Size = new System.Drawing.Size(350, 23);
             this.companyTextBox.TabIndex = 10;
             this.companyTextBox.Text = "Enter Company Name";
-            this.companyTextBox.TextChanged += new System.EventHandler(this.companyTextBox_TextChanged);
             // 
             // phoneBoxText
             // 
@@ -128,7 +132,6 @@ namespace MEMS.Windows
             this.phoneBoxText.Size = new System.Drawing.Size(350, 23);
             this.phoneBoxText.TabIndex = 11;
             this.phoneBoxText.Text = "Enter Phone Number";
-            this.phoneBoxText.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // contactTextBox
             // 
@@ -148,14 +151,14 @@ namespace MEMS.Windows
             this.emailTextBox.TabIndex = 13;
             this.emailTextBox.Text = "Enter Contact Email";
             // 
-            // descriptionTextBox
+            // issueDescriptionTextBox
             // 
-            this.descriptionTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.descriptionTextBox.Location = new System.Drawing.Point(408, 199);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(350, 23);
-            this.descriptionTextBox.TabIndex = 14;
-            this.descriptionTextBox.Text = "Enter Issue Description";
+            this.issueDescriptionTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.issueDescriptionTextBox.Location = new System.Drawing.Point(408, 199);
+            this.issueDescriptionTextBox.Name = "issueDescriptionTextBox";
+            this.issueDescriptionTextBox.Size = new System.Drawing.Size(350, 23);
+            this.issueDescriptionTextBox.TabIndex = 14;
+            this.issueDescriptionTextBox.Text = "Enter Issue Description";
             // 
             // companyLabel
             // 
@@ -196,7 +199,6 @@ namespace MEMS.Windows
             this.issueDescriptionLabel.Size = new System.Drawing.Size(109, 23);
             this.issueDescriptionLabel.TabIndex = 19;
             this.issueDescriptionLabel.Text = "Issue Description:";
-            this.issueDescriptionLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // machineSelectionLabel
             // 
@@ -219,21 +221,49 @@ namespace MEMS.Windows
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.Company, this.Phone, this.Contact, this.Email, this.Issue });
             this.dataGridView1.Location = new System.Drawing.Point(299, 233);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(459, 359);
             this.dataGridView1.TabIndex = 22;
             // 
-            // addButton
+            // Company
             // 
-            this.addButton.Location = new System.Drawing.Point(202, 598);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(85, 40);
-            this.addButton.TabIndex = 23;
-            this.addButton.Text = "Add Request";
-            this.addButton.UseVisualStyleBackColor = true;
+            this.Company.HeaderText = "Company";
+            this.Company.Name = "Company";
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            // 
+            // Contact
+            // 
+            this.Contact.HeaderText = "Contact";
+            this.Contact.Name = "Contact";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // Issue
+            // 
+            this.Issue.HeaderText = "Issue";
+            this.Issue.Name = "Issue";
+            // 
+            // addRequestButton
+            // 
+            this.addRequestButton.Location = new System.Drawing.Point(202, 598);
+            this.addRequestButton.Name = "addRequestButton";
+            this.addRequestButton.Size = new System.Drawing.Size(85, 40);
+            this.addRequestButton.TabIndex = 23;
+            this.addRequestButton.Text = "Add Request";
+            this.addRequestButton.UseVisualStyleBackColor = true;
+            this.addRequestButton.Click += new System.EventHandler(this.addRequestButton_Click);
             // 
             // updateRequestButton
             // 
@@ -253,7 +283,7 @@ namespace MEMS.Windows
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(781, 644);
             this.Controls.Add(this.updateRequestButton);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.addRequestButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.newMaintenanceRequestLabel);
             this.Controls.Add(this.machineSelectionLabel);
@@ -262,14 +292,14 @@ namespace MEMS.Windows
             this.Controls.Add(this.contactLabel);
             this.Controls.Add(this.phoneLabel);
             this.Controls.Add(this.companyLabel);
-            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.issueDescriptionTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.contactTextBox);
             this.Controls.Add(this.phoneBoxText);
             this.Controls.Add(this.companyTextBox);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.printButton);
-            this.Controls.Add(this.listview);
+            this.Controls.Add(this.activeMachines);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMaintenanceWindow";
@@ -281,9 +311,16 @@ namespace MEMS.Windows
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Issue;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Company;
+
         private System.Windows.Forms.Button updateRequestButton;
 
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button addRequestButton;
 
         private System.Windows.Forms.DataGridView dataGridView1;
 
@@ -302,7 +339,7 @@ namespace MEMS.Windows
         private System.Windows.Forms.TextBox phoneBoxText;
         private System.Windows.Forms.TextBox contactTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox issueDescriptionTextBox;
 
         private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button saveButton;
@@ -313,7 +350,7 @@ namespace MEMS.Windows
         private System.Windows.Forms.ColumnHeader MachineName;
         private System.Windows.Forms.ColumnHeader MachineUID;
 
-        private System.Windows.Forms.ListView listview;
+        private System.Windows.Forms.ListView activeMachines;
 
         #endregion
     }
