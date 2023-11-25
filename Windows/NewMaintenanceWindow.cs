@@ -10,6 +10,10 @@ namespace MEMS.Windows
         public NewMaintenanceWindow()
         {
             InitializeComponent();
+            
+            activeMachines.SelectionMode = SelectionMode.None;
+            //activeMachines.DataSource = "name";
+            activeMachines.SelectionMode = SelectionMode.One;
             //NewMaintenanceWindow_FormClosing();
         }
         //this should be in its own class... with NewMaintenanceWindow_FormClosing
@@ -54,36 +58,49 @@ namespace MEMS.Windows
         }
         private void DataInputFields()
         {
-            dataGridView1.Rows.Add(companyTextBox.Text,
-                phoneBoxText.Text,
-                contactTextBox.Text,
-                emailTextBox.Text,
-                issueDescriptionTextBox.Text);
+            dataGridView1.Rows.Add("Edit Company",
+                "Edit Phone",
+                "Edit Contact",
+                "Edit Email",
+                "Edit Issue");
         }
 
-        /*TEST CODE*/
+        private void MachineList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var machine = (Machine)activeMachines.SelectedItem;
+            if (activeMachines.SelectedItem == null)
+            {
+                return;
+            }
+
+            machineDisplay.Items.Clear();
+            machineDisplay.Items.Add("Name: " + machine.name);
+            machineDisplay.Items.Add("Model: " + machine.model);
+            machineDisplay.Items.Add("Manufacturer: " + machine.manufacturer);
+            machineDisplay.Items.Add("Zone: " + machine.zone);
+        }
+        
+
         private void LoadListView()
         {
-            //test objects to display in window 
-            //note: MaintenanceRequests will need a Machine reference
-
             List<Machine> machineList = ServiceUtil.machineService.GetMachinesByPage(1);
+            var machines = new List<Machine>();
             foreach (var machine in machineList)
             {
-                string[] machineArr = { machine.name, machine.Id.ToString().Substring(19)};
+                machines.Add(machine);
                 if (!machine.isActive) continue;
-                var listMachine = new ListViewItem(machineArr);
-                activeMachines.Items.Add(listMachine);
+                activeMachines.Items.Add("ID: " + machine.Id.ToString().Substring(19) + " Name: " + machine.name );
             }
+
+            activeMachines.DataSource = machines;
+            activeMachines.DisplayMember = "name";
+            activeMachines.SelectionMode = SelectionMode.One;
+
         }
 
         private void addRequestButton_Click(object sender, EventArgs e)
         {
             
-        }
-
-        private void companyTextBox_TextChanged(string companyText)
-        {
             
         }
     }
