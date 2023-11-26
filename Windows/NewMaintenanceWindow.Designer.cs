@@ -43,6 +43,8 @@ namespace MEMS.Windows
             this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Severity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RequestType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addRequestButton = new System.Windows.Forms.Button();
             this.updateRequestButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -97,10 +99,10 @@ namespace MEMS.Windows
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.Company, this.Phone, this.Contact, this.Email, this.Issue });
-            this.dataGridView1.Location = new System.Drawing.Point(299, 233);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.Company, this.Phone, this.Contact, this.Email, this.Issue, this.Severity, this.RequestType });
+            this.dataGridView1.Location = new System.Drawing.Point(293, 228);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(459, 359);
+            this.dataGridView1.Size = new System.Drawing.Size(465, 359);
             this.dataGridView1.TabIndex = 22;
             // 
             // Company
@@ -127,6 +129,16 @@ namespace MEMS.Windows
             // 
             this.Issue.HeaderText = "Issue";
             this.Issue.Name = "Issue";
+            // 
+            // Severity
+            // 
+            this.Severity.HeaderText = "Severity";
+            this.Severity.Name = "Severity";
+            // 
+            // RequestType
+            // 
+            this.RequestType.HeaderText = "Request Type";
+            this.RequestType.Name = "RequestType";
             // 
             // addRequestButton
             // 
@@ -206,6 +218,10 @@ namespace MEMS.Windows
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn RequestType;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Severity;
 
         private System.Windows.Forms.ListBox activeMachines;
 
