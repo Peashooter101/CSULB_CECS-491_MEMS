@@ -39,7 +39,6 @@ namespace MEMS.Windows
             this.MachineModel = new System.Windows.Forms.ColumnHeader();
             this.MachineManufacturer = new System.Windows.Forms.ColumnHeader();
             this.MachineZone = new System.Windows.Forms.ColumnHeader();
-            this.printButton = new System.Windows.Forms.Button();
             this.addNewMachineButton = new System.Windows.Forms.Button();
             this.lblDoubleClick = new System.Windows.Forms.Label();
             this.FlagButton = new System.Windows.Forms.Button();
@@ -102,18 +101,6 @@ namespace MEMS.Windows
             this.MachineZone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MachineZone.Width = 62;
             // 
-            // printButton
-            // 
-            this.printButton.BackColor = System.Drawing.Color.GhostWhite;
-            this.printButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.printButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.printButton.Location = new System.Drawing.Point(26, 449);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(85, 32);
-            this.printButton.TabIndex = 3;
-            this.printButton.Text = "Print";
-            this.printButton.UseVisualStyleBackColor = false;
-            // 
             // addNewMachineButton
             // 
             this.addNewMachineButton.BackColor = System.Drawing.Color.GhostWhite;
@@ -139,7 +126,7 @@ namespace MEMS.Windows
             // 
             // FlagButton
             // 
-            this.FlagButton.Location = new System.Drawing.Point(117, 449);
+            this.FlagButton.Location = new System.Drawing.Point(27, 449);
             this.FlagButton.Name = "FlagButton";
             this.FlagButton.Size = new System.Drawing.Size(91, 32);
             this.FlagButton.TabIndex = 7;
@@ -156,7 +143,6 @@ namespace MEMS.Windows
             this.Controls.Add(this.FlagButton);
             this.Controls.Add(this.lblDoubleClick);
             this.Controls.Add(this.addNewMachineButton);
-            this.Controls.Add(this.printButton);
             this.Controls.Add(this.activeMachines);
             this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,7 +173,6 @@ namespace MEMS.Windows
         private System.Windows.Forms.ColumnHeader MachineName;
 
         private System.Windows.Forms.ListView activeMachines;
-        private System.Windows.Forms.Button printButton;
 
         private System.Windows.Forms.TextBox textBox1;
 

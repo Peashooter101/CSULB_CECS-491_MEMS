@@ -100,9 +100,9 @@ namespace MEMS.Windows
             this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.Company, this.Phone, this.Contact, this.Email, this.Issue, this.Severity, this.RequestType });
-            this.dataGridView1.Location = new System.Drawing.Point(293, 228);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 413);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(465, 359);
+            this.dataGridView1.Size = new System.Drawing.Size(745, 179);
             this.dataGridView1.TabIndex = 22;
             // 
             // Company
@@ -175,9 +175,9 @@ namespace MEMS.Windows
             this.machineDisplay.BackColor = System.Drawing.Color.GhostWhite;
             this.machineDisplay.FormattingEnabled = true;
             this.machineDisplay.ItemHeight = 15;
-            this.machineDisplay.Location = new System.Drawing.Point(293, 43);
+            this.machineDisplay.Location = new System.Drawing.Point(299, 43);
             this.machineDisplay.Name = "machineDisplay";
-            this.machineDisplay.Size = new System.Drawing.Size(465, 184);
+            this.machineDisplay.Size = new System.Drawing.Size(459, 364);
             this.machineDisplay.TabIndex = 26;
             this.machineDisplay.SelectedIndexChanged += new System.EventHandler(this.MachineList_SelectedIndexChanged);
             // 
@@ -188,7 +188,7 @@ namespace MEMS.Windows
             this.activeMachines.ItemHeight = 15;
             this.activeMachines.Location = new System.Drawing.Point(13, 43);
             this.activeMachines.Name = "activeMachines";
-            this.activeMachines.Size = new System.Drawing.Size(274, 544);
+            this.activeMachines.Size = new System.Drawing.Size(274, 364);
             this.activeMachines.TabIndex = 27;
             this.activeMachines.SelectedIndexChanged += new System.EventHandler(this.MachineList_SelectedIndexChanged);
             // 

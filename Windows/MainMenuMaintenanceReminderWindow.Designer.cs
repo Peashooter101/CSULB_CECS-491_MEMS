@@ -54,7 +54,7 @@ namespace MEMS.Windows
             this.maintenanceEntriesList.HideSelection = false;
             this.maintenanceEntriesList.Location = new System.Drawing.Point(14, 14);
             this.maintenanceEntriesList.Name = "maintenanceEntriesList";
-            this.maintenanceEntriesList.Size = new System.Drawing.Size(905, 491);
+            this.maintenanceEntriesList.Size = new System.Drawing.Size(671, 491);
             this.maintenanceEntriesList.TabIndex = 12;
             this.maintenanceEntriesList.UseCompatibleStateImageBehavior = false;
             this.maintenanceEntriesList.View = System.Windows.Forms.View.Details;
@@ -99,7 +99,7 @@ namespace MEMS.Windows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 549);
+            this.ClientSize = new System.Drawing.Size(697, 549);
             this.Controls.Add(this.maintenanceEntriesList);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

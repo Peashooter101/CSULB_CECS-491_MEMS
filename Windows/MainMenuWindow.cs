@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Globalization;
 using System.Windows.Forms;
 using MEMS.Model;
@@ -35,7 +37,7 @@ namespace MEMS.Windows
             containerControl1.Controls.Add(accountInfo);
             accountInfo.TopLevel = false;
             accountInfo.FormBorderStyle = FormBorderStyle.Sizable;
-            accountInfo.Dock = DockStyle.Fill;
+            //accountInfo.Dock = DockStyle.Fill;
             accountInfo.BringToFront();
             accountInfo.Show();
         }
@@ -48,7 +50,7 @@ namespace MEMS.Windows
             addMachine.TopLevel = false;
             containerControl1.Controls.Add(addMachine);
             addMachine.FormBorderStyle = FormBorderStyle.Sizable;
-            addMachine.Dock = DockStyle.Fill; 
+            //addMachine.Dock = DockStyle.Fill; 
             addMachine.BringToFront();
             addMachine.Show(); 
         }
@@ -60,7 +62,7 @@ namespace MEMS.Windows
             changeLog.TopLevel = false;
             containerControl1.Controls.Add(changeLog);
             changeLog.FormBorderStyle = FormBorderStyle.Sizable;
-            changeLog.Dock = DockStyle.Fill;
+            //changeLog.Dock = DockStyle.Fill;
             changeLog.BringToFront();
             changeLog.Show();
         }
@@ -84,7 +86,7 @@ namespace MEMS.Windows
             listMachines.TopLevel = false;
             containerControl1.Controls.Add(listMachines);
             listMachines.FormBorderStyle = FormBorderStyle.Sizable;
-            listMachines.Dock = DockStyle.Fill;
+            //listMachines.Dock = DockStyle.Fill;
             listMachines.BringToFront();
             listMachines.Show();
         }
@@ -96,7 +98,7 @@ namespace MEMS.Windows
             maintenanceLog.TopLevel = false;
             containerControl1.Controls.Add(maintenanceLog);
             maintenanceLog.FormBorderStyle = FormBorderStyle.Sizable;
-            maintenanceLog.Dock = DockStyle.Fill;
+            //maintenanceLog.Dock = DockStyle.Fill;
             maintenanceLog.BringToFront();
             maintenanceLog.Show();
         }
@@ -108,7 +110,7 @@ namespace MEMS.Windows
             maintenanceReminder.TopLevel = false;
             containerControl1.Controls.Add(maintenanceReminder);
             maintenanceReminder.FormBorderStyle = FormBorderStyle.Sizable;
-            maintenanceReminder.Dock = DockStyle.Fill;
+            //maintenanceReminder.Dock = DockStyle.Fill;
             maintenanceReminder.BringToFront();
             maintenanceReminder.Show();
         }
@@ -120,10 +122,28 @@ namespace MEMS.Windows
             newMaintenance.TopLevel = false;
             containerControl1.Controls.Add(newMaintenance);
             newMaintenance.FormBorderStyle = FormBorderStyle.Sizable;
-            newMaintenance.Dock = DockStyle.Fill;
+            //newMaintenance.Dock = DockStyle.Fill;
             newMaintenance.BringToFront();
             newMaintenance.Show();
         }
+        private Bitmap memoryImage;
+        private void printContainer_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Graphics graphics = containerControl1.CreateGraphics();
+            Size size = containerControl1.Size;
+            
+            memoryImage = new Bitmap(size.Width, size.Height, graphics);
+            graphics = Graphics.FromImage(memoryImage);
+            Point point = PointToScreen(containerControl1.Location);
+            //Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            //memoryGraphics.CopyFromScreen(containerControl1.Location.X, containerControl1.Location.Y,0, 0, containerControl1.Size );
+            graphics.CopyFromScreen(point.X, point.Y, 0, 0, Size);
+            printContainer.Print();
+        }
     }
 }
