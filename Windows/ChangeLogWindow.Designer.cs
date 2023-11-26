@@ -32,7 +32,6 @@ namespace MEMS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeLogWindow));
-            this.bttnPrint = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.ID = new System.Windows.Forms.ColumnHeader();
             this.MachineID = new System.Windows.Forms.ColumnHeader();
@@ -42,16 +41,6 @@ namespace MEMS
             this.Type = new System.Windows.Forms.ColumnHeader();
             this.Description = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
-            // 
-            // bttnPrint
-            // 
-            this.bttnPrint.Location = new System.Drawing.Point(600, 472);
-            this.bttnPrint.Margin = new System.Windows.Forms.Padding(2);
-            this.bttnPrint.Name = "bttnPrint";
-            this.bttnPrint.Size = new System.Drawing.Size(87, 28);
-            this.bttnPrint.TabIndex = 14;
-            this.bttnPrint.Text = "Print";
-            this.bttnPrint.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
@@ -103,9 +92,8 @@ namespace MEMS
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(702, 532);
+            this.ClientSize = new System.Drawing.Size(702, 462);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.bttnPrint);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -125,8 +113,6 @@ namespace MEMS
         private System.Windows.Forms.ColumnHeader Description;
 
         private System.Windows.Forms.ListView listView1;
-
-        private System.Windows.Forms.Button bttnPrint;
 
         #endregion
     }

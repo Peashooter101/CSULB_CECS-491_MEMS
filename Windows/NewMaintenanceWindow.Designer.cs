@@ -34,7 +34,6 @@ namespace MEMS.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMaintenanceWindow));
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.printButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.machineSelectionLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -64,15 +63,6 @@ namespace MEMS.Windows
             this.dataGridTextBoxColumn2.Format = "";
             this.dataGridTextBoxColumn2.FormatInfo = null;
             this.dataGridTextBoxColumn2.Width = -1;
-            // 
-            // printButton
-            // 
-            this.printButton.Location = new System.Drawing.Point(12, 598);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(85, 40);
-            this.printButton.TabIndex = 4;
-            this.printButton.Text = "Print";
-            this.printButton.UseVisualStyleBackColor = true;
             // 
             // saveButton
             // 
@@ -142,7 +132,7 @@ namespace MEMS.Windows
             // 
             // addRequestButton
             // 
-            this.addRequestButton.Location = new System.Drawing.Point(202, 598);
+            this.addRequestButton.Location = new System.Drawing.Point(13, 598);
             this.addRequestButton.Name = "addRequestButton";
             this.addRequestButton.Size = new System.Drawing.Size(85, 40);
             this.addRequestButton.TabIndex = 23;
@@ -152,7 +142,7 @@ namespace MEMS.Windows
             // 
             // updateRequestButton
             // 
-            this.updateRequestButton.Location = new System.Drawing.Point(299, 598);
+            this.updateRequestButton.Location = new System.Drawing.Point(104, 598);
             this.updateRequestButton.Name = "updateRequestButton";
             this.updateRequestButton.Size = new System.Drawing.Size(85, 40);
             this.updateRequestButton.TabIndex = 24;
@@ -208,7 +198,6 @@ namespace MEMS.Windows
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.machineSelectionLabel);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.printButton);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMaintenanceWindow";
@@ -244,7 +233,6 @@ namespace MEMS.Windows
 
         private System.Windows.Forms.Label machineSelectionLabel;
 
-        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button saveButton;
 
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn1;
