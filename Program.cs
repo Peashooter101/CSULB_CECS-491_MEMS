@@ -14,6 +14,7 @@ namespace MEMS
         //private static DatabaseContext _dbContext;
         //public static MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGO_DB_URI"));
         //public static string memsDbName = "mems_test";
+        public static UserRole.User currentUser;
         
         /// <summary>
         /// The main entry point for the application.
@@ -36,7 +37,9 @@ namespace MEMS
            //Application.Run(new MaintenanceLogWindow());
            //Application.Run(new ListMachinesWindow());
            //Application.Run(new MainMenuWindow());
-           if (Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING") != null)
+           
+           //Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", null, EnvironmentVariableTarget.User);
+           if (Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING", EnvironmentVariableTarget.User) != null)
            {
                Application.Run(new LoginWindow());
            }

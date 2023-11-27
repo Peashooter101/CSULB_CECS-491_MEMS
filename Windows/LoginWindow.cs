@@ -12,12 +12,33 @@ namespace MEMS.Windows
 
         private void button1_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if(ServiceUtil.UserRoleService.matchUser(userNameBox.Text, passwordBox.Text) == null)
+            {
+                createAccountLabel.Text = "no user with that email and password";
+            }
+            else
+            {
+                Program.currentUser = ServiceUtil.UserRoleService.matchUser(userNameBox.Text, passwordBox.Text);
+                Hide();
+                MainMenuWindow mainMenuWindow = new MainMenuWindow();
+                mainMenuWindow.Show();
+            }
+            
         }
 
         private void createAccountLabel_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+        }
+
+        private void userNameBox_TextChanged(object sender, EventArgs e)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        private void passwordBox_TextChanged(object sender, EventArgs e)
+        {
+            //throw new System.NotImplementedException();
         }
     }
 }

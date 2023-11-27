@@ -33,12 +33,13 @@ namespace MEMS.Windows
             {
                 label2.Text = "Connection successful";
                 LoginService.SetConnectionString(dbConnectString.Text);
-                var loginWindow = new LoginWindow();
-                loginWindow.Show();
+                ServiceUtil.LoginService.CreateUser(textBox2.Text, textBox3.Text, textBox1.Text);
+                //var loginWindow = new LoginWindow();
+                //loginWindow.Show();
                 Hide();
                 
-                //var MainMenuWindow = new MainMenuWindow();
-                //MainMenuWindow.Show();
+                var MainMenuWindow = new MainMenuWindow();
+                MainMenuWindow.Show();
 
             }
             else
@@ -46,7 +47,7 @@ namespace MEMS.Windows
                 label2.Text = "Failed to connect using connection string";
             }
 
-            ServiceUtil.LoginService.CreateUser(textBox2.Text, textBox3.Text, textBox1.Text);
+            
         }
 
         private void DatabaseConnectionWindow_Load(object sender, EventArgs e)

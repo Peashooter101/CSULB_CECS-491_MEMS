@@ -99,7 +99,7 @@ namespace MEMS.Windows
             // 
             this.label2.Location = new System.Drawing.Point(172, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.Size = new System.Drawing.Size(243, 23);
             this.label2.TabIndex = 6;
             this.label2.Text = ":";
             this.label2.Click += new System.EventHandler(this.label2_Click_1);
@@ -152,7 +152,6 @@ namespace MEMS.Windows
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(300, 20);
             this.textBox3.TabIndex = 11;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // DatabaseConnectionWindow
             // 

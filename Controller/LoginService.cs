@@ -27,7 +27,7 @@ namespace MEMS
 
         public static void SetConnectionString(string connectionString)
         {
-            Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", connectionString);
+            Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", connectionString, EnvironmentVariableTarget.User);
         }
 
         public static bool TestMongoDBConnection(string connectionString)
@@ -49,8 +49,8 @@ namespace MEMS
         {
             //ServiceUtil.ClientService.CreateClient("MEMS");
             //Client cli = ServiceUtil.ClientService.ReadByName("MEMS");
-            //ServiceUtil.UserRoleService.CreateUserRole("boss", cli.Id);
-            UserRole usroll = ServiceUtil.UserRoleService.ReadByName("boss");
+            //ServiceUtil.UserRoleService.CreateUserRole("employee", cli.Id);
+            UserRole usroll = ServiceUtil.UserRoleService.ReadByName("employee");
             //UserRole.User userObj = _repository.FindOne(u => u.username == user);
             ServiceUtil.UserRoleService.AddUser(usroll, user, email, pass);
             

@@ -10,12 +10,14 @@ using System.Threading.Tasks;
 
 namespace MEMS
 {
+    
     public interface IRepository<T> where T : IEntity
     {
         void Create(T entity);
         T Read(ObjectId id);
         void Update(T entity);
         void Delete(ObjectId id);
+        
     }
     public class Repository<T> : IRepository<T> where T : IEntity
     {

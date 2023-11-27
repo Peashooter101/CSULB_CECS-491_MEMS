@@ -45,6 +45,7 @@ namespace MEMS.Windows
             this.userNameBox.Name = "userNameBox";
             this.userNameBox.Size = new System.Drawing.Size(115, 20);
             this.userNameBox.TabIndex = 0;
+            this.userNameBox.TextChanged += new System.EventHandler(this.userNameBox_TextChanged);
             // 
             // passwordBox
             // 
@@ -52,6 +53,7 @@ namespace MEMS.Windows
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(115, 20);
             this.passwordBox.TabIndex = 1;
+            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // label1
             // 
@@ -87,13 +89,14 @@ namespace MEMS.Windows
             this.createAccountLabel.Name = "createAccountLabel";
             this.createAccountLabel.Size = new System.Drawing.Size(130, 21);
             this.createAccountLabel.TabIndex = 5;
-            this.createAccountLabel.Text = "Or, create an account.";
+            this.createAccountLabel.Text = ":";
             this.createAccountLabel.Click += new System.EventHandler(this.createAccountLabel_Click);
             // 
             // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(253, 170);
             this.Controls.Add(this.createAccountLabel);
             this.Controls.Add(this.button1);
@@ -101,8 +104,8 @@ namespace MEMS.Windows
             this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.userNameBox);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "LoginWindow";
-            this.Text = "LoginWindow";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
