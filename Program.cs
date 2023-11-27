@@ -14,19 +14,40 @@ namespace MEMS
         //private static DatabaseContext _dbContext;
         //public static MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGO_DB_URI"));
         //public static string memsDbName = "mems_test";
+        public static UserRole.User currentUser;
         
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        private static void Main()
+        static void Main()
         {
             // DatabaseInitializer.GetInstance().CheckDatabase("sample_mems");
             // DatabaseInitializer.GetInstance().CheckCollection("sample_mems", "blah");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new AccountCreationWindow());
             
-           Application.Run(new MainMenuWindow());
+            // Application.Run(new NewMaintenanceWindow());
+           
+
+           // Application.Run(new ListMachinesWindow());
+           //Application.Run(new MaintenanceReminderWindow());
+
+           //Application.Run(new MaintenanceLogWindow());
+           //Application.Run(new ListMachinesWindow());
+           //Application.Run(new MainMenuWindow());
+           
+           //Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", null, EnvironmentVariableTarget.User);
+           if (Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING", EnvironmentVariableTarget.User) != null)
+           {
+               Application.Run(new LoginWindow());
+           }
+           else
+           {
+               Application.Run(new DatabaseConnectionWindow()); 
+           }
+           
         }
     }
 }
