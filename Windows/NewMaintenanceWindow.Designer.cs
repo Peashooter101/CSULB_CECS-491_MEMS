@@ -31,54 +31,26 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            this.listview = new System.Windows.Forms.ListView();
-            this.MachineName = new System.Windows.Forms.ColumnHeader();
-            this.MachineUID = new System.Windows.Forms.ColumnHeader();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMaintenanceWindow));
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.printButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.mainMenuButton = new System.Windows.Forms.Button();
-            this.companyTextBox = new System.Windows.Forms.TextBox();
-            this.phoneBoxText = new System.Windows.Forms.TextBox();
-            this.contactTextBox = new System.Windows.Forms.TextBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.companyLabel = new System.Windows.Forms.Label();
-            this.phoneLabel = new System.Windows.Forms.Label();
-            this.contactLabel = new System.Windows.Forms.Label();
-            this.emailLabel = new System.Windows.Forms.Label();
-            this.issueDescriptionLabel = new System.Windows.Forms.Label();
             this.machineSelectionLabel = new System.Windows.Forms.Label();
-            this.newMaintenanceRequestLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.addButton = new System.Windows.Forms.Button();
+            this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Severity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RequestType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addRequestButton = new System.Windows.Forms.Button();
             this.updateRequestButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.machineDisplay = new System.Windows.Forms.ListBox();
+            this.activeMachines = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listview
-            // 
-            this.listview.BackColor = System.Drawing.Color.GhostWhite;
-            this.listview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { this.MachineName, this.MachineUID });
-            this.listview.GridLines = true;
-            this.listview.HideSelection = false;
-            this.listview.Location = new System.Drawing.Point(12, 36);
-            this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(275, 556);
-            this.listview.TabIndex = 1;
-            this.listview.UseCompatibleStateImageBehavior = false;
-            this.listview.View = System.Windows.Forms.View.Details;
-            // 
-            // MachineName
-            // 
-            this.MachineName.Text = "Name";
-            this.MachineName.Width = 194;
-            // 
-            // MachineUID
-            // 
-            this.MachineUID.Text = "UID";
-            this.MachineUID.Width = 103;
             // 
             // dataGridTextBoxColumn1
             // 
@@ -92,15 +64,6 @@ namespace MEMS.Windows
             this.dataGridTextBoxColumn2.FormatInfo = null;
             this.dataGridTextBoxColumn2.Width = -1;
             // 
-            // printButton
-            // 
-            this.printButton.Location = new System.Drawing.Point(12, 598);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(85, 40);
-            this.printButton.TabIndex = 4;
-            this.printButton.Text = "Print";
-            this.printButton.UseVisualStyleBackColor = true;
-            // 
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(673, 598);
@@ -109,108 +72,6 @@ namespace MEMS.Windows
             this.saveButton.TabIndex = 7;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
-            // 
-            // mainMenuButton
-            // 
-            this.mainMenuButton.Location = new System.Drawing.Point(582, 598);
-            this.mainMenuButton.Name = "mainMenuButton";
-            this.mainMenuButton.Size = new System.Drawing.Size(85, 40);
-            this.mainMenuButton.TabIndex = 8;
-            this.mainMenuButton.Text = "Main Menu";
-            this.mainMenuButton.UseVisualStyleBackColor = true;
-            // 
-            // companyTextBox
-            // 
-            this.companyTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.companyTextBox.Location = new System.Drawing.Point(468, 68);
-            this.companyTextBox.Name = "companyTextBox";
-            this.companyTextBox.Size = new System.Drawing.Size(290, 23);
-            this.companyTextBox.TabIndex = 10;
-            this.companyTextBox.Text = "Enter Company Name";
-            this.companyTextBox.TextChanged += new System.EventHandler(this.companyTextBox_TextChanged);
-            // 
-            // phoneBoxText
-            // 
-            this.phoneBoxText.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.phoneBoxText.Location = new System.Drawing.Point(468, 101);
-            this.phoneBoxText.Name = "phoneBoxText";
-            this.phoneBoxText.Size = new System.Drawing.Size(290, 23);
-            this.phoneBoxText.TabIndex = 11;
-            this.phoneBoxText.Text = "Enter Phone Number";
-            this.phoneBoxText.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // contactTextBox
-            // 
-            this.contactTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.contactTextBox.Location = new System.Drawing.Point(468, 132);
-            this.contactTextBox.Name = "contactTextBox";
-            this.contactTextBox.Size = new System.Drawing.Size(290, 23);
-            this.contactTextBox.TabIndex = 12;
-            this.contactTextBox.Text = "Enter Contact Name";
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.emailTextBox.Location = new System.Drawing.Point(468, 166);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(290, 23);
-            this.emailTextBox.TabIndex = 13;
-            this.emailTextBox.Text = "Enter Contact Email";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.descriptionTextBox.Location = new System.Drawing.Point(468, 199);
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(290, 23);
-            this.descriptionTextBox.TabIndex = 14;
-            this.descriptionTextBox.Text = "Enter Issue Description";
-            // 
-            // companyLabel
-            // 
-            this.companyLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.companyLabel.Location = new System.Drawing.Point(293, 68);
-            this.companyLabel.Name = "companyLabel";
-            this.companyLabel.Size = new System.Drawing.Size(169, 23);
-            this.companyLabel.TabIndex = 15;
-            this.companyLabel.Text = "Company:";
-            // 
-            // phoneLabel
-            // 
-            this.phoneLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.phoneLabel.Location = new System.Drawing.Point(293, 101);
-            this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(169, 23);
-            this.phoneLabel.TabIndex = 16;
-            this.phoneLabel.Text = "Phone:";
-            // 
-            // contactLabel
-            // 
-            this.contactLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.contactLabel.Location = new System.Drawing.Point(293, 134);
-            this.contactLabel.Name = "contactLabel";
-            this.contactLabel.Size = new System.Drawing.Size(169, 23);
-            this.contactLabel.TabIndex = 17;
-            this.contactLabel.Text = "Contact:";
-            // 
-            // emailLabel
-            // 
-            this.emailLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.emailLabel.Location = new System.Drawing.Point(293, 168);
-            this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(169, 23);
-            this.emailLabel.TabIndex = 18;
-            this.emailLabel.Text = "Email:";
-            // 
-            // issueDescriptionLabel
-            // 
-            this.issueDescriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.issueDescriptionLabel.Location = new System.Drawing.Point(293, 201);
-            this.issueDescriptionLabel.Name = "issueDescriptionLabel";
-            this.issueDescriptionLabel.Size = new System.Drawing.Size(169, 23);
-            this.issueDescriptionLabel.TabIndex = 19;
-            this.issueDescriptionLabel.Text = "Issue Description:";
-            this.issueDescriptionLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // machineSelectionLabel
             // 
@@ -223,41 +84,103 @@ namespace MEMS.Windows
             this.machineSelectionLabel.Text = "Machine Selection";
             this.machineSelectionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // newMaintenanceRequestLabel
-            // 
-            this.newMaintenanceRequestLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.newMaintenanceRequestLabel.Location = new System.Drawing.Point(293, 36);
-            this.newMaintenanceRequestLabel.Name = "newMaintenanceRequestLabel";
-            this.newMaintenanceRequestLabel.Size = new System.Drawing.Size(170, 24);
-            this.newMaintenanceRequestLabel.TabIndex = 21;
-            this.newMaintenanceRequestLabel.Text = "New Maintenance Request:";
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(299, 233);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.Company, this.Phone, this.Contact, this.Email, this.Issue, this.Severity, this.RequestType });
+            this.dataGridView1.Location = new System.Drawing.Point(13, 413);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(459, 359);
+            this.dataGridView1.Size = new System.Drawing.Size(745, 179);
             this.dataGridView1.TabIndex = 22;
             // 
-            // addButton
+            // Company
             // 
-            this.addButton.Location = new System.Drawing.Point(103, 598);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(85, 40);
-            this.addButton.TabIndex = 23;
-            this.addButton.Text = "Add Request";
-            this.addButton.UseVisualStyleBackColor = true;
+            this.Company.HeaderText = "Company";
+            this.Company.Name = "Company";
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            // 
+            // Contact
+            // 
+            this.Contact.HeaderText = "Contact";
+            this.Contact.Name = "Contact";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // Issue
+            // 
+            this.Issue.HeaderText = "Issue";
+            this.Issue.Name = "Issue";
+            // 
+            // Severity
+            // 
+            this.Severity.HeaderText = "Severity";
+            this.Severity.Name = "Severity";
+            // 
+            // RequestType
+            // 
+            this.RequestType.HeaderText = "Request Type";
+            this.RequestType.Name = "RequestType";
+            // 
+            // addRequestButton
+            // 
+            this.addRequestButton.Location = new System.Drawing.Point(13, 598);
+            this.addRequestButton.Name = "addRequestButton";
+            this.addRequestButton.Size = new System.Drawing.Size(85, 40);
+            this.addRequestButton.TabIndex = 23;
+            this.addRequestButton.Text = "Add Request";
+            this.addRequestButton.UseVisualStyleBackColor = true;
+            this.addRequestButton.Click += new System.EventHandler(this.addRequestButton_Click);
             // 
             // updateRequestButton
             // 
-            this.updateRequestButton.Location = new System.Drawing.Point(202, 598);
+            this.updateRequestButton.Location = new System.Drawing.Point(104, 598);
             this.updateRequestButton.Name = "updateRequestButton";
             this.updateRequestButton.Size = new System.Drawing.Size(85, 40);
             this.updateRequestButton.TabIndex = 24;
             this.updateRequestButton.Text = "Update Request";
             this.updateRequestButton.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(293, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(465, 24);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Machine Information ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // machineDisplay
+            // 
+            this.machineDisplay.BackColor = System.Drawing.Color.GhostWhite;
+            this.machineDisplay.FormattingEnabled = true;
+            this.machineDisplay.ItemHeight = 15;
+            this.machineDisplay.Location = new System.Drawing.Point(299, 43);
+            this.machineDisplay.Name = "machineDisplay";
+            this.machineDisplay.Size = new System.Drawing.Size(459, 364);
+            this.machineDisplay.TabIndex = 26;
+            this.machineDisplay.SelectedIndexChanged += new System.EventHandler(this.MachineList_SelectedIndexChanged);
+            // 
+            // activeMachines
+            // 
+            this.activeMachines.BackColor = System.Drawing.Color.GhostWhite;
+            this.activeMachines.FormattingEnabled = true;
+            this.activeMachines.ItemHeight = 15;
+            this.activeMachines.Location = new System.Drawing.Point(13, 43);
+            this.activeMachines.Name = "activeMachines";
+            this.activeMachines.Size = new System.Drawing.Size(274, 364);
+            this.activeMachines.TabIndex = 27;
+            this.activeMachines.SelectedIndexChanged += new System.EventHandler(this.MachineList_SelectedIndexChanged);
             // 
             // NewMaintenanceWindow
             // 
@@ -267,70 +190,53 @@ namespace MEMS.Windows
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(781, 644);
+            this.Controls.Add(this.activeMachines);
+            this.Controls.Add(this.machineDisplay);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.updateRequestButton);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.addRequestButton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.newMaintenanceRequestLabel);
             this.Controls.Add(this.machineSelectionLabel);
-            this.Controls.Add(this.issueDescriptionLabel);
-            this.Controls.Add(this.emailLabel);
-            this.Controls.Add(this.contactLabel);
-            this.Controls.Add(this.phoneLabel);
-            this.Controls.Add(this.companyLabel);
-            this.Controls.Add(this.descriptionTextBox);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.contactTextBox);
-            this.Controls.Add(this.phoneBoxText);
-            this.Controls.Add(this.companyTextBox);
-            this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.printButton);
-            this.Controls.Add(this.listview);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMaintenanceWindow";
-            this.Text = "New Maintenance Request";
+            this.Text = "[MEMS] New Maintenance Request";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewMaintenanceWindow_FormClosing);
             this.Load += new System.EventHandler(this.NewMaintenanceWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn RequestType;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Severity;
+
+        private System.Windows.Forms.ListBox activeMachines;
+
+        private System.Windows.Forms.ListBox machineDisplay;
+
+        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Issue;
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn Company;
 
         private System.Windows.Forms.Button updateRequestButton;
 
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button addRequestButton;
 
         private System.Windows.Forms.DataGridView dataGridView1;
 
-        private System.Windows.Forms.Label newMaintenanceRequestLabel;
-
         private System.Windows.Forms.Label machineSelectionLabel;
 
-        private System.Windows.Forms.Label phoneLabel;
-        private System.Windows.Forms.Label contactLabel;
-        private System.Windows.Forms.Label emailLabel;
-        private System.Windows.Forms.Label issueDescriptionLabel;
-
-        private System.Windows.Forms.Label companyLabel;
-
-        private System.Windows.Forms.TextBox companyTextBox;
-        private System.Windows.Forms.TextBox phoneBoxText;
-        private System.Windows.Forms.TextBox contactTextBox;
-        private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.TextBox descriptionTextBox;
-
-        private System.Windows.Forms.Button mainMenuButton;
-
-        private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Button saveButton;
 
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn1;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn2;
-
-        private System.Windows.Forms.ColumnHeader MachineName;
-        private System.Windows.Forms.ColumnHeader MachineUID;
-
-        private System.Windows.Forms.ListView listview;
 
         #endregion
     }

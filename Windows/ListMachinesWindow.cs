@@ -1,16 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace MEMS.Windows
 {
+    
     public partial class ListMachinesWindow : Form
     { 
         private AddMachineWindow addMachineWindow;
         private ListMachinesWindow listMachinesWindow;
+        private Bitmap memoryImage; 
+        private List<Machine> machineList = ServiceUtil.machineService.GetMachinesByPage(1);
         public ListMachinesWindow()
         {
             InitializeComponent();
+            
         }
 
         private void ListMachinesWindow_Load(object sender, EventArgs e)
@@ -20,7 +26,7 @@ namespace MEMS.Windows
 
         private void LoadListView()
         {
-            List<Machine> machineList = ServiceUtil.machineService.GetMachinesByPage(1);
+           
             activeMachines.Items.Clear();
             foreach (var machine in machineList)
             {
@@ -39,11 +45,7 @@ namespace MEMS.Windows
             addMachineWindow.MachineAdded += LoadListView;
             addMachineWindow.Show();
         }
-        private void PrintButton_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         private void activeMachines_SelectedIndexChanged(object sender, EventArgs e)
         {
             // throw new System.NotImplementedException();
@@ -81,5 +83,6 @@ namespace MEMS.Windows
             detail.ShowDialog();
             LoadListView();
         }
+        
     }
 }
