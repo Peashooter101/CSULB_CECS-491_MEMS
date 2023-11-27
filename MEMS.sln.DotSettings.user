@@ -15,9 +15,11 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FAccountCreationWindow/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FAddMachineWindow/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FChangeLogWindow/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FDatabaseConnectionWindow/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FCreateAccount/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FDatabaseConnectionWindow/@EntryIndexedValue">True</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FListMachinesWindow/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FLoginWindow/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FMaintenanceLogWindow/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=MEMS_002FWindows_002FMaintenanceReminderWindow/@EntryIndexedValue">False</s:Boolean>
 	

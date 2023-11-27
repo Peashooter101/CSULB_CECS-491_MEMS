@@ -10,23 +10,7 @@ namespace MEMS.Windows
         {
             InitializeComponent();
         }
-
-        private void submitButton_Click(object sender, EventArgs e)
-        {
-            if (LoginService.TestMongoDBConnection(dbConnectString.Text))
-            {
-                label2.Text = "Connection successfull";
-                LoginService.SetConnectionString(dbConnectString.Text);
-                var MainMenuWindow = new MainMenuWindow();
-                MainMenuWindow.Show();
-
-            }
-            else
-            {
-                label2.Text = "Failed to connect using connection string";
-            }
-        }
-
+        
         private void dbConnectString_TextChanged(object sender, EventArgs e)
         {
             
@@ -41,7 +25,59 @@ namespace MEMS.Windows
         {
             
         }
-        
-        
+
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            if (LoginService.TestMongoDBConnection(dbConnectString.Text))
+            {
+                label2.Text = "Connection successful";
+                LoginService.SetConnectionString(dbConnectString.Text);
+                var loginWindow = new LoginWindow();
+                loginWindow.Show();
+                Hide();
+                
+                //var MainMenuWindow = new MainMenuWindow();
+                //MainMenuWindow.Show();
+
+            }
+            else
+            {
+                label2.Text = "Failed to connect using connection string";
+            }
+
+            ServiceUtil.LoginService.CreateUser(textBox2.Text, textBox3.Text, textBox1.Text);
+        }
+
+        private void DatabaseConnectionWindow_Load(object sender, EventArgs e)
+        {
+            
+            //throw new System.NotImplementedException();
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            //throw new System.NotImplementedException();
+        }
     }
 }

@@ -221,6 +221,12 @@
         <Compile Include="Windows\ChangeLogWindow.Designer.cs">
           <DependentUpon>ChangeLogWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Windows\CreateAccount.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\CreateAccount.Designer.cs">
+          <DependentUpon>CreateAccount.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\DatabaseConnectionWindow.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -238,6 +244,12 @@
         </Compile>
         <Compile Include="Windows\DetailedMachineWindow.Designer.cs">
           <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Windows\LoginWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\LoginWindow.Designer.cs">
+          <DependentUpon>LoginWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Windows\MainMenuMaintenanceReminderWindow.cs">
           <SubType>Form</SubType>
@@ -288,6 +300,9 @@
         <EmbeddedResource Include="Windows\ChangeLogWindow.resx">
           <DependentUpon>ChangeLogWindow.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Windows\CreateAccount.resx">
+          <DependentUpon>CreateAccount.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Windows\DatabaseConnectionWindow.resx">
             <DependentUpon>DatabaseConnectionWindow.cs</DependentUpon>
         </EmbeddedResource>
@@ -296,6 +311,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\DetailedMachineWindow.resx">
           <DependentUpon>DetailedMachineWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Windows\LoginWindow.resx">
+          <DependentUpon>LoginWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\MainMenuMaintenanceReminderWindow.resx">
           <DependentUpon>MainMenuMaintenanceReminderWindow.cs</DependentUpon>

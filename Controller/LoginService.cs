@@ -1,4 +1,5 @@
 using System;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using PasswordHashing;
 
@@ -7,9 +8,11 @@ namespace MEMS
     public class LoginService
     {
         private readonly Repository<UserRole.User> _repository;
+       
 
         public LoginService()
         {
+
             //MongoClient client = Program.client;
             //_repository = new Repository<UserRole.User>(client.GetDatabase(Program.memsDbName), "users");
         }
@@ -42,11 +45,16 @@ namespace MEMS
             }
         }
 
-        public bool CreateUser(string user, string pass)
+        public bool CreateUser(string user, string email, string pass)
         {
-            UserRole.User userObj = _repository.FindOne(u => u.username == user);
+            //ServiceUtil.ClientService.CreateClient("MEMS");
+            //Client cli = ServiceUtil.ClientService.ReadByName("MEMS");
+            //ServiceUtil.UserRoleService.CreateUserRole("boss", cli.Id);
+            UserRole usroll = ServiceUtil.UserRoleService.ReadByName("boss");
+            //UserRole.User userObj = _repository.FindOne(u => u.username == user);
+            ServiceUtil.UserRoleService.AddUser(usroll, user, email, pass);
             
-            if (userObj != null) return false;
+            /*if (userObj != null) return false;
             
             int salt = new Random().Next(int.MinValue, int.MaxValue);
             PasswordHasherInstance phi = PasswordHasherInstance.Create(HashAlgorithm.SHA256, salt);
@@ -58,6 +66,7 @@ namespace MEMS
                 password = passHash,
                 salt = salt
             });
+            */
             // TODO: Validate the user was actually created and uploaded to the database, return false if failure maybe?
             return true;
         }
