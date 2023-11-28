@@ -80,5 +80,12 @@ namespace MEMS.Windows
             request = null;
             this.Show();
         }
+        
+        private void MaintenanceLogWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Parent = null;
+            e.Cancel = true;
+        }
     }
 }

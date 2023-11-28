@@ -195,6 +195,7 @@
         <Compile Include="Controller\BusinessLocationService.cs" />
         <Compile Include="Controller\ChangeLogService.cs" />
         <Compile Include="Controller\ClientService.cs" />
+        <Compile Include="Controller\ContactService.cs" />
         <Compile Include="Controller\LoginService.cs" />
         <Compile Include="Controller\MachineService.cs" />
         <Compile Include="Controller\MaintenanceReminderService.cs" />

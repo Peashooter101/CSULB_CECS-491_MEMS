@@ -38,5 +38,12 @@ namespace MEMS
                 
             }
         }
+        
+        private void ChangeLogWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Parent = null;
+            e.Cancel = true;
+        }
     }
 }

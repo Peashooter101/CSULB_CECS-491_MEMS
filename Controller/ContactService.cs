@@ -17,17 +17,18 @@ namespace MEMS
 				new Repository<Contact>(_dbContext.database, "Contacts");
 		}
 
-		public void CreateContact()
+		public void CreateContact(string contactName, string contactEmail, int contactPhoneNumber, ObjectId contactBusinessLocation, BsonObjectId machineId)
 		{
 
 			var newContact = new Contact()
 			{
-				name = name,
-				email = email,
-				phoneNumber = phoneNumber,
-				businessLocation = businessLocation
+				name = contactName,
+				email = contactEmail,
+				phoneNumber = contactPhoneNumber,
+				businessLocation = contactBusinessLocation,
+				machineRefId = machineId,
 			};
-			this.contactRepository.Create(newContact);
+			contactRepository.Create(newContact);
 		}
 
 		public Contact ReadContact(ObjectId id)
@@ -36,10 +37,10 @@ namespace MEMS
 			return contactRepository.Find(filter).FirstOrDefault();
 		}
 
-		public List<Contact> GetContactsByMachine (ObjectId id)
-		{
-			var
-		}
+		//public List<Contact> GetContactsByMachine (ObjectId id)
+		//{
+		//	var
+		//}
 
 	}
 }

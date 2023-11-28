@@ -16,5 +16,6 @@ namespace MEMS
         public string email { get; set; }
         public int phoneNumber { get; set; }
         public ObjectId businessLocation { get; set; } = ObjectId.Empty;
+        public BsonObjectId machineRefId { get; set; } = BsonObjectId.Empty;
     }
 }

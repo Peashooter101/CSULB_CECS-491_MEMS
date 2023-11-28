@@ -30,5 +30,12 @@ namespace MEMS.Windows
         {
             //throw new System.NotImplementedException();
         }
+
+        private void AccountCreationWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Parent = null;
+            e.Cancel = true;
+        }
     }
 }

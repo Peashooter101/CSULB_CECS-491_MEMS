@@ -42,11 +42,12 @@ namespace MEMS
            //mongodb+srv://seancollins362:3RfZG5Fs4qPg863n@cluster0.1j1jtdz.mongodb.net/
            
            //Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", null, EnvironmentVariableTarget.User);
-           if (Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING", EnvironmentVariableTarget.User) != null)
+           if (Environment.GetEnvironmentVariable("MONGO_DB_URI", EnvironmentVariableTarget.User) != null)
            {
                ServiceUtil.dbContext = DatabaseContext.GetInstance();
                ServiceUtil.init();
-               Application.Run(new LoginWindow());
+               //Application.Run(new LoginWindow());
+               Application.Run(new MainMenuWindow());
            }
            else
            {

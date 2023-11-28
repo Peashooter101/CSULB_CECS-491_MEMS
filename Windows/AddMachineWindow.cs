@@ -69,10 +69,12 @@ namespace MEMS.Windows
                 }
             }
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        
+        private void AddMachineWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            throw new System.NotImplementedException();
+            Hide();
+            Parent = null;
+            e.Cancel = true;
         }
     }
 }

@@ -47,7 +47,7 @@ namespace MEMS.Windows
             // 
             this.textBox1.Location = new System.Drawing.Point(26, 16);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 27);
+            this.textBox1.Size = new System.Drawing.Size(284, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Active Machines";
             // 
@@ -132,7 +132,7 @@ namespace MEMS.Windows
             // 
             // ListMachinesWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(805, 505);
@@ -145,7 +145,6 @@ namespace MEMS.Windows
             this.Name = "ListMachinesWindow";
             this.Text = "Active Machines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListMachinesWindow_FormClosing);
-            this.Load += new System.EventHandler(this.ListMachinesWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
