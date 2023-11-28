@@ -29,10 +29,14 @@ namespace MEMS.Windows
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            
             if (LoginService.TestMongoDBConnection(dbConnectString.Text))
             {
                 label2.Text = "Connection successful";
-                LoginService.SetConnectionString(dbConnectString.Text);
+                Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", dbConnectString.Text,
+                           EnvironmentVariableTarget.User);
+                ServiceUtil.dbContext = DatabaseContext.GetInstance();
+                ServiceUtil.init();
                 ServiceUtil.LoginService.CreateUser(textBox2.Text, textBox3.Text, textBox1.Text);
                 //var loginWindow = new LoginWindow();
                 //loginWindow.Show();
