@@ -88,7 +88,7 @@ namespace MEMS.Windows
             this.nameBox.BackColor = System.Drawing.Color.GhostWhite;
             this.nameBox.Location = new System.Drawing.Point(118, 53);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(258, 23);
+            this.nameBox.Size = new System.Drawing.Size(258, 31);
             this.nameBox.TabIndex = 4;
             // 
             // modelBox
@@ -96,7 +96,7 @@ namespace MEMS.Windows
             this.modelBox.BackColor = System.Drawing.Color.GhostWhite;
             this.modelBox.Location = new System.Drawing.Point(118, 83);
             this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(258, 23);
+            this.modelBox.Size = new System.Drawing.Size(258, 31);
             this.modelBox.TabIndex = 5;
             // 
             // manuBox
@@ -104,7 +104,7 @@ namespace MEMS.Windows
             this.manuBox.BackColor = System.Drawing.Color.GhostWhite;
             this.manuBox.Location = new System.Drawing.Point(118, 143);
             this.manuBox.Name = "manuBox";
-            this.manuBox.Size = new System.Drawing.Size(258, 23);
+            this.manuBox.Size = new System.Drawing.Size(258, 31);
             this.manuBox.TabIndex = 6;
             // 
             // zoneBox
@@ -112,23 +112,24 @@ namespace MEMS.Windows
             this.zoneBox.BackColor = System.Drawing.Color.GhostWhite;
             this.zoneBox.Location = new System.Drawing.Point(118, 203);
             this.zoneBox.Name = "zoneBox";
-            this.zoneBox.Size = new System.Drawing.Size(258, 23);
+            this.zoneBox.Size = new System.Drawing.Size(258, 31);
             this.zoneBox.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(16, 173);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.Size = new System.Drawing.Size(82, 21);
             this.label1.TabIndex = 8;
             this.label1.Text = "Building";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buildingBox
             // 
             this.buildingBox.BackColor = System.Drawing.Color.GhostWhite;
             this.buildingBox.Location = new System.Drawing.Point(118, 173);
             this.buildingBox.Name = "buildingBox";
-            this.buildingBox.Size = new System.Drawing.Size(258, 23);
+            this.buildingBox.Size = new System.Drawing.Size(258, 31);
             this.buildingBox.TabIndex = 7;
             // 
             // lblInstructions
@@ -172,10 +173,10 @@ namespace MEMS.Windows
             // 
             this.detailBox.BackColor = System.Drawing.Color.GhostWhite;
             this.detailBox.FormattingEnabled = true;
-            this.detailBox.ItemHeight = 15;
+            this.detailBox.ItemHeight = 24;
             this.detailBox.Location = new System.Drawing.Point(412, 57);
             this.detailBox.Name = "detailBox";
-            this.detailBox.Size = new System.Drawing.Size(251, 139);
+            this.detailBox.Size = new System.Drawing.Size(251, 124);
             this.detailBox.TabIndex = 15;
             // 
             // serialNumBox
@@ -183,7 +184,7 @@ namespace MEMS.Windows
             this.serialNumBox.BackColor = System.Drawing.Color.GhostWhite;
             this.serialNumBox.Location = new System.Drawing.Point(117, 113);
             this.serialNumBox.Name = "serialNumBox";
-            this.serialNumBox.Size = new System.Drawing.Size(258, 23);
+            this.serialNumBox.Size = new System.Drawing.Size(258, 31);
             this.serialNumBox.TabIndex = 16;
             // 
             // lblSerial
@@ -196,7 +197,7 @@ namespace MEMS.Windows
             // 
             // AddMachineWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(695, 254);
