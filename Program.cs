@@ -36,19 +36,19 @@ namespace MEMS
 
            //Application.Run(new MaintenanceLogWindow());
            //Application.Run(new ListMachinesWindow());
-           //Application.Run(new MainMenuWindow());
+           Application.Run(new MainMenuWindow());
            
            
            //mongodb+srv://seancollins362:3RfZG5Fs4qPg863n@cluster0.1j1jtdz.mongodb.net/
            //Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", null, EnvironmentVariableTarget.User);
-           if (Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING", EnvironmentVariableTarget.User) != null)
-           {
-               Application.Run(new LoginWindow());
-           }
-           else
-           {
-               Application.Run(new DatabaseConnectionWindow()); 
-           }
+           // if (Environment.GetEnvironmentVariable("MEMS_CONNECTION_STRING", EnvironmentVariableTarget.User) != null)
+           // {
+           //     Application.Run(new LoginWindow());
+           // }
+           // else
+           // {
+           //     Application.Run(new DatabaseConnectionWindow()); 
+           // }
            
         }
     }
