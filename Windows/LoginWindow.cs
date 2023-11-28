@@ -12,9 +12,9 @@ namespace MEMS.Windows
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(ServiceUtil.UserRoleService.matchUser(userNameBox.Text, passwordBox.Text) == null)
+            if(ServiceUtil.UserRoleService.matchUser(userNameBox.Text, passwordBox.Text) == null || userNameBox.Text =="" || passwordBox.Text == "")
             {
-                createAccountLabel.Text = "no user with that email and password";
+                createAccountLabel.Text = "no user with that username and password";
             }
             else
             {

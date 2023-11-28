@@ -8,23 +8,27 @@ namespace MEMS.Windows
         public AccountCreationWindow()
         {
             InitializeComponent();
+            username.Text = Program.currentUser.username;
         }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(password.Text.Trim()) || string.IsNullOrWhiteSpace(email.Text))
-            {
-                errorLabel.Text = @"Your email and password cannot be empty.";
-                return;
-            }
-            // TODO: Regex Check for Email
-            if (!password.Text.Equals(confirmPassword.Text))
-            {
-                errorLabel.Text = @"Those passwords do not match!";
-                return;
-            }
-            // TODO: Send information to Control which determines if account is administrator and updates database.
-            throw new System.NotImplementedException();
+            Close();
+        }
+
+        private void AccountCreationWindow_Load(object sender, EventArgs e)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        private void username_Click(object sender, EventArgs e)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            //throw new System.NotImplementedException();
         }
     }
 }

@@ -223,6 +223,7 @@
         </Compile>
         <Compile Include="Windows\CreateAccount.cs">
           <SubType>Form</SubType>
+          <DependentUpon>AccountCreationWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Windows\CreateAccount.Designer.cs">
           <DependentUpon>CreateAccount.cs</DependentUpon>
