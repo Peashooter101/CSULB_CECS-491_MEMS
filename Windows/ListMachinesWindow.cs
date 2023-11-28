@@ -25,8 +25,8 @@ namespace MEMS.Windows
         }
 
         private void LoadListView()
-        {
-           
+        { 
+            machineList = ServiceUtil.machineService.GetMachinesByPage(1);
             activeMachines.Items.Clear();
             foreach (var machine in machineList)
             {
