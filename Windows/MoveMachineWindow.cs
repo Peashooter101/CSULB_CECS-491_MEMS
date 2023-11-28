@@ -33,8 +33,6 @@ namespace MEMS.Windows
             m.zone = zoneChoice.Text;
             ServiceUtil.machineService.UpdateMachine(m);
             this.Close();
-            // MessageBox.Show()
-            // throw new NotImplementedException();
         }
     }
 }
