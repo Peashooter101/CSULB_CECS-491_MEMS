@@ -145,6 +145,7 @@ namespace MEMS.Windows
             this.Name = "AccountCreationWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[MEMS] Account Creation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AccountCreationWindow_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

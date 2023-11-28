@@ -99,6 +99,7 @@ namespace MEMS
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeLogWindow";
             this.Text = "[MEMS] Change Log Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChangeLogWindow_FormClosing);
             this.Load += new System.EventHandler(this.ChangelogWindow_Load);
             this.ResumeLayout(false);
         }

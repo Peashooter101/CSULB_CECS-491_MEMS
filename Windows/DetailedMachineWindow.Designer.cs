@@ -202,6 +202,7 @@ namespace MEMS.Windows
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailedMachineWindow";
             this.Text = "[MEMS] Detailed Machine Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetailedMachineWindow_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

@@ -57,5 +57,12 @@ namespace MEMS.Windows
         {
             //throw new System.NotImplementedException();
         }
+        
+        private void MaintenanceReminderWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Parent = null;
+            e.Cancel = true;
+        }
     }
 }

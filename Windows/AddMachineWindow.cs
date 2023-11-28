@@ -69,5 +69,12 @@ namespace MEMS.Windows
                 }
             }
         }
+        
+        private void AddMachineWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Parent = null;
+            e.Cancel = true;
+        }
     }
 }

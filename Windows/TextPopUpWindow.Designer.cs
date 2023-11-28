@@ -53,6 +53,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TextPopUpWindow";
             this.Text = "Pop Up ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TextPopUpWindow_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
         }

@@ -9,7 +9,7 @@ namespace MEMS.Windows
     
     public partial class ListMachinesWindow : Form
     { 
-        private AddMachineWindow addMachineWindow;
+        private AddMachineWindow addMachineWindow = new AddMachineWindow();
         private ListMachinesWindow listMachinesWindow;
         private Bitmap memoryImage; 
         private List<Machine> machineList = ServiceUtil.machineService.GetMachinesByPage(1);
@@ -41,7 +41,7 @@ namespace MEMS.Windows
         private void NewMachineButton_Click(object sender, EventArgs e)
         {
             //Hide();
-            var addMachineWindow = new AddMachineWindow();
+            //var addMachineWindow = new AddMachineWindow();
             addMachineWindow.MachineAdded += LoadListView;
             addMachineWindow.Show();
         }
@@ -58,6 +58,9 @@ namespace MEMS.Windows
                 addMachineWindow.MachineAdded -= LoadListView;
                 addMachineWindow.Close();
             }
+            Hide();
+            Parent = null;
+            e.Cancel = true;
         }
 
         private void activeMachines_DoubleClick(object sender, EventArgs e)
@@ -83,6 +86,5 @@ namespace MEMS.Windows
             detail.ShowDialog();
             LoadListView();
         }
-        
     }
 }

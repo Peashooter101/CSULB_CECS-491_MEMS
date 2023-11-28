@@ -14,5 +14,12 @@ namespace MEMS.Windows
         {
             textBox1.Text = text;
         }
+        
+        private void TextPopUpWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Parent = null;
+            e.Cancel = true;
+        }
     }
 }

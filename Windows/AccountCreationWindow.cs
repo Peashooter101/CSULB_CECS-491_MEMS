@@ -26,5 +26,12 @@ namespace MEMS.Windows
             // TODO: Send information to Control which determines if account is administrator and updates database.
             throw new System.NotImplementedException();
         }
+
+        private void AccountCreationWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Parent = null;
+            e.Cancel = true;
+        }
     }
 }

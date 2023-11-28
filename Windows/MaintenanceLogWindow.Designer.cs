@@ -140,6 +140,7 @@ namespace MEMS.Windows
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaintenanceLogWindow";
             this.Text = "[MEMS] Maintenance Log";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MaintenanceLogWindow_FormClosing);
             this.ResumeLayout(false);
         }
 

@@ -183,6 +183,7 @@ namespace MEMS.Windows
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MaintenanceReminderWindow";
             this.Text = "[MEMS] Maintenance Reminder Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MaintenanceReminderWindow_FormClosing);
             this.Load += new System.EventHandler(this.MachineReminder_Load);
             this.ResumeLayout(false);
         }

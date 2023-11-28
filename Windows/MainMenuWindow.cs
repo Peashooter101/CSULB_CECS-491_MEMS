@@ -10,8 +10,15 @@ namespace MEMS.Windows
 {
     public partial class MainMenuWindow : Form
     {
-        
-        
+        MainMenuMaintenanceReminderWindow _loadMaintenanceList = new MainMenuMaintenanceReminderWindow();
+        AccountCreationWindow _accountInfo = new AccountCreationWindow();
+        AddMachineWindow _addMachine = new AddMachineWindow();
+        ChangeLogWindow _changeLog = new ChangeLogWindow();
+        TextPopUpWindow _dbPopUp = new TextPopUpWindow();
+        ListMachinesWindow _listMachines = new ListMachinesWindow();
+        MaintenanceLogWindow _maintenanceLog = new MaintenanceLogWindow();
+        MaintenanceReminderWindow _maintenanceReminder = new MaintenanceReminderWindow();
+        NewMaintenanceWindow _newMaintenance = new NewMaintenanceWindow();
         public MainMenuWindow()
         {
             InitializeComponent();
@@ -24,107 +31,168 @@ namespace MEMS.Windows
 
         private void MainMenuMaintenanceReminderPopUp()
         {
-            MainMenuMaintenanceReminderWindow loadMaintenanceList = new MainMenuMaintenanceReminderWindow();
-            loadMaintenanceList.TopLevel = false;
-            containerControl1.Controls.Add(loadMaintenanceList);
-            loadMaintenanceList.Show();
+            if (containerControl1.Controls.Contains(_loadMaintenanceList))
+            {
+                MessageBox.Show(@"Maintenance List Already Open.");
+            }
+            else
+            {
+                _loadMaintenanceList.TopLevel = false;
+                containerControl1.Controls.Add(_loadMaintenanceList);
+                _loadMaintenanceList.Dock = DockStyle.Fill;
+                _loadMaintenanceList.Show();
+            }
         }
         
         private void MDIAccountInformation_Click(object sender, EventArgs e)
         {
-            AccountCreationWindow accountInfo = new AccountCreationWindow();
-            accountInfo.MdiParent = this;
-            containerControl1.Controls.Add(accountInfo);
-            accountInfo.TopLevel = false;
-            accountInfo.FormBorderStyle = FormBorderStyle.Sizable;
-            //accountInfo.Dock = DockStyle.Fill;
-            accountInfo.BringToFront();
-            accountInfo.Show();
+            
+            if (containerControl1.Controls.Contains(_accountInfo))
+            {
+                MessageBox.Show(@"Account Information Window Already Open");
+            }
+            else
+            {
+                _accountInfo.MdiParent = this;
+                containerControl1.Controls.Add(_accountInfo);
+                _accountInfo.TopLevel = false;
+                _accountInfo.FormBorderStyle = FormBorderStyle.Sizable;
+                _accountInfo.Dock = DockStyle.Fill;
+                _accountInfo.BringToFront();
+                _accountInfo.Show();
+            }
+            
         }
 
         
         private void MDIAddMachineButton_Click(object sender, EventArgs e)
         {
-            AddMachineWindow addMachine = new AddMachineWindow();
-            addMachine.MdiParent = this;
-            addMachine.TopLevel = false;
-            containerControl1.Controls.Add(addMachine);
-            addMachine.FormBorderStyle = FormBorderStyle.Sizable;
-            //addMachine.Dock = DockStyle.Fill; 
-            addMachine.BringToFront();
-            addMachine.Show(); 
+            if (containerControl1.Controls.Contains(_addMachine))
+            {
+                MessageBox.Show(@"Add Machine Window Already Open");
+            }
+            else
+            {
+                _addMachine.MdiParent = this;
+                _addMachine.TopLevel = false;
+                containerControl1.Controls.Add(_addMachine);
+                _addMachine.FormBorderStyle = FormBorderStyle.Sizable;
+                _addMachine.Dock = DockStyle.Fill; 
+                _addMachine.BringToFront();
+                _addMachine.Show(); 
+            }
         }
         
         private void MDIChangeLogButton_Click(object sender, EventArgs e)
         {
-            var changeLog = new ChangeLogWindow();
-            changeLog.MdiParent = this;
-            changeLog.TopLevel = false;
-            containerControl1.Controls.Add(changeLog);
-            changeLog.FormBorderStyle = FormBorderStyle.Sizable;
-            //changeLog.Dock = DockStyle.Fill;
-            changeLog.BringToFront();
-            changeLog.Show();
+            if (containerControl1.Controls.Contains(_changeLog))
+            {
+                MessageBox.Show(@"Change Log Window Already Open");
+            }
+            else
+            {
+                _changeLog.MdiParent = this;
+                _changeLog.TopLevel = false;
+                containerControl1.Controls.Add(_changeLog);
+                _changeLog.FormBorderStyle = FormBorderStyle.Sizable;
+                _changeLog.Dock = DockStyle.Fill;
+                _changeLog.BringToFront();
+                _changeLog.Show();
+            }
+            
         }
+        
         private void MDIDbConnectInfoButton_Click(object sender, EventArgs e)
         {
-            TextPopUpWindow dbPopUp = new TextPopUpWindow();
-            dbPopUp.MdiParent = this;
-            var dbConnection = ServiceUtil.dbContext.database.DatabaseNamespace;
-            dbPopUp.TextDisplay(@"Database Connection: " + dbConnection);
-            dbPopUp.TopLevel = false;
-            containerControl1.Controls.Add(dbPopUp);
-            dbPopUp.BringToFront();
-            dbPopUp.Show();
+            if (containerControl1.Controls.Contains(_dbPopUp))
+            {
+                MessageBox.Show(@"Database Connection Window Already Open");
+            }
+            else
+            {
+                _dbPopUp.MdiParent = this;
+                var dbConnection = ServiceUtil.dbContext.database.DatabaseNamespace;
+                _dbPopUp.TextDisplay(@"Database Connection: " + dbConnection);
+                _dbPopUp.TopLevel = false;
+                containerControl1.Controls.Add(_dbPopUp);
+                _dbPopUp.BringToFront();
+                _dbPopUp.Show();
+            }
         }
 
 
         private void MDIActiveMachineButtons_Click(object sender, EventArgs e)
         {
-            var listMachines = new ListMachinesWindow();
-            listMachines.MdiParent = this;
-            listMachines.TopLevel = false;
-            containerControl1.Controls.Add(listMachines);
-            listMachines.FormBorderStyle = FormBorderStyle.Sizable;
-            //listMachines.Dock = DockStyle.Fill;
-            listMachines.BringToFront();
-            listMachines.Show();
+            if (containerControl1.Controls.Contains(_listMachines))
+            {
+                MessageBox.Show(@"Active Machines Window Already Open");
+            }
+            else
+            {
+                _listMachines.MdiParent = this;
+                _listMachines.TopLevel = false;
+                containerControl1.Controls.Add(_listMachines);
+                _listMachines.FormBorderStyle = FormBorderStyle.Sizable;
+                _listMachines.Dock = DockStyle.Fill;
+                _listMachines.BringToFront();
+                _listMachines.Show();
+            }
+            
         }
 
         private void MDIMaintenanceLogButton_Click(object sender, EventArgs e)
         {
-            var maintenanceLog = new MaintenanceLogWindow();
-            maintenanceLog.MdiParent = this;
-            maintenanceLog.TopLevel = false;
-            containerControl1.Controls.Add(maintenanceLog);
-            maintenanceLog.FormBorderStyle = FormBorderStyle.Sizable;
-            //maintenanceLog.Dock = DockStyle.Fill;
-            maintenanceLog.BringToFront();
-            maintenanceLog.Show();
+            if (containerControl1.Controls.Contains(_maintenanceLog))
+            {
+                MessageBox.Show(@"Maintenance Log Window Already Open");
+            }
+            else
+            {
+                _maintenanceLog.MdiParent = this;
+                _maintenanceLog.TopLevel = false;
+                containerControl1.Controls.Add(_maintenanceLog);
+                _maintenanceLog.FormBorderStyle = FormBorderStyle.Sizable;
+                _maintenanceLog.Dock = DockStyle.Fill;
+                _maintenanceLog.BringToFront();
+                _maintenanceLog.Show();
+            }
+            
         }
 
         private void MDIMaintenanceReminderButton_Click(object sender, EventArgs e)
         {
-            var maintenanceReminder = new MaintenanceReminderWindow();
-            maintenanceReminder.MdiParent = this;
-            maintenanceReminder.TopLevel = false;
-            containerControl1.Controls.Add(maintenanceReminder);
-            maintenanceReminder.FormBorderStyle = FormBorderStyle.Sizable;
-            //maintenanceReminder.Dock = DockStyle.Fill;
-            maintenanceReminder.BringToFront();
-            maintenanceReminder.Show();
+            if (containerControl1.Controls.Contains(_maintenanceReminder))
+            {
+                MessageBox.Show(@"Maintenance Reminder Window Already Open");
+            }
+            else
+            {
+                _maintenanceReminder.MdiParent = this;
+                _maintenanceReminder.TopLevel = false;
+                containerControl1.Controls.Add(_maintenanceReminder);
+                _maintenanceReminder.FormBorderStyle = FormBorderStyle.Sizable;
+                _maintenanceReminder.Dock = DockStyle.Fill;
+                _maintenanceReminder.BringToFront();
+                _maintenanceReminder.Show();
+            }
         }
 
         private void MDINewMaintenanceRequestButton_Click(object sender, EventArgs e)
         {
-            var newMaintenance = new NewMaintenanceWindow();
-            newMaintenance.MdiParent = this;
-            newMaintenance.TopLevel = false;
-            containerControl1.Controls.Add(newMaintenance);
-            newMaintenance.FormBorderStyle = FormBorderStyle.Sizable;
-            //newMaintenance.Dock = DockStyle.Fill;
-            newMaintenance.BringToFront();
-            newMaintenance.Show();
+            if (containerControl1.Controls.Contains(_newMaintenance))
+            {
+                MessageBox.Show(@"New Maintenance Window Window Already Open");
+            }
+            else
+            {
+                _newMaintenance.MdiParent = this;
+                _newMaintenance.TopLevel = false;
+                containerControl1.Controls.Add(_newMaintenance);
+                _newMaintenance.FormBorderStyle = FormBorderStyle.Sizable;
+                _newMaintenance.Dock = DockStyle.Fill;
+                _newMaintenance.BringToFront();
+                _newMaintenance.Show();
+            }
         }
         private Bitmap memoryImage;
         private void printContainer_PrintPage(object sender, PrintPageEventArgs e)
