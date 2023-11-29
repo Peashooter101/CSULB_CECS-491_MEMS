@@ -1,3 +1,5 @@
+using System;
+
 namespace MEMS
 {
     public static class ServiceUtil
@@ -9,6 +11,7 @@ namespace MEMS
         public static LoginService LoginService;
         public static UserRoleService UserRoleService;
         public static ClientService ClientService;
+        public static ContactService ContactService;
 
         public static void init()
         {
@@ -18,6 +21,7 @@ namespace MEMS
         LoginService = new LoginService();
         UserRoleService = new UserRoleService(dbContext);
         ClientService = new ClientService(dbContext);
+        ContactService = new ContactService(dbContext);
         }
     }
 }
