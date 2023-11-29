@@ -42,9 +42,9 @@ namespace MEMS.Windows
             MachineDetails.Items.Add("Model: " + m.model);
             MachineDetails.Items.Add("Manufacturer: " + m.manufacturer);
             MachineDetails.Items.Add("Zone: " + m.zone);
-            MachineDetails.Items.Add("\nProblem: " + r.description);
-            MachineDetails.Items.Add("\nTechnician: " + c.name);
-            MachineDetails.Items.Add("Phone Number: " + c.phoneNumber);
+            if (r != null) MachineDetails.Items.Add("\nProblem: " + r.description);
+            if (c != null) MachineDetails.Items.Add("\nTechnician: " + c.name);
+            if (c != null) MachineDetails.Items.Add("Phone Number: " + c.phoneNumber);
             
         }
         
