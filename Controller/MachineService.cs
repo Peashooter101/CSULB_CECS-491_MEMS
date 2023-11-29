@@ -62,6 +62,12 @@ namespace MEMS
 
         }
 
+        public List<Machine> GetAllMachines()
+        {
+            var filter = Builders<Machine>.Filter.Empty;
+            return machineRepository.Find(filter).ToList();
+        }
+
         public void UpdateMachine(Machine m)
         {
             this.machineRepository.Update(m);

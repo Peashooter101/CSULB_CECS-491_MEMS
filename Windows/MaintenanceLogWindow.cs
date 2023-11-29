@@ -15,7 +15,7 @@ namespace MEMS.Windows
             InitializeComponent();
             MachineList.SelectionMode = SelectionMode.None;
 
-            List<Machine> machineList = ServiceUtil.machineService.GetMachinesByPage(1);
+            List<Machine> machineList = ServiceUtil.machineService.GetAllMachines();
             
             MachineList.DataSource = machineList;
             MachineList.DisplayMember = "name";

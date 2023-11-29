@@ -12,7 +12,7 @@ namespace MEMS.Windows
         private AddMachineWindow addMachineWindow = new AddMachineWindow();
         private ListMachinesWindow listMachinesWindow;
         private Bitmap memoryImage; 
-        private List<Machine> machineList = ServiceUtil.machineService.GetMachinesByPage(1);
+        private List<Machine> machineList = ServiceUtil.machineService.GetAllMachines();
         public ListMachinesWindow()
         {
             InitializeComponent();
@@ -26,12 +26,12 @@ namespace MEMS.Windows
 
         private void LoadListView()
         { 
-            machineList = ServiceUtil.machineService.GetMachinesByPage(2);
+            machineList = ServiceUtil.machineService.GetAllMachines();
             activeMachines.Items.Clear();
             foreach (var machine in machineList)
             {
                 string[] machineArr =
-                    { machine.name, machine.Id.ToString(), machine.model, machine.manufacturer, machine.zone, machine.serial };
+                    { machine.name, machine.Id.ToString().Substring(19, 5), machine.model, machine.manufacturer, machine.zone, machine.serial };
                 if (!machine.isActive) continue;
                 var listMachine = new ListViewItem(machineArr);
                 activeMachines.Items.Add(listMachine);

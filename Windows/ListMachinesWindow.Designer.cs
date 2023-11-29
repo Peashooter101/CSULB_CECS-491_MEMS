@@ -67,7 +67,7 @@ namespace MEMS.Windows
             // 
             // MachineUid
             // 
-            this.MachineUid.Text = "UID";
+            this.MachineUid.Text = "ID";
             this.MachineUid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MachineUid.Width = 150;
             // 
@@ -133,7 +133,7 @@ namespace MEMS.Windows
             // 
             // ListMachinesWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(805, 505);
