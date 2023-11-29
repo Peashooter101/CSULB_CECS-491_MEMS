@@ -40,7 +40,7 @@ namespace MEMS.Windows
             this.modelBox = new System.Windows.Forms.TextBox();
             this.manuBox = new System.Windows.Forms.TextBox();
             this.zoneBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBldg = new System.Windows.Forms.Label();
             this.buildingBox = new System.Windows.Forms.TextBox();
             this.lblInstructions = new System.Windows.Forms.Label();
             this.saveDetailBtn = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@ namespace MEMS.Windows
             // 
             this.lblModel.Location = new System.Drawing.Point(16, 83);
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(47, 14);
+            this.lblModel.Size = new System.Drawing.Size(60, 27);
             this.lblModel.TabIndex = 1;
             this.lblModel.Text = "Model";
             // 
@@ -71,7 +71,7 @@ namespace MEMS.Windows
             // 
             this.lblManu.Location = new System.Drawing.Point(14, 143);
             this.lblManu.Name = "lblManu";
-            this.lblManu.Size = new System.Drawing.Size(84, 20);
+            this.lblManu.Size = new System.Drawing.Size(109, 20);
             this.lblManu.TabIndex = 2;
             this.lblManu.Text = "Manufacturer";
             // 
@@ -79,7 +79,7 @@ namespace MEMS.Windows
             // 
             this.lblZone.Location = new System.Drawing.Point(16, 203);
             this.lblZone.Name = "lblZone";
-            this.lblZone.Size = new System.Drawing.Size(40, 18);
+            this.lblZone.Size = new System.Drawing.Size(45, 18);
             this.lblZone.TabIndex = 3;
             this.lblZone.Text = "Zone";
             // 
@@ -88,7 +88,7 @@ namespace MEMS.Windows
             this.nameBox.BackColor = System.Drawing.Color.GhostWhite;
             this.nameBox.Location = new System.Drawing.Point(118, 53);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(258, 31);
+            this.nameBox.Size = new System.Drawing.Size(258, 27);
             this.nameBox.TabIndex = 4;
             // 
             // modelBox
@@ -96,7 +96,7 @@ namespace MEMS.Windows
             this.modelBox.BackColor = System.Drawing.Color.GhostWhite;
             this.modelBox.Location = new System.Drawing.Point(118, 83);
             this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(258, 31);
+            this.modelBox.Size = new System.Drawing.Size(258, 27);
             this.modelBox.TabIndex = 5;
             // 
             // manuBox
@@ -104,7 +104,7 @@ namespace MEMS.Windows
             this.manuBox.BackColor = System.Drawing.Color.GhostWhite;
             this.manuBox.Location = new System.Drawing.Point(118, 143);
             this.manuBox.Name = "manuBox";
-            this.manuBox.Size = new System.Drawing.Size(258, 31);
+            this.manuBox.Size = new System.Drawing.Size(258, 27);
             this.manuBox.TabIndex = 6;
             // 
             // zoneBox
@@ -112,24 +112,23 @@ namespace MEMS.Windows
             this.zoneBox.BackColor = System.Drawing.Color.GhostWhite;
             this.zoneBox.Location = new System.Drawing.Point(118, 203);
             this.zoneBox.Name = "zoneBox";
-            this.zoneBox.Size = new System.Drawing.Size(258, 31);
+            this.zoneBox.Size = new System.Drawing.Size(258, 27);
             this.zoneBox.TabIndex = 9;
             // 
-            // label1
+            // lblBldg
             // 
-            this.label1.Location = new System.Drawing.Point(16, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 21);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Building";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblBldg.Location = new System.Drawing.Point(16, 173);
+            this.lblBldg.Name = "lblBldg";
+            this.lblBldg.Size = new System.Drawing.Size(82, 21);
+            this.lblBldg.TabIndex = 8;
+            this.lblBldg.Text = "Building";
             // 
             // buildingBox
             // 
             this.buildingBox.BackColor = System.Drawing.Color.GhostWhite;
             this.buildingBox.Location = new System.Drawing.Point(118, 173);
             this.buildingBox.Name = "buildingBox";
-            this.buildingBox.Size = new System.Drawing.Size(258, 31);
+            this.buildingBox.Size = new System.Drawing.Size(258, 27);
             this.buildingBox.TabIndex = 7;
             // 
             // lblInstructions
@@ -173,31 +172,31 @@ namespace MEMS.Windows
             // 
             this.detailBox.BackColor = System.Drawing.Color.GhostWhite;
             this.detailBox.FormattingEnabled = true;
-            this.detailBox.ItemHeight = 24;
+            this.detailBox.ItemHeight = 19;
             this.detailBox.Location = new System.Drawing.Point(412, 57);
             this.detailBox.Name = "detailBox";
-            this.detailBox.Size = new System.Drawing.Size(251, 124);
+            this.detailBox.Size = new System.Drawing.Size(251, 118);
             this.detailBox.TabIndex = 15;
             // 
             // serialNumBox
             // 
             this.serialNumBox.BackColor = System.Drawing.Color.GhostWhite;
-            this.serialNumBox.Location = new System.Drawing.Point(117, 113);
+            this.serialNumBox.Location = new System.Drawing.Point(118, 113);
             this.serialNumBox.Name = "serialNumBox";
-            this.serialNumBox.Size = new System.Drawing.Size(258, 31);
+            this.serialNumBox.Size = new System.Drawing.Size(258, 27);
             this.serialNumBox.TabIndex = 16;
             // 
             // lblSerial
             // 
             this.lblSerial.Location = new System.Drawing.Point(14, 113);
             this.lblSerial.Name = "lblSerial";
-            this.lblSerial.Size = new System.Drawing.Size(87, 14);
+            this.lblSerial.Size = new System.Drawing.Size(87, 27);
             this.lblSerial.TabIndex = 17;
             this.lblSerial.Text = "Serial Number";
             // 
             // AddMachineWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(695, 254);
@@ -209,7 +208,7 @@ namespace MEMS.Windows
             this.Controls.Add(this.saveDetailBtn);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.buildingBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBldg);
             this.Controls.Add(this.zoneBox);
             this.Controls.Add(this.manuBox);
             this.Controls.Add(this.modelBox);
@@ -235,7 +234,7 @@ namespace MEMS.Windows
 
         private System.Windows.Forms.Label lblConfirm;
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBldg;
         private System.Windows.Forms.TextBox buildingBox;
         private System.Windows.Forms.Label lblInstructions;
         private System.Windows.Forms.Button saveDetailBtn;

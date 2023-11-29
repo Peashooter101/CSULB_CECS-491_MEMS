@@ -86,5 +86,10 @@ namespace MEMS.Windows
             detail.ShowDialog();
             LoadListView();
         }
+
+        private void mainMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

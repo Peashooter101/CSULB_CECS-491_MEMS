@@ -63,10 +63,10 @@ namespace MEMS.Windows
             MessageBox.Show(loc + dir);
 
         }
-        private void UpdateBtn_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        // private void UpdateBtn_Click(object sender, EventArgs e)
+        // {
+        //     throw new System.NotImplementedException();
+        // }
 
         private void BackBtn_Click(object sender, EventArgs e)
         {

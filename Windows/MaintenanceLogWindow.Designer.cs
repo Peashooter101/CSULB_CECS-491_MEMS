@@ -32,7 +32,6 @@ namespace MEMS.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceLogWindow));
             this.MachineList = new System.Windows.Forms.ListBox();
             this.SaveBtn = new System.Windows.Forms.Button();
-            this.UpdateBtn = new System.Windows.Forms.Button();
             this.AddMaintenanceBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
@@ -45,10 +44,10 @@ namespace MEMS.Windows
             this.MachineList.BackColor = System.Drawing.Color.GhostWhite;
             this.MachineList.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.MachineList.HorizontalScrollbar = true;
-            this.MachineList.ItemHeight = 15;
+            this.MachineList.ItemHeight = 19;
             this.MachineList.Location = new System.Drawing.Point(30, 60);
             this.MachineList.Name = "MachineList";
-            this.MachineList.Size = new System.Drawing.Size(151, 259);
+            this.MachineList.Size = new System.Drawing.Size(151, 251);
             this.MachineList.TabIndex = 0;
             this.MachineList.SelectedIndexChanged += new System.EventHandler(this.MachineList_SelectedIndexChanged);
             // 
@@ -61,16 +60,6 @@ namespace MEMS.Windows
             this.SaveBtn.Text = "Save Log";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.Location = new System.Drawing.Point(222, 238);
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(332, 27);
-            this.UpdateBtn.TabIndex = 6;
-            this.UpdateBtn.Text = "Update Maintenance Entry";
-            this.UpdateBtn.UseVisualStyleBackColor = true;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // AddMaintenanceBtn
             // 
@@ -105,11 +94,11 @@ namespace MEMS.Windows
             // 
             this.MachineDetails.BackColor = System.Drawing.Color.GhostWhite;
             this.MachineDetails.FormattingEnabled = true;
-            this.MachineDetails.ItemHeight = 15;
+            this.MachineDetails.ItemHeight = 19;
             this.MachineDetails.Location = new System.Drawing.Point(222, 60);
             this.MachineDetails.Margin = new System.Windows.Forms.Padding(2);
             this.MachineDetails.Name = "MachineDetails";
-            this.MachineDetails.Size = new System.Drawing.Size(331, 124);
+            this.MachineDetails.Size = new System.Drawing.Size(331, 118);
             this.MachineDetails.TabIndex = 19;
             // 
             // BackBtn
@@ -124,7 +113,7 @@ namespace MEMS.Windows
             // 
             // MaintenanceLogWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(586, 337);
@@ -133,7 +122,6 @@ namespace MEMS.Windows
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddMaintenanceBtn);
             this.Controls.Add(this.BackBtn);
-            this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.MachineList);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,7 +140,6 @@ namespace MEMS.Windows
 
         private System.Windows.Forms.Button AddMaintenanceBtn;
 
-        private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button BackBtn;
 
         private System.Windows.Forms.Button SaveBtn;
