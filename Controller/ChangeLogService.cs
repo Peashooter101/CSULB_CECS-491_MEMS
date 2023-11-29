@@ -15,14 +15,15 @@ namespace MEMS
             changelogRepository = new Repository<ChangelogEntry>(_dbContext.database, "ChangelogEntries");
         }
         
-        public void CreateChange(DateTime timestamp, string type, string description)
+        public void CreateChange(DateTime timestamp, string type, string description, Machine machine)
         {
             
             var newChange = new ChangelogEntry()
             {
                 timestamp = timestamp,
                 type = type,
-                description = description
+                description = description,
+                machineId = machine.Id
             };
             this.changelogRepository.Create(newChange);
         }

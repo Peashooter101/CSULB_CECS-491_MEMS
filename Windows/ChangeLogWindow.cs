@@ -25,10 +25,10 @@ namespace MEMS
             {
                 string[] changeArray =
                 {
-                    change.Id.ToString(),
-                    change.machineId.ToString(),
-                    change.userId.ToString(),
-                    change.authorId.ToString(),
+                    change.Id.ToString().Substring(19),
+                    change.machineId.ToString().Substring(19),
+                    change.userId.ToString().Substring(19),
+                    change.authorId.ToString().Substring(19),
                     change.timestamp.ToString(CultureInfo.CurrentCulture),
                     change.type,
                     change.description

@@ -32,7 +32,7 @@ namespace MEMS
                 isActive = true
             };
             this.machineRepository.Create(newMachine);
-            ServiceUtil.changeLogService.CreateChange(DateTime.Now, "machine", "added machine");
+            ServiceUtil.changeLogService.CreateChange(DateTime.Now, "machine", "added machine", newMachine);
         }
 
         public Machine ReadMachine(ObjectId id)
@@ -65,7 +65,7 @@ namespace MEMS
         public void UpdateMachine(Machine m)
         {
             this.machineRepository.Update(m);
-            ServiceUtil.changeLogService.CreateChange(DateTime.Now, "zone", "machine moved");
+            ServiceUtil.changeLogService.CreateChange(DateTime.Now, "zone", "machine moved", m);
         }
     }
 }

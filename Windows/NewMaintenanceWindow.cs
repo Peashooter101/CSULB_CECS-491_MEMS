@@ -127,7 +127,7 @@ namespace MEMS.Windows
             }
 
             //verify request type: 
-            if (dataGridView1.Rows[0].Cells[6].Value.Equals("Edit Severity") ||
+            if (
                 dataGridView1.Rows[0].Cells[6].Value.Equals("") ||
                 !dataGridView1.Rows[0].Cells[6].Value.Equals("Repair") &&
                 !dataGridView1.Rows[0].Cells[6].Value.Equals("Replace") &&
@@ -150,8 +150,8 @@ namespace MEMS.Windows
                     contact.name, contact.email, contact.phoneNumber, contact.employer, contact.businessLocation,
                     referenceMachine);
                 ServiceUtil.MaintenanceReminderService.CreateMaintenanceReminder(entry.type, entry.severity,
-                    entry.description, (ObjectId)referenceMachine);
-                ServiceUtil.changeLogService.CreateChange(DateTime.Now, entry.type.ToString(), entry.description);
+                    entry.description, (ObjectId)referenceMachine, machineObject);
+                ServiceUtil.changeLogService.CreateChange(DateTime.Now, entry.type.ToString(), entry.description, machineObject);
                 MessageBox.Show(@"Request Added");
             }
 
