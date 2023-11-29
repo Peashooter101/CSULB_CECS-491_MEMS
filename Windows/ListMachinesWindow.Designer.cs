@@ -31,7 +31,6 @@ namespace MEMS.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.activeMachines = new System.Windows.Forms.ListView();
             this.MachineName = new System.Windows.Forms.ColumnHeader();
             this.MachineUid = new System.Windows.Forms.ColumnHeader();
@@ -40,16 +39,9 @@ namespace MEMS.Windows
             this.MachineZone = new System.Windows.Forms.ColumnHeader();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.addNewMachineButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDblClk = new System.Windows.Forms.Label();
+            this.lblTop = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(26, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Active Machines";
             // 
             // activeMachines
             // 
@@ -107,6 +99,7 @@ namespace MEMS.Windows
             this.mainMenuButton.TabIndex = 2;
             this.mainMenuButton.Text = "Main Menu";
             this.mainMenuButton.UseVisualStyleBackColor = false;
+            this.mainMenuButton.Click += new System.EventHandler(this.mainMenuButton_Click);
             // 
             // addNewMachineButton
             // 
@@ -121,35 +114,45 @@ namespace MEMS.Windows
             this.addNewMachineButton.UseVisualStyleBackColor = false;
             this.addNewMachineButton.Click += new System.EventHandler(this.NewMachineButton_Click);
             // 
-            // label1
+            // lblDblClk
             // 
-            this.label1.Location = new System.Drawing.Point(316, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Double-click machine for details.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDblClk.Location = new System.Drawing.Point(158, 16);
+            this.lblDblClk.Name = "lblDblClk";
+            this.lblDblClk.Size = new System.Drawing.Size(493, 23);
+            this.lblDblClk.TabIndex = 5;
+            this.lblDblClk.Text = "Double-click machine for details.";
+            this.lblDblClk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTop
+            // 
+            this.lblTop.Location = new System.Drawing.Point(27, 20);
+            this.lblTop.Name = "lblTop";
+            this.lblTop.Size = new System.Drawing.Size(125, 23);
+            this.lblTop.TabIndex = 6;
+            this.lblTop.Text = "Active Machines";
             // 
             // ListMachinesWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(805, 505);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTop);
+            this.Controls.Add(this.lblDblClk);
             this.Controls.Add(this.addNewMachineButton);
             this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.activeMachines);
-            this.Controls.Add(this.textBox1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ListMachinesWindow";
             this.Text = "Active Machines";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListMachinesWindow_FormClosing);
+            this.Load += new System.EventHandler(this.ListMachinesWindow_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDblClk;
+
+        private System.Windows.Forms.Label lblTop;
 
         private System.Windows.Forms.Button addNewMachineButton;
         private System.Windows.Forms.Button addMachineButton;
@@ -166,8 +169,6 @@ namespace MEMS.Windows
 
         private System.Windows.Forms.ListView activeMachines;
         private System.Windows.Forms.Button mainMenuButton;
-
-        private System.Windows.Forms.TextBox textBox1;
 
         #endregion
     }

@@ -28,7 +28,7 @@ namespace MEMS.Windows
             if (string.IsNullOrWhiteSpace(nameBox.Text)
                 || string.IsNullOrWhiteSpace(modelBox.Text)
                 || string.IsNullOrWhiteSpace(manuBox.Text)
-                || string.IsNullOrWhiteSpace(buildingBox.Text)
+                // || string.IsNullOrWhiteSpace(buildingBox.Text)
                 || string.IsNullOrWhiteSpace(serialNumBox.Text)
                 )
             {
@@ -52,16 +52,18 @@ namespace MEMS.Windows
                     detailBox.Items.Add("Model: " + modelBox.Text);
                     detailBox.Items.Add("Serial Number: " + serialNumBox.Text);
                     detailBox.Items.Add("Manufacturer: " + manuBox.Text);
-                    detailBox.Items.Add("Zone: " + zoneBox.Text);
                     detailBox.Items.Add("Building: " + buildingBox.Text);
+                    detailBox.Items.Add("Zone: " + zoneBox.Text);
 
+                    MessageBox.Show("Machine has been added.", "[MEMS] Success", MessageBoxButtons.OK);
 
-                    lblConfirm.Text = @"Adding this machine. Click ""Save Details"" to confirm.";
+                    // lblConfirm.Text = @"Adding this machine. Click ""Save Details"" to confirm.";
                     //need to add business logic to check if machine has been added or not yet.
                     //Query the DB if no entry -> add else -> create popup that machine already exists. 
                     ServiceUtil.machineService.CreateMachine(nameBox.Text, modelBox.Text, serialNumBox.Text,
                         manuBox.Text, zoneBox.Text);
                     MachineAdded?.Invoke();
+                    this.Close();
                 }
                 else
                 {

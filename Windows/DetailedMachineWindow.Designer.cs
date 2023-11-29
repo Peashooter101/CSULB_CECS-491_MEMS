@@ -45,7 +45,6 @@ namespace MEMS.Windows
             this.zoneBox = new System.Windows.Forms.TextBox();
             this.moveButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.saveChangesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTop
@@ -88,7 +87,7 @@ namespace MEMS.Windows
             // 
             this.lblManu.Location = new System.Drawing.Point(9, 150);
             this.lblManu.Name = "lblManu";
-            this.lblManu.Size = new System.Drawing.Size(97, 27);
+            this.lblManu.Size = new System.Drawing.Size(109, 27);
             this.lblManu.TabIndex = 4;
             this.lblManu.Text = "Manufacturer";
             this.lblManu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -109,7 +108,7 @@ namespace MEMS.Windows
             this.nameBox.Enabled = false;
             this.nameBox.Location = new System.Drawing.Point(113, 58);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(266, 23);
+            this.nameBox.Size = new System.Drawing.Size(266, 27);
             this.nameBox.TabIndex = 6;
             // 
             // modelBox
@@ -118,7 +117,7 @@ namespace MEMS.Windows
             this.modelBox.Enabled = false;
             this.modelBox.Location = new System.Drawing.Point(113, 87);
             this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(266, 23);
+            this.modelBox.Size = new System.Drawing.Size(266, 27);
             this.modelBox.TabIndex = 7;
             // 
             // serialBox
@@ -127,7 +126,7 @@ namespace MEMS.Windows
             this.serialBox.Enabled = false;
             this.serialBox.Location = new System.Drawing.Point(113, 117);
             this.serialBox.Name = "serialBox";
-            this.serialBox.Size = new System.Drawing.Size(266, 23);
+            this.serialBox.Size = new System.Drawing.Size(266, 27);
             this.serialBox.TabIndex = 8;
             // 
             // manuBox
@@ -136,7 +135,7 @@ namespace MEMS.Windows
             this.manuBox.Enabled = false;
             this.manuBox.Location = new System.Drawing.Point(113, 147);
             this.manuBox.Name = "manuBox";
-            this.manuBox.Size = new System.Drawing.Size(266, 23);
+            this.manuBox.Size = new System.Drawing.Size(266, 27);
             this.manuBox.TabIndex = 9;
             // 
             // zoneBox
@@ -145,7 +144,7 @@ namespace MEMS.Windows
             this.zoneBox.Enabled = false;
             this.zoneBox.Location = new System.Drawing.Point(113, 179);
             this.zoneBox.Name = "zoneBox";
-            this.zoneBox.Size = new System.Drawing.Size(266, 23);
+            this.zoneBox.Size = new System.Drawing.Size(266, 27);
             this.zoneBox.TabIndex = 10;
             // 
             // moveButton
@@ -160,7 +159,7 @@ namespace MEMS.Windows
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(276, 229);
+            this.closeButton.Location = new System.Drawing.Point(292, 229);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(87, 27);
             this.closeButton.TabIndex = 12;
@@ -168,23 +167,13 @@ namespace MEMS.Windows
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // saveChangesButton
-            // 
-            this.saveChangesButton.Location = new System.Drawing.Point(120, 229);
-            this.saveChangesButton.Name = "saveChangesButton";
-            this.saveChangesButton.Size = new System.Drawing.Size(103, 27);
-            this.saveChangesButton.TabIndex = 13;
-            this.saveChangesButton.Text = "Save Changes";
-            this.saveChangesButton.UseVisualStyleBackColor = true;
-            // 
             // DetailedMachineWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(394, 272);
-            this.Controls.Add(this.saveChangesButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.moveButton);
             this.Controls.Add(this.zoneBox);
@@ -206,8 +195,6 @@ namespace MEMS.Windows
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        private System.Windows.Forms.Button saveChangesButton;
 
         private System.Windows.Forms.Button moveButton;
         private System.Windows.Forms.Button closeButton;
