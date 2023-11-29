@@ -43,7 +43,7 @@ namespace MEMS.Windows
                     //loginWindow.Show();
                     Hide();
 
-                    var MainMenuWindow = new MainMenuWindow();
+                    var MainMenuWindow = new MainMenuWindow(this);
                     MainMenuWindow.Show();
 
                 }

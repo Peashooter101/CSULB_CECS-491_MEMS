@@ -20,7 +20,7 @@ namespace MEMS.Windows
             {
                 Program.currentUser = ServiceUtil.UserRoleService.matchUser(userNameBox.Text, passwordBox.Text);
                 Hide();
-                MainMenuWindow mainMenuWindow = new MainMenuWindow();
+                MainMenuWindow mainMenuWindow = new MainMenuWindow(this);
                 mainMenuWindow.Show();
             }
             

@@ -19,9 +19,19 @@ namespace MEMS.Windows
         MaintenanceLogWindow _maintenanceLog = new MaintenanceLogWindow();
         MaintenanceReminderWindow _maintenanceReminder = new MaintenanceReminderWindow();
         NewMaintenanceWindow _newMaintenance = new NewMaintenanceWindow();
-        public MainMenuWindow()
+        private LoginWindow L;
+        private DatabaseConnectionWindow C;
+        
+        public MainMenuWindow(LoginWindow l)
         {
             InitializeComponent();
+            IsMdiContainer = true;
+            L = l;
+        }
+        public MainMenuWindow(DatabaseConnectionWindow c)
+        {
+            InitializeComponent();
+            C = c;
             IsMdiContainer = true;
         }
         private void MainMenu_Load(object sender, EventArgs e)
@@ -213,6 +223,18 @@ namespace MEMS.Windows
             //memoryGraphics.CopyFromScreen(containerControl1.Location.X, containerControl1.Location.Y,0, 0, containerControl1.Size );
             graphics.CopyFromScreen(point.X, point.Y, 0, 0, Size);
             printContainer.Print();
+        }
+
+        private void MainMenuWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (L != null)
+            {
+                L.Close();
+            }
+            else
+            {
+                C.Close();
+            }
         }
     }
 }
