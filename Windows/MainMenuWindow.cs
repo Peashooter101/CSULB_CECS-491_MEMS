@@ -11,7 +11,7 @@ namespace MEMS.Windows
     public partial class MainMenuWindow : Form
     {
         MainMenuMaintenanceReminderWindow _loadMaintenanceList = new MainMenuMaintenanceReminderWindow();
-        AccountCreationWindow _accountInfo = new AccountCreationWindow();
+        AccountCreationWindow _accountInfo;
         AddMachineWindow _addMachine = new AddMachineWindow();
         ChangeLogWindow _changeLog = new ChangeLogWindow();
         TextPopUpWindow _dbPopUp = new TextPopUpWindow();
@@ -46,6 +46,7 @@ namespace MEMS.Windows
         
         private void MDIAccountInformation_Click(object sender, EventArgs e)
         {
+            _accountInfo = new AccountCreationWindow();
             
             if (containerControl1.Controls.Contains(_accountInfo))
             {

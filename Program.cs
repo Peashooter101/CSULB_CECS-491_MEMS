@@ -46,8 +46,8 @@ namespace MEMS
            {
                ServiceUtil.dbContext = DatabaseContext.GetInstance();
                ServiceUtil.init();
-               //Application.Run(new LoginWindow());
-               Application.Run(new MainMenuWindow());
+               Application.Run(new LoginWindow());
+               //Application.Run(new MainMenuWindow());
            }
            else
            {
