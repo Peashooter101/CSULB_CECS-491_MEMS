@@ -34,7 +34,6 @@ namespace MEMS.Windows
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMaintenanceWindow));
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.saveButton = new System.Windows.Forms.Button();
             this.machineSelectionLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +44,6 @@ namespace MEMS.Windows
             this.Severity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RequestType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addRequestButton = new System.Windows.Forms.Button();
-            this.updateRequestButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.machineDisplay = new System.Windows.Forms.ListBox();
             this.activeMachines = new System.Windows.Forms.ListBox();
@@ -63,15 +61,6 @@ namespace MEMS.Windows
             this.dataGridTextBoxColumn2.Format = "";
             this.dataGridTextBoxColumn2.FormatInfo = null;
             this.dataGridTextBoxColumn2.Width = -1;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(673, 598);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(85, 40);
-            this.saveButton.TabIndex = 7;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
             // 
             // machineSelectionLabel
             // 
@@ -132,22 +121,13 @@ namespace MEMS.Windows
             // 
             // addRequestButton
             // 
-            this.addRequestButton.Location = new System.Drawing.Point(13, 598);
+            this.addRequestButton.Location = new System.Drawing.Point(673, 598);
             this.addRequestButton.Name = "addRequestButton";
             this.addRequestButton.Size = new System.Drawing.Size(85, 40);
             this.addRequestButton.TabIndex = 23;
             this.addRequestButton.Text = "Add Request";
             this.addRequestButton.UseVisualStyleBackColor = true;
             this.addRequestButton.Click += new System.EventHandler(this.addRequestButton_Click);
-            // 
-            // updateRequestButton
-            // 
-            this.updateRequestButton.Location = new System.Drawing.Point(104, 598);
-            this.updateRequestButton.Name = "updateRequestButton";
-            this.updateRequestButton.Size = new System.Drawing.Size(85, 40);
-            this.updateRequestButton.TabIndex = 24;
-            this.updateRequestButton.Text = "Update Request";
-            this.updateRequestButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -193,11 +173,9 @@ namespace MEMS.Windows
             this.Controls.Add(this.activeMachines);
             this.Controls.Add(this.machineDisplay);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.updateRequestButton);
             this.Controls.Add(this.addRequestButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.machineSelectionLabel);
-            this.Controls.Add(this.saveButton);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewMaintenanceWindow";
@@ -225,15 +203,11 @@ namespace MEMS.Windows
 
         private System.Windows.Forms.DataGridViewTextBoxColumn Company;
 
-        private System.Windows.Forms.Button updateRequestButton;
-
         private System.Windows.Forms.Button addRequestButton;
 
         private System.Windows.Forms.DataGridView dataGridView1;
 
         private System.Windows.Forms.Label machineSelectionLabel;
-
-        private System.Windows.Forms.Button saveButton;
 
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn1;
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn2;

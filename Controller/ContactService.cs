@@ -17,7 +17,7 @@ namespace MEMS
 				new Repository<Contact>(_dbContext.database, "Contacts");
 		}
 
-		public void CreateContact(string contactName, string contactEmail, int contactPhoneNumber, ObjectId contactBusinessLocation, BsonObjectId machineId)
+		public void CreateContact(string contactName, string contactEmail, string contactPhoneNumber, string contactEmployer, ObjectId contactBusinessLocation, BsonObjectId machineId)
 		{
 
 			var newContact = new Contact()
@@ -25,6 +25,7 @@ namespace MEMS
 				name = contactName,
 				email = contactEmail,
 				phoneNumber = contactPhoneNumber,
+				employer = contactEmployer,
 				businessLocation = contactBusinessLocation,
 				machineRefId = machineId,
 			};
