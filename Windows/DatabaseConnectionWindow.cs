@@ -34,7 +34,7 @@ namespace MEMS.Windows
                 if (LoginService.TestMongoDBConnection(dbConnectString.Text))
                 {
                     label2.Text = "Connection successful";
-                    Environment.SetEnvironmentVariable("MEMS_CONNECTION_STRING", dbConnectString.Text,
+                    Environment.SetEnvironmentVariable("MONGO_DB_URI", dbConnectString.Text,
                         EnvironmentVariableTarget.User);
                     ServiceUtil.dbContext = DatabaseContext.GetInstance();
                     ServiceUtil.init();
