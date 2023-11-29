@@ -38,10 +38,11 @@ namespace MEMS
 			return contactRepository.Find(filter).FirstOrDefault();
 		}
 
-		//public List<Contact> GetContactsByMachine (ObjectId id)
-		//{
-		//	var
-		//}
+		public Contact GetContactByMachine(ObjectId id)
+		{
+			var filter = Builders<Contact>.Filter.Eq(c => c.machineRefId, id);
+			return contactRepository.Find(filter).FirstOrDefault();
+		}
 
 	}
 }

@@ -19,7 +19,7 @@ namespace MEMS
             _maintenanceRepository = new Repository<MaintenanceEntry>(_dbContext.database, "MaintenanceEntries");
         }
 
-        public void CreateMaintenanceReminder(MaintenanceType maintenanceType, Severity severity, string description)
+        public void CreateMaintenanceReminder(MaintenanceType maintenanceType, Severity severity, string description, ObjectId machine)
         {
             var newMaintenanceReminder = new MaintenanceEntry()
             {
@@ -27,6 +27,7 @@ namespace MEMS
                 severity = severity,
                 description = description,
                 maintenanceTime = DateTime.Today,
+                machineId = machine
             };
             _maintenanceRepository.Create(newMaintenanceReminder);
             ServiceUtil.changeLogService.CreateChange(DateTime.Now, "Maintenance Add", "maintenance request added");
@@ -54,6 +55,12 @@ namespace MEMS
         {
             var severityType = Builders<MaintenanceEntry>.Filter.Eq(entry => entry.severity, severity);
             return _maintenanceRepository.Find(severityType).ToList();
+        }
+
+        public MaintenanceEntry ReadByMachineID(ObjectId machine)
+        {
+            var filter = Builders<MaintenanceEntry>.Filter.Eq(m => m.machineId, machine);
+            return _maintenanceRepository.Find(filter).FirstOrDefault();
         }
     }
 }

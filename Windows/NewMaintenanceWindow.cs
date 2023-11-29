@@ -150,7 +150,7 @@ namespace MEMS.Windows
                     contact.name, contact.email, contact.phoneNumber, contact.employer, contact.businessLocation,
                     referenceMachine);
                 ServiceUtil.MaintenanceReminderService.CreateMaintenanceReminder(entry.type, entry.severity,
-                    entry.description);
+                    entry.description, (ObjectId)referenceMachine);
                 ServiceUtil.changeLogService.CreateChange(DateTime.Now, entry.type.ToString(), entry.description);
                 MessageBox.Show(@"Request Added");
             }

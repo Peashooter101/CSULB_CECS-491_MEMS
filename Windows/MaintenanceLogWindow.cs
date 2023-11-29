@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using MEMS.Model;
 
 namespace MEMS.Windows
 {
@@ -26,6 +27,8 @@ namespace MEMS.Windows
         {
             
             var m = (Machine)MachineList.SelectedItem;
+            var c = (Contact)ServiceUtil.ContactService.GetContactByMachine(m.Id);
+            var r = (MaintenanceEntry)ServiceUtil.MaintenanceReminderService.ReadByMachineID(m.Id);
             
             if (MachineList.SelectedItem == null) 
             { 
@@ -39,7 +42,10 @@ namespace MEMS.Windows
             MachineDetails.Items.Add("Model: " + m.model);
             MachineDetails.Items.Add("Manufacturer: " + m.manufacturer);
             MachineDetails.Items.Add("Zone: " + m.zone);
-            MachineDetails.Items.Add("Maintenance ID: " + m.maintenanceScheduleId);
+            MachineDetails.Items.Add("\nProblem: " + r.description);
+            MachineDetails.Items.Add("\nTechnician: " + c.name);
+            MachineDetails.Items.Add("Phone Number: " + c.phoneNumber);
+            
         }
         
         private void SaveBtn_Click(object sender, EventArgs e)
