@@ -46,27 +46,25 @@ namespace MEMS.Windows
             // 
             // dbConnectString
             // 
-            this.dbConnectString.Location = new System.Drawing.Point(258, 78);
-            this.dbConnectString.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dbConnectString.BackColor = System.Drawing.Color.GhostWhite;
+            this.dbConnectString.Location = new System.Drawing.Point(201, 59);
             this.dbConnectString.Name = "dbConnectString";
-            this.dbConnectString.Size = new System.Drawing.Size(448, 26);
+            this.dbConnectString.Size = new System.Drawing.Size(349, 23);
             this.dbConnectString.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(15, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(448, 35);
+            this.label1.Size = new System.Drawing.Size(349, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Please provide the following MongoDB Database Information";
             // 
             // connectStringLabel
             // 
-            this.connectStringLabel.Location = new System.Drawing.Point(15, 81);
-            this.connectStringLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.connectStringLabel.Location = new System.Drawing.Point(12, 61);
             this.connectStringLabel.Name = "connectStringLabel";
-            this.connectStringLabel.Size = new System.Drawing.Size(234, 31);
+            this.connectStringLabel.Size = new System.Drawing.Size(182, 23);
             this.connectStringLabel.TabIndex = 2;
             this.connectStringLabel.Text = "Database Connection String";
             this.connectStringLabel.Click += new System.EventHandler(this.connectStringLabel_Click);
@@ -74,10 +72,9 @@ namespace MEMS.Windows
             // submitButton
             // 
             this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.submitButton.Location = new System.Drawing.Point(292, 352);
-            this.submitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.submitButton.Location = new System.Drawing.Point(227, 264);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(108, 35);
+            this.submitButton.Size = new System.Drawing.Size(84, 27);
             this.submitButton.TabIndex = 5;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -85,74 +82,70 @@ namespace MEMS.Windows
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(258, 299);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(201, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(364, 35);
+            this.label2.Size = new System.Drawing.Size(283, 27);
             this.label2.TabIndex = 6;
             this.label2.Text = ":";
             this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(15, 196);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(234, 31);
+            this.label3.Size = new System.Drawing.Size(182, 23);
             this.label3.TabIndex = 10;
             this.label3.Text = "Password";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(258, 193);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.BackColor = System.Drawing.Color.GhostWhite;
+            this.textBox1.Location = new System.Drawing.Point(201, 144);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(448, 26);
+            this.textBox1.Size = new System.Drawing.Size(349, 23);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(15, 136);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(12, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 31);
+            this.label4.Size = new System.Drawing.Size(182, 23);
             this.label4.TabIndex = 8;
             this.label4.Text = "Username";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(258, 133);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox2.BackColor = System.Drawing.Color.GhostWhite;
+            this.textBox2.Location = new System.Drawing.Point(201, 99);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(448, 26);
+            this.textBox2.Size = new System.Drawing.Size(349, 23);
             this.textBox2.TabIndex = 7;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(15, 256);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(12, 192);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(234, 31);
+            this.label5.Size = new System.Drawing.Size(182, 23);
             this.label5.TabIndex = 12;
             this.label5.Text = "Email";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(257, 253);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox3.BackColor = System.Drawing.Color.GhostWhite;
+            this.textBox3.Location = new System.Drawing.Point(199, 189);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(448, 26);
+            this.textBox3.Size = new System.Drawing.Size(349, 23);
             this.textBox3.TabIndex = 11;
             // 
             // DatabaseConnectionWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 424);
+            this.ClientSize = new System.Drawing.Size(561, 318);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
@@ -164,8 +157,8 @@ namespace MEMS.Windows
             this.Controls.Add(this.connectStringLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dbConnectString);
+            this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "DatabaseConnectionWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
